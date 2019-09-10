@@ -49,7 +49,9 @@ class ViewController: UIViewController {
     }
     
     @objc func otherButton(_ sender: UIButton) {
-        print(sender.tag)
+        if(sender.tag == 14){
+            label.text = "0"
+        }
     }
     
     /*
