@@ -44,13 +44,36 @@ class ViewController: UIViewController {
     }
     
     @objc func numButton(_ sender: UIButton) {
-        label.text = String(sender.tag)
-        print(sender.tag)
+        if(label.text == "0"){
+            label.text = String(sender.tag)
+        }else{
+            label.text?.append(String(sender.tag))
+        }
+        //print(sender.tag)
     }
     
     @objc func otherButton(_ sender: UIButton) {
-        if(sender.tag == 14){
+        if(sender.tag == 10){
+            //SC
+        }else if(sender.tag == 11){
+            //Point
+        }else if(sender.tag == 12){
+            //=
+        }else if(sender.tag == 13){
+            //+
+        }else if(sender.tag == 14){
+            //-
+        }else if(sender.tag == 15){
+            //×
+        }else if(sender.tag == 16){
+            //AC
             label.text = "0"
+        }else if(sender.tag == 17){
+            //+/-
+        }else if(sender.tag == 18){
+            //%
+        }else if(sender.tag == 19){
+            //÷
         }
     }
     
@@ -215,6 +238,7 @@ class ViewController: UIViewController {
         self.view.addSubview(button9)
     }
     
+    //Not Number Buttons
     func setElementOption(w: CGFloat, h: CGFloat) {
         //button size
         let bw = w / 4 - 20
@@ -288,7 +312,7 @@ class ViewController: UIViewController {
         
         //×
         let buttonMul = UIButton(type: UIButton.ButtonType.system)
-        buttonMul.tag = 13
+        buttonMul.tag = 15
         buttonMul.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonMul.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonMul.setTitle("×", for: UIControl.State.normal)
@@ -301,7 +325,7 @@ class ViewController: UIViewController {
         
         //AC
         let buttonAc = UIButton(type: UIButton.ButtonType.system)
-        buttonAc.tag = 14
+        buttonAc.tag = 16
         buttonAc.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonAc.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAc.setTitle("AC", for: UIControl.State.normal)
@@ -314,7 +338,7 @@ class ViewController: UIViewController {
         
         //±
         let buttonAS = UIButton(type: UIButton.ButtonType.system)
-        buttonAS.tag = 15
+        buttonAS.tag = 17
         buttonAS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonAS.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAS.setTitle("+/-", for: UIControl.State.normal)
@@ -327,7 +351,7 @@ class ViewController: UIViewController {
         
         //%
         let buttonRem = UIButton(type: UIButton.ButtonType.system)
-        buttonRem.tag = 16
+        buttonRem.tag = 18
         buttonRem.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonRem.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonRem.setTitle("%", for: UIControl.State.normal)
@@ -340,7 +364,7 @@ class ViewController: UIViewController {
         
         //÷
         let buttonDiv = UIButton(type: UIButton.ButtonType.system)
-        buttonDiv.tag = 17
+        buttonDiv.tag = 19
         buttonDiv.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonDiv.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonDiv.setTitle("÷", for: UIControl.State.normal)
