@@ -77,6 +77,10 @@ class ViewController: UIViewController {
         }
     }
     
+    func getLastChar() -> Character {
+        return label.text?.last ?? "0"
+    }
+    
     /*
     @objc func orientationDidChange(_ notification: NSNotification) {
         // 端末の向きを判定します。
