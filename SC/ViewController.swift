@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let label: UILabel! = UILabel()
+    var label: UILabel! = UILabel()
+    var numOnScreen: Double = 0
+    var preNum: Double = 0
+    var performingMath = false
+    var operation = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +48,21 @@ class ViewController: UIViewController {
     }
     
     @objc func numButton(_ sender: UIButton) {
+        if performingMath == true || label.text == "0" {
+            label.text = String(sender.tag)
+            numOnScreen = Double(label.text!) as! Double
+            performingMath = false
+        } else {
+            label.text = label.text! + String(sender.tag)
+            numOnScreen = Double(label.text!) as! Double
+        }
+        /*
         if(label.text == "0"){
             label.text = String(sender.tag)
         }else{
             label.text?.append(String(sender.tag))
         }
-        //print(sender.tag)
+ */
     }
     
     @objc func otherButton(_ sender: UIButton) {
@@ -57,23 +70,67 @@ class ViewController: UIViewController {
             //SC
         }else if(sender.tag == 11){
             //Point
+            if(getLastChar() != "."){
+                label.text?.append(".")
+            }else{
+                _ = label.text?.popLast()
+            }
+            preNum = Double(label.text!) as! Double
         }else if(sender.tag == 12){
             //=
+            if operation == 13{
+                label.text = String(preNum + numOnScreen)
+            }else if operation == 14{
+                label.text = String(preNum - numOnScreen)
+            }else if operation == 15{
+                label.text = String(preNum * numOnScreen)
+            }else if operation == 18{
+                //label.text = String(preNum % numOnScreen)
+            }else if operation == 19{
+                label.text = String(preNum / numOnScreen)
+            }
         }else if(sender.tag == 13){
             //+
+            preNum = Double(label.text!) as! Double
+            label.text?.append("+")
+            operation = sender.tag
+            performingMath = true
         }else if(sender.tag == 14){
             //-
+            preNum = Double(label.text!) as! Double
+            label.text?.append("-")
+            operation = sender.tag
+            performingMath = true
         }else if(sender.tag == 15){
             //×
+            preNum = Double(label.text!) as! Double
+            label.text?.append("×")
+            operation = sender.tag
+            performingMath = true
         }else if(sender.tag == 16){
             //AC
             label.text = "0"
+            preNum = 0
+            numOnScreen = 0
+            operation = 0
         }else if(sender.tag == 17){
             //+/-
+            preNum = Double(label.text!) as! Double
+            var tmp = Double(label.text!) as! Double
+            tmp = tmp * -1.0
+            label.text = String(tmp)
         }else if(sender.tag == 18){
             //%
+            preNum = Double(label.text!) as! Double
+            label.text?.append("%")
+            operation = sender.tag
+            performingMath = true
         }else if(sender.tag == 19){
             //÷
+            preNum = Double(label.text!) as! Double
+            label.text?.append("÷")
+            operation = sender.tag
+            performingMath = true
         }
     }
     
