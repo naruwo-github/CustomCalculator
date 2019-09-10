@@ -40,6 +40,32 @@ class ViewController: UIViewController {
         self.view.addSubview(label)
     }
     
+    @objc func numButton(_ sender: UIButton) {
+        label.text = String(sender.tag)
+        print(sender.tag)
+    }
+    
+    @objc func otherButton(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
+    @objc func orientationDidChange(_ notification: NSNotification) {
+        // 端末の向きを判定します。
+        // 縦向きを検知する場合、
+        //   device.orientation.isPortrait
+        // を判定します。
+        let device = UIDevice.current
+        if device.orientation.isLandscape {
+            // 横向きの場合
+            //print("横向き")
+            setLandscape()
+        } else {
+            // 縦向きの場合
+            //print("縦向き")
+            setPortrate()
+        }
+    }
+    
     //Normal Calculator Buttons
     func setElementsNormal(w: CGFloat, h: CGFloat) {
         //buttons size
@@ -310,29 +336,12 @@ class ViewController: UIViewController {
         self.view.addSubview(buttonDiv)
     }
     
-    @objc func numButton(_ sender: UIButton) {
-        label.text = String(sender.tag)
-        print(sender.tag)
+    func setLandscape() {
+        //
     }
     
-    @objc func otherButton(_ sender: UIButton) {
-        print(sender.tag)
-    }
-    
-    
-    @objc func orientationDidChange(_ notification: NSNotification) {
-        // 端末の向きを判定します。
-        // 縦向きを検知する場合、
-        //   device.orientation.isPortrait
-        // を判定します。
-        let device = UIDevice.current
-        if device.orientation.isLandscape {
-            // 横向きの場合
-            print("横向き")
-        } else {
-            // 縦向きの場合
-            print("縦向き")
-        }
+    func setPortrate() {
+        //
     }
 }
 
