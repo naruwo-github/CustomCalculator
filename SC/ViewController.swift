@@ -22,11 +22,13 @@ class ViewController: UIViewController {
         setElementsNormal(w: wid, h: hei)
         setElementOption(w: wid, h: hei)
         
+        /*
         // 端末回転の通知機能を設定します。
         let action = #selector(orientationDidChange(_:))
         let center = NotificationCenter.default
         let name = UIDevice.orientationDidChangeNotification
         center.addObserver(self, selector: action, name: name, object: nil)
+ */
     }
     
     func setLabel(w: CGFloat, h: CGFloat) {
@@ -47,9 +49,12 @@ class ViewController: UIViewController {
     }
     
     @objc func otherButton(_ sender: UIButton) {
-        print(sender.tag)
+        if(sender.tag == 14){
+            label.text = "0"
+        }
     }
     
+    /*
     @objc func orientationDidChange(_ notification: NSNotification) {
         // 端末の向きを判定します。
         // 縦向きを検知する場合、
@@ -70,6 +75,7 @@ class ViewController: UIViewController {
             setPortrate()
         }
     }
+ */
     
     //Normal Calculator Buttons
     func setElementsNormal(w: CGFloat, h: CGFloat) {
@@ -219,7 +225,7 @@ class ViewController: UIViewController {
         let buttonSC = UIButton(type: UIButton.ButtonType.system)
         buttonSC.tag = 10
         buttonSC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonSC.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonSC.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonSC.setTitle("←SC", for: UIControl.State.normal)
         buttonSC.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonSC.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -232,7 +238,7 @@ class ViewController: UIViewController {
         let buttonPoint = UIButton(type: UIButton.ButtonType.system)
         buttonPoint.tag = 11
         buttonPoint.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonPoint.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonPoint.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonPoint.setTitle(".", for: UIControl.State.normal)
         buttonPoint.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonPoint.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -245,7 +251,7 @@ class ViewController: UIViewController {
         let buttonEqu = UIButton(type: UIButton.ButtonType.system)
         buttonEqu.tag = 12
         buttonEqu.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonEqu.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonEqu.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonEqu.setTitle("=", for: UIControl.State.normal)
         buttonEqu.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonEqu.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -258,7 +264,7 @@ class ViewController: UIViewController {
         let buttonAdd = UIButton(type: UIButton.ButtonType.system)
         buttonAdd.tag = 13
         buttonAdd.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonAdd.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonAdd.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAdd.setTitle("+", for: UIControl.State.normal)
         buttonAdd.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonAdd.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -271,7 +277,7 @@ class ViewController: UIViewController {
         let buttonSub = UIButton(type: UIButton.ButtonType.system)
         buttonSub.tag = 14
         buttonSub.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonSub.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonSub.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonSub.setTitle("-", for: UIControl.State.normal)
         buttonSub.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonSub.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -284,7 +290,7 @@ class ViewController: UIViewController {
         let buttonMul = UIButton(type: UIButton.ButtonType.system)
         buttonMul.tag = 13
         buttonMul.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonMul.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonMul.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonMul.setTitle("×", for: UIControl.State.normal)
         buttonMul.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonMul.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -297,7 +303,7 @@ class ViewController: UIViewController {
         let buttonAc = UIButton(type: UIButton.ButtonType.system)
         buttonAc.tag = 14
         buttonAc.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonAc.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonAc.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAc.setTitle("AC", for: UIControl.State.normal)
         buttonAc.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonAc.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -310,7 +316,7 @@ class ViewController: UIViewController {
         let buttonAS = UIButton(type: UIButton.ButtonType.system)
         buttonAS.tag = 15
         buttonAS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonAS.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonAS.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAS.setTitle("+/-", for: UIControl.State.normal)
         buttonAS.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonAS.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -323,7 +329,7 @@ class ViewController: UIViewController {
         let buttonRem = UIButton(type: UIButton.ButtonType.system)
         buttonRem.tag = 16
         buttonRem.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonRem.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonRem.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonRem.setTitle("%", for: UIControl.State.normal)
         buttonRem.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonRem.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -336,7 +342,7 @@ class ViewController: UIViewController {
         let buttonDiv = UIButton(type: UIButton.ButtonType.system)
         buttonDiv.tag = 17
         buttonDiv.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonDiv.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        buttonDiv.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonDiv.setTitle("÷", for: UIControl.State.normal)
         buttonDiv.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonDiv.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
@@ -346,6 +352,7 @@ class ViewController: UIViewController {
         self.view.addSubview(buttonDiv)
     }
     
+    /*
     func setLandscape() {
         //
     }
@@ -353,5 +360,6 @@ class ViewController: UIViewController {
     func setPortrate() {
         //
     }
+ */
 }
 
