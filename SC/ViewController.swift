@@ -17,6 +17,12 @@ class ViewController: UIViewController {
         let wid = self.view.frame.width
         let hei = self.view.frame.height
         
+        // 端末回転の通知機能を設定します。
+        let action = #selector(orientationDidChange(_:))
+        let center = NotificationCenter.default
+        let name = UIDevice.orientationDidChangeNotification
+        center.addObserver(self, selector: action, name: name, object: nil)
+        
         setLabel(w: wid, h: hei)
         setElementsNormal(w: wid, h: hei)
         setElementOption(w: wid, h: hei)
@@ -311,6 +317,22 @@ class ViewController: UIViewController {
     
     @objc func otherButton(_ sender: UIButton) {
         print(sender.tag)
+    }
+    
+    
+    @objc func orientationDidChange(_ notification: NSNotification) {
+        // 端末の向きを判定します。
+        // 縦向きを検知する場合、
+        //   device.orientation.isPortrait
+        // を判定します。
+        let device = UIDevice.current
+        if device.orientation.isLandscape {
+            // 横向きの場合
+            print("横向き")
+        } else {
+            // 縦向きの場合
+            print("縦向き")
+        }
     }
 }
 
