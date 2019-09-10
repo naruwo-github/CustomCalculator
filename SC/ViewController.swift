@@ -17,15 +17,16 @@ class ViewController: UIViewController {
         let wid = self.view.frame.width
         let hei = self.view.frame.height
         
+        //settings
+        setLabel(w: wid, h: hei)
+        setElementsNormal(w: wid, h: hei)
+        setElementOption(w: wid, h: hei)
+        
         // 端末回転の通知機能を設定します。
         let action = #selector(orientationDidChange(_:))
         let center = NotificationCenter.default
         let name = UIDevice.orientationDidChangeNotification
         center.addObserver(self, selector: action, name: name, object: nil)
-        
-        setLabel(w: wid, h: hei)
-        setElementsNormal(w: wid, h: hei)
-        setElementOption(w: wid, h: hei)
     }
     
     func setLabel(w: CGFloat, h: CGFloat) {
