@@ -44,8 +44,12 @@ class ViewController: UIViewController {
     }
     
     @objc func numButton(_ sender: UIButton) {
-        label.text = String(sender.tag)
-        print(sender.tag)
+        if(label.text == "0"){
+            label.text = String(sender.tag)
+        }else{
+            label.text?.append(String(sender.tag))
+        }
+        //print(sender.tag)
     }
     
     @objc func otherButton(_ sender: UIButton) {
