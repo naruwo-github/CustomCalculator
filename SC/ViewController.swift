@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let label: UILabel! = UILabel()
+    var label: UILabel! = UILabel()
+    var numOnScreen: Float = 0.0
+    var preNum: Float = 0.0
+    var performingMath: Bool = false
+    var operation: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
     func setLabel(w: CGFloat, h: CGFloat) {
         label.textColor = UIColor.white
         label.text = "0"
-        label.font = UIFont.systemFont(ofSize: 100)
+        label.font = UIFont.systemFont(ofSize: 80)
         label.frame = CGRect(x: 0, y: 0, width: w, height: w/3)
         //label.backgroundColor = UIColor.gray
         label.center = CGPoint(x: w/2, y: h-50-h*11/16)
@@ -44,36 +48,87 @@ class ViewController: UIViewController {
     }
     
     @objc func numButton(_ sender: UIButton) {
-        if(label.text == "0"){
+        if performingMath == true || label.text == "0" {
             label.text = String(sender.tag)
-        }else{
-            label.text?.append(String(sender.tag))
+            numOnScreen = NSString(string: label.text!).floatValue
+            performingMath = false
+        } else {
+            label.text = label.text! + String(sender.tag)
+            numOnScreen = NSString(string: label.text!).floatValue
         }
-        //print(sender.tag)
     }
     
     @objc func otherButton(_ sender: UIButton) {
-        if(sender.tag == 10){
-            //SC
-        }else if(sender.tag == 11){
+        if sender.tag == 10 {
+            //C
+            if label.text!.count > 0 {
+                _ = label.text!.popLast()
+            } else {
+                label.text = "0"
+            }
+        } else if sender.tag == 11 {
             //Point
-        }else if(sender.tag == 12){
+            if getLastChar() != "." {
+                label.text?.append(".")
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+        } else if sender.tag == 12 {
             //=
-        }else if(sender.tag == 13){
+            if operation == 13 {
+                label.text = String(preNum + numOnScreen)
+            } else if operation == 14 {
+                label.text = String(preNum - numOnScreen)
+            } else if operation == 15 {
+                label.text = String(preNum * numOnScreen)
+            } else if operation == 18 {
+                label.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
+            } else if operation == 19 {
+                label.text = String(preNum / numOnScreen)
+            }
+        } else if sender.tag == 13 {
             //+
-        }else if(sender.tag == 14){
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("+")
+            operation = sender.tag
+            performingMath = true
+        } else if sender.tag == 14 {
             //-
-        }else if(sender.tag == 15){
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("-")
+            operation = sender.tag
+            performingMath = true
+        } else if sender.tag == 15 {
             //×
-        }else if(sender.tag == 16){
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("×")
+            operation = sender.tag
+            performingMath = true
+        } else if sender.tag == 16 {
             //AC
             label.text = "0"
-        }else if(sender.tag == 17){
+            preNum = 0
+            numOnScreen = 0
+            operation = 0
+        } else if sender.tag == 17 {
             //+/-
-        }else if(sender.tag == 18){
+            preNum = NSString(string: label.text!).floatValue
+            var tmp = NSString(string: label.text!).floatValue
+            tmp = tmp * -1.0
+            label.text = String(tmp)
+        } else if sender.tag == 18 {
             //%
-        }else if(sender.tag == 19){
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("%")
+            operation = sender.tag
+            performingMath = true
+        } else if sender.tag == 19 {
             //÷
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("÷")
+            operation = sender.tag
+            performingMath = true
         }
     }
     
@@ -254,7 +309,8 @@ class ViewController: UIViewController {
         buttonSC.tag = 10
         buttonSC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonSC.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
-        buttonSC.setTitle("←SC", for: UIControl.State.normal)
+        //buttonSC.setTitle("←SC", for: UIControl.State.normal)
+        buttonSC.setTitle("C", for: UIControl.State.normal)
         buttonSC.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonSC.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         buttonSC.layer.cornerRadius = 30
