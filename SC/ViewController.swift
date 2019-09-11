@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //Calculation result
     var label: UILabel! = UILabel()
+    //Text font size
+    var fontSize: CGFloat = 80
+    //Displaying result
     var numOnScreen: Float = 0.0
+    //Keep current value
     var preNum: Float = 0.0
+    //Operation mode flag
     var performingMath: Bool = false
+    //Operation mode num
     var operation: Int = 0
     
     override func viewDidLoad() {
@@ -21,9 +28,11 @@ class ViewController: UIViewController {
         let wid = self.view.frame.width
         let hei = self.view.frame.height
         
-        //settings
+        //Label setting
         setLabel(w: wid, h: hei)
+        //Number button setting
         setElementsNormal(w: wid, h: hei)
+        //Operation button setting
         setElementOption(w: wid, h: hei)
         
         /*
@@ -35,18 +44,21 @@ class ViewController: UIViewController {
  */
     }
     
+    //Label setting method
     func setLabel(w: CGFloat, h: CGFloat) {
         label.textColor = UIColor.white
         label.text = "0"
-        label.font = UIFont.systemFont(ofSize: 80)
+        label.font = UIFont.systemFont(ofSize: fontSize)
         label.frame = CGRect(x: 0, y: 0, width: w, height: w/3)
-        //label.backgroundColor = UIColor.gray
         label.center = CGPoint(x: w/2, y: h-50-h*11/16)
-        //label.sizeToFit()
+        //Right alignment
         label.textAlignment = NSTextAlignment.right
+        //Auto arrangement of font size
+        label.adjustsFontSizeToFitWidth = true
         self.view.addSubview(label)
     }
     
+    //Callded when umber button pressed
     @objc func numButton(_ sender: UIButton) {
         if performingMath == true || label.text == "0" {
             label.text = String(sender.tag)
@@ -58,10 +70,11 @@ class ViewController: UIViewController {
         }
     }
     
+    //Called operation button pressed
     @objc func otherButton(_ sender: UIButton) {
         if sender.tag == 10 {
             //C
-            if label.text!.count > 0 {
+            if label.text!.count > 1 {
                 _ = label.text!.popLast()
             } else {
                 label.text = "0"
@@ -132,6 +145,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //Get the charactor of end
     func getLastChar() -> Character {
         return label.text?.last ?? "0"
     }
