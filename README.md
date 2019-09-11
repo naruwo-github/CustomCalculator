@@ -5,8 +5,8 @@ This app can be used as a general calculator and also has a function as a scient
 Please use according to the application.
 
 ## Launch & Start Screen
-<img src = "SC-LaunchScreen.png" width = "200" />
-<img src = "SC-StartScreen.png" width = "200" />
+<img src = "SC_LaunchScreen.png" width = "200" />
+<img src = "SC_StartScreen.png" width = "200" />
 
 Just started developing...
 
