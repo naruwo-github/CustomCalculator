@@ -44,12 +44,15 @@ class ViewController: UIViewController {
     
     //Label setting method
     func setLabel(w: CGFloat, h: CGFloat) {
-        let bottom = h - 50
+        //settings
+        let bottom = h - 60
+        let wid = w / 8
+        
         label.textColor = UIColor.white
         label.text = "0"
         label.font = UIFont.systemFont(ofSize: fontSize)
         label.frame = CGRect(x: 0, y: 0, width: w, height: w/3)
-        label.center = CGPoint(x: w/2, y: bottom - h*11/16)
+        label.center = CGPoint(x: w/2, y: bottom - wid*11)
         //Right alignment
         label.textAlignment = NSTextAlignment.right
         //Auto arrangement of font size
@@ -154,13 +157,16 @@ class ViewController: UIViewController {
         // 縦向きを検知する場合、
         //   device.orientation.isPortrait
         // を判定します。
+        let wid = self.view.frame.width
+        let hei = self.view.frame.height
+        
         let device = UIDevice.current
         if device.orientation.isLandscape {
             // 横向きの場合
-            setLandscape()
+            setLandscape(w: wid, h: hei)
         } else {
             // 縦向きの場合
-            setPortrate()
+            setPortrate(w: wid, h: hei)
         }
     }
     
@@ -171,7 +177,7 @@ class ViewController: UIViewController {
         let side: CGFloat = w/4 - interval*2
         
         let wid = w / 8
-        let hei = h - 75
+        let hei = h - 60
         
         //0
         let button0 = UIButton(type: UIButton.ButtonType.system)
@@ -311,7 +317,7 @@ class ViewController: UIViewController {
         let side: CGFloat = w/4 - interval*2
         
         let wid = w / 8
-        let hei = h - 75
+        let hei = h - 60
         
         //C
         let buttonSC = UIButton(type: UIButton.ButtonType.system)
@@ -446,13 +452,267 @@ class ViewController: UIViewController {
     }
     
     //横向き
-    func setLandscape() {
-        //
+    func setLandscape(w: CGFloat, h: CGFloat) {
+        //buttons size
+        let interval: CGFloat = 10
+        let side: CGFloat = w/4 - interval*2
+        
+        let wid = w / 8
+        let hei = h - 60
+        
+        if let button0 = self.view.viewWithTag(0) as? UIButton {
+            button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button0.layer.cornerRadius = 30
+            button0.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button0.center = CGPoint(x: wid*3, y: hei - wid)
+        }
+        if let button1 = self.view.viewWithTag(1) as? UIButton {
+            button1.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button1.layer.cornerRadius = 30
+            button1.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button1.center = CGPoint(x: wid, y: hei - wid*3)
+        }
+        if let button2 = self.view.viewWithTag(2) as? UIButton {
+            button2.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button2.layer.cornerRadius = 30
+            button2.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button2.center = CGPoint(x: wid*3, y: hei - wid*3)
+        }
+        if let button3 = self.view.viewWithTag(3) as? UIButton {
+            button3.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button3.layer.cornerRadius = 30
+            button3.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button3.center = CGPoint(x: wid*5, y: hei - wid*3)
+        }
+        if let button4 = self.view.viewWithTag(4) as? UIButton {
+            button4.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button4.layer.cornerRadius = 30
+            button4.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button4.center = CGPoint(x: wid, y: hei - wid*5)
+        }
+        if let button5 = self.view.viewWithTag(5) as? UIButton {
+            button5.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button5.layer.cornerRadius = 30
+            button5.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button5.center = CGPoint(x: wid*3, y: hei - wid*5)
+        }
+        if let button6 = self.view.viewWithTag(6) as? UIButton {
+            button6.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button6.layer.cornerRadius = 30
+            button6.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button6.center = CGPoint(x: wid*5, y: hei - wid*5)
+        }
+        if let button7 = self.view.viewWithTag(7) as? UIButton {
+            button7.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button7.layer.cornerRadius = 30
+            button7.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button7.center = CGPoint(x: wid, y: hei - wid*7)
+        }
+        if let button8 = self.view.viewWithTag(8) as? UIButton {
+            button8.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button8.layer.cornerRadius = 30
+            button8.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button8.center = CGPoint(x: wid*3, y: hei - wid*7)
+        }
+        if let button9 = self.view.viewWithTag(9) as? UIButton {
+            button9.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button9.layer.cornerRadius = 30
+            button9.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button9.center = CGPoint(x: wid*5, y: hei - wid*7)
+        }
+        
+        if let buttonC = self.view.viewWithTag(10) as? UIButton {
+            buttonC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonC.layer.cornerRadius = 30
+            buttonC.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonC.center = CGPoint(x: wid, y: hei - wid)
+        }
+        if let buttonP = self.view.viewWithTag(11) as? UIButton {
+            buttonP.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonP.layer.cornerRadius = 30
+            buttonP.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonP.center = CGPoint(x: wid*5, y: hei - wid)
+        }
+        if let buttonEqu = self.view.viewWithTag(12) as? UIButton {
+            buttonEqu.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonEqu.layer.cornerRadius = 30
+            buttonEqu.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonEqu.center = CGPoint(x: wid*7, y: hei - wid)
+        }
+        if let buttonAdd = self.view.viewWithTag(13) as? UIButton {
+            buttonAdd.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAdd.layer.cornerRadius = 30
+            buttonAdd.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAdd.center = CGPoint(x: wid*7, y: hei - wid*3)
+        }
+        if let buttonSub = self.view.viewWithTag(14) as? UIButton {
+            buttonSub.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonSub.layer.cornerRadius = 30
+            buttonSub.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonSub.center = CGPoint(x: wid*7, y: hei - wid*5)
+        }
+        if let buttonMul = self.view.viewWithTag(15) as? UIButton {
+            buttonMul.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonMul.layer.cornerRadius = 30
+            buttonMul.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonMul.center = CGPoint(x: wid*7, y: hei - wid*7)
+        }
+        if let buttonAC = self.view.viewWithTag(16) as? UIButton {
+            buttonAC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAC.layer.cornerRadius = 30
+            buttonAC.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAC.center = CGPoint(x: wid, y: hei - wid*9)
+        }
+        if let buttonAS = self.view.viewWithTag(17) as? UIButton {
+            buttonAS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAS.layer.cornerRadius = 30
+            buttonAS.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAS.center = CGPoint(x: wid*3, y: hei - wid*9)
+        }
+        if let buttonRem = self.view.viewWithTag(18) as? UIButton {
+            buttonRem.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonRem.layer.cornerRadius = 30
+            buttonRem.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonRem.center = CGPoint(x: wid*5, y: hei - wid*9)
+        }
+        if let buttonDiv = self.view.viewWithTag(19) as? UIButton {
+            buttonDiv.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonDiv.layer.cornerRadius = 30
+            buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonDiv.center = CGPoint(x: wid*7, y: hei - wid*9)
+        }
     }
     
     //縦向き
-    func setPortrate() {
-        //
+    func setPortrate(w: CGFloat, h: CGFloat) {
+        //buttons size
+        let interval: CGFloat = 10
+        let side: CGFloat = w/4 - interval*2
+        
+        let wid = w / 8
+        let hei = h - 60
+        
+        if let button0 = self.view.viewWithTag(0) as? UIButton {
+            button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button0.layer.cornerRadius = 30
+            button0.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button0.center = CGPoint(x: wid*3, y: hei - wid)
+        }
+        if let button1 = self.view.viewWithTag(1) as? UIButton {
+            button1.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button1.layer.cornerRadius = 30
+            button1.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button1.center = CGPoint(x: wid, y: hei - wid*3)
+        }
+        if let button2 = self.view.viewWithTag(2) as? UIButton {
+            button2.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button2.layer.cornerRadius = 30
+            button2.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button2.center = CGPoint(x: wid*3, y: hei - wid*3)
+        }
+        if let button3 = self.view.viewWithTag(3) as? UIButton {
+            button3.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button3.layer.cornerRadius = 30
+            button3.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button3.center = CGPoint(x: wid*5, y: hei - wid*3)
+        }
+        if let button4 = self.view.viewWithTag(4) as? UIButton {
+            button4.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button4.layer.cornerRadius = 30
+            button4.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button4.center = CGPoint(x: wid, y: hei - wid*5)
+        }
+        if let button5 = self.view.viewWithTag(5) as? UIButton {
+            button5.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button5.layer.cornerRadius = 30
+            button5.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button5.center = CGPoint(x: wid*3, y: hei - wid*5)
+        }
+        if let button6 = self.view.viewWithTag(6) as? UIButton {
+            button6.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button6.layer.cornerRadius = 30
+            button6.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button6.center = CGPoint(x: wid*5, y: hei - wid*5)
+        }
+        if let button7 = self.view.viewWithTag(7) as? UIButton {
+            button7.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button7.layer.cornerRadius = 30
+            button7.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button7.center = CGPoint(x: wid, y: hei - wid*7)
+        }
+        if let button8 = self.view.viewWithTag(8) as? UIButton {
+            button8.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button8.layer.cornerRadius = 30
+            button8.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button8.center = CGPoint(x: wid*3, y: hei - wid*7)
+        }
+        if let button9 = self.view.viewWithTag(9) as? UIButton {
+            button9.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button9.layer.cornerRadius = 30
+            button9.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            button9.center = CGPoint(x: wid*5, y: hei - wid*7)
+        }
+        
+        if let buttonC = self.view.viewWithTag(10) as? UIButton {
+            buttonC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonC.layer.cornerRadius = 30
+            buttonC.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonC.center = CGPoint(x: wid, y: hei - wid)
+        }
+        if let buttonP = self.view.viewWithTag(11) as? UIButton {
+            buttonP.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonP.layer.cornerRadius = 30
+            buttonP.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonP.center = CGPoint(x: wid*5, y: hei - wid)
+        }
+        if let buttonEqu = self.view.viewWithTag(12) as? UIButton {
+            buttonEqu.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonEqu.layer.cornerRadius = 30
+            buttonEqu.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonEqu.center = CGPoint(x: wid*7, y: hei - wid)
+        }
+        if let buttonAdd = self.view.viewWithTag(13) as? UIButton {
+            buttonAdd.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAdd.layer.cornerRadius = 30
+            buttonAdd.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAdd.center = CGPoint(x: wid*7, y: hei - wid*3)
+        }
+        if let buttonSub = self.view.viewWithTag(14) as? UIButton {
+            buttonSub.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonSub.layer.cornerRadius = 30
+            buttonSub.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonSub.center = CGPoint(x: wid*7, y: hei - wid*5)
+        }
+        if let buttonMul = self.view.viewWithTag(15) as? UIButton {
+            buttonMul.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonMul.layer.cornerRadius = 30
+            buttonMul.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonMul.center = CGPoint(x: wid*7, y: hei - wid*7)
+        }
+        if let buttonAC = self.view.viewWithTag(16) as? UIButton {
+            buttonAC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAC.layer.cornerRadius = 30
+            buttonAC.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAC.center = CGPoint(x: wid, y: hei - wid*9)
+        }
+        if let buttonAS = self.view.viewWithTag(17) as? UIButton {
+            buttonAS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonAS.layer.cornerRadius = 30
+            buttonAS.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonAS.center = CGPoint(x: wid*3, y: hei - wid*9)
+        }
+        if let buttonRem = self.view.viewWithTag(18) as? UIButton {
+            buttonRem.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonRem.layer.cornerRadius = 30
+            buttonRem.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonRem.center = CGPoint(x: wid*5, y: hei - wid*9)
+        }
+        if let buttonDiv = self.view.viewWithTag(19) as? UIButton {
+            buttonDiv.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            buttonDiv.layer.cornerRadius = 30
+            buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
+            buttonDiv.center = CGPoint(x: wid*7, y: hei - wid*9)
+        }
     }
 }
 
