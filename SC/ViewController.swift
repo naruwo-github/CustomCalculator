@@ -35,13 +35,11 @@ class ViewController: UIViewController {
         //Operation button setting
         setElementOption(w: wid, h: hei)
         
-        /*
         // 端末回転の通知機能を設定します。
         let action = #selector(orientationDidChange(_:))
         let center = NotificationCenter.default
         let name = UIDevice.orientationDidChangeNotification
         center.addObserver(self, selector: action, name: name, object: nil)
- */
     }
     
     //Label setting method
@@ -150,7 +148,6 @@ class ViewController: UIViewController {
         return label.text?.last ?? "0"
     }
     
-    /*
     @objc func orientationDidChange(_ notification: NSNotification) {
         // 端末の向きを判定します。
         // 縦向きを検知する場合、
@@ -159,19 +156,12 @@ class ViewController: UIViewController {
         let device = UIDevice.current
         if device.orientation.isLandscape {
             // 横向きの場合
-//            print("横向き")
-//            print(self.view.frame.width)
-//            print(self.view.frame.height)
             setLandscape()
         } else {
             // 縦向きの場合
-//            print("縦向き")
-//            print(self.view.frame.width)
-//            print(self.view.frame.height)
             setPortrate()
         }
     }
- */
     
     //Normal Calculator Buttons
     func setElementsNormal(w: CGFloat, h: CGFloat) {
@@ -450,14 +440,14 @@ class ViewController: UIViewController {
         self.view.addSubview(buttonDiv)
     }
     
-    /*
+    //横向き
     func setLandscape() {
         //
     }
     
+    //縦向き
     func setPortrate() {
         //
     }
- */
 }
 
