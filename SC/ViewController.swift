@@ -167,7 +167,9 @@ class ViewController: UIViewController {
     //Normal Calculator Buttons
     func setElementsNormal(w: CGFloat, h: CGFloat) {
         //buttons size
-        let bw = w / 4 - 20
+        let interval: CGFloat = 10
+        let side: CGFloat = w/4 - interval*2
+        
         let wid = w / 8
         let hei = h - 50
         
@@ -180,7 +182,7 @@ class ViewController: UIViewController {
         button0.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button0.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button0.layer.cornerRadius = 30
-        button0.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button0.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button0.center = CGPoint(x: wid*3, y: hei - h/16)
         self.view.addSubview(button0)
         
@@ -193,7 +195,7 @@ class ViewController: UIViewController {
         button1.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button1.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button1.layer.cornerRadius = 30
-        button1.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button1.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button1.center = CGPoint(x: wid, y: hei - h*3/16)
         self.view.addSubview(button1)
         
@@ -206,7 +208,7 @@ class ViewController: UIViewController {
         button2.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button2.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button2.layer.cornerRadius = 30
-        button2.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button2.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button2.center = CGPoint(x: wid*3, y: hei - h*3/16)
         self.view.addSubview(button2)
         
@@ -219,7 +221,7 @@ class ViewController: UIViewController {
         button3.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button3.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button3.layer.cornerRadius = 30
-        button3.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button3.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button3.center = CGPoint(x: wid*5, y: hei - h*3/16)
         self.view.addSubview(button3)
         
@@ -232,7 +234,7 @@ class ViewController: UIViewController {
         button4.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button4.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button4.layer.cornerRadius = 30
-        button4.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button4.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button4.center = CGPoint(x: wid, y: hei - h*5/16)
         self.view.addSubview(button4)
         
@@ -245,7 +247,7 @@ class ViewController: UIViewController {
         button5.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button5.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button5.layer.cornerRadius = 30
-        button5.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button5.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button5.center = CGPoint(x: wid*3, y: hei - h*5/16)
         self.view.addSubview(button5)
         
@@ -258,7 +260,7 @@ class ViewController: UIViewController {
         button6.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button6.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button6.layer.cornerRadius = 30
-        button6.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button6.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button6.center = CGPoint(x: wid*5, y: hei - h*5/16)
         self.view.addSubview(button6)
         
@@ -271,7 +273,7 @@ class ViewController: UIViewController {
         button7.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button7.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button7.layer.cornerRadius = 30
-        button7.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button7.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button7.center = CGPoint(x: wid, y: hei - h*7/16)
         self.view.addSubview(button7)
         
@@ -284,7 +286,7 @@ class ViewController: UIViewController {
         button8.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button8.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button8.layer.cornerRadius = 30
-        button8.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button8.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button8.center = CGPoint(x: wid*3, y: hei - h*7/16)
         self.view.addSubview(button8)
         
@@ -297,7 +299,7 @@ class ViewController: UIViewController {
         button9.setTitleColor(UIColor.black, for: UIControl.State.normal)
         button9.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
         button9.layer.cornerRadius = 30
-        button9.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        button9.frame = CGRect(x: 0, y: 0, width: side, height: side)
         button9.center = CGPoint(x: wid*5, y: hei - h*7/16)
         self.view.addSubview(button9)
     }
@@ -305,11 +307,14 @@ class ViewController: UIViewController {
     //Not Number Buttons
     func setElementOption(w: CGFloat, h: CGFloat) {
         //button size
+        let interval: CGFloat = 10
+        let side: CGFloat = w/4 - interval*2
+        
         let bw = w / 4 - 20
         let wid = w / 8
         let hei = h - 50
         
-        //Go to SC
+        //C
         let buttonSC = UIButton(type: UIButton.ButtonType.system)
         buttonSC.tag = 10
         buttonSC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -317,9 +322,9 @@ class ViewController: UIViewController {
         //buttonSC.setTitle("←SC", for: UIControl.State.normal)
         buttonSC.setTitle("C", for: UIControl.State.normal)
         buttonSC.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonSC.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonSC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonSC.layer.cornerRadius = 30
-        buttonSC.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonSC.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonSC.center = CGPoint(x: wid, y: hei - h/16)
         self.view.addSubview(buttonSC)
         
@@ -330,9 +335,9 @@ class ViewController: UIViewController {
         buttonPoint.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonPoint.setTitle(".", for: UIControl.State.normal)
         buttonPoint.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonPoint.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonPoint.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonPoint.layer.cornerRadius = 30
-        buttonPoint.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonPoint.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonPoint.center = CGPoint(x: wid*5, y: hei - h/16)
         self.view.addSubview(buttonPoint)
         
@@ -343,9 +348,9 @@ class ViewController: UIViewController {
         buttonEqu.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonEqu.setTitle("=", for: UIControl.State.normal)
         buttonEqu.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonEqu.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonEqu.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
         buttonEqu.layer.cornerRadius = 30
-        buttonEqu.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonEqu.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonEqu.center = CGPoint(x: wid*7, y: hei - h/16)
         self.view.addSubview(buttonEqu)
         
@@ -356,9 +361,9 @@ class ViewController: UIViewController {
         buttonAdd.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAdd.setTitle("+", for: UIControl.State.normal)
         buttonAdd.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonAdd.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonAdd.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
         buttonAdd.layer.cornerRadius = 30
-        buttonAdd.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonAdd.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonAdd.center = CGPoint(x: wid*7, y: hei - h*3/16)
         self.view.addSubview(buttonAdd)
         
@@ -369,9 +374,9 @@ class ViewController: UIViewController {
         buttonSub.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonSub.setTitle("-", for: UIControl.State.normal)
         buttonSub.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonSub.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonSub.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
         buttonSub.layer.cornerRadius = 30
-        buttonSub.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonSub.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonSub.center = CGPoint(x: wid*7, y: hei - h*5/16)
         self.view.addSubview(buttonSub)
         
@@ -382,9 +387,9 @@ class ViewController: UIViewController {
         buttonMul.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonMul.setTitle("×", for: UIControl.State.normal)
         buttonMul.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonMul.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonMul.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
         buttonMul.layer.cornerRadius = 30
-        buttonMul.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonMul.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonMul.center = CGPoint(x: wid*7, y: hei - h*7/16)
         self.view.addSubview(buttonMul)
         
@@ -395,9 +400,9 @@ class ViewController: UIViewController {
         buttonAc.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAc.setTitle("AC", for: UIControl.State.normal)
         buttonAc.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonAc.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonAc.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonAc.layer.cornerRadius = 30
-        buttonAc.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonAc.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonAc.center = CGPoint(x: wid, y: hei - h*9/16)
         self.view.addSubview(buttonAc)
         
@@ -408,9 +413,9 @@ class ViewController: UIViewController {
         buttonAS.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonAS.setTitle("+/-", for: UIControl.State.normal)
         buttonAS.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonAS.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonAS.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonAS.layer.cornerRadius = 30
-        buttonAS.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonAS.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonAS.center = CGPoint(x: wid*3, y: hei - h*9/16)
         self.view.addSubview(buttonAS)
         
@@ -421,9 +426,9 @@ class ViewController: UIViewController {
         buttonRem.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonRem.setTitle("%", for: UIControl.State.normal)
         buttonRem.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonRem.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonRem.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonRem.layer.cornerRadius = 30
-        buttonRem.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonRem.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonRem.center = CGPoint(x: wid*5, y: hei - h*9/16)
         self.view.addSubview(buttonRem)
         
@@ -434,9 +439,9 @@ class ViewController: UIViewController {
         buttonDiv.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
         buttonDiv.setTitle("÷", for: UIControl.State.normal)
         buttonDiv.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonDiv.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+        buttonDiv.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
         buttonDiv.layer.cornerRadius = 30
-        buttonDiv.frame = CGRect(x: 0, y: 0, width: bw, height: bw)
+        buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonDiv.center = CGPoint(x: wid*7, y: hei - h*9/16)
         self.view.addSubview(buttonDiv)
     }
