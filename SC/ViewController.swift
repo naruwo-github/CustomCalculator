@@ -44,11 +44,12 @@ class ViewController: UIViewController {
     
     //Label setting method
     func setLabel(w: CGFloat, h: CGFloat) {
+        let bottom = h - 50
         label.textColor = UIColor.white
         label.text = "0"
         label.font = UIFont.systemFont(ofSize: fontSize)
         label.frame = CGRect(x: 0, y: 0, width: w, height: w/3)
-        label.center = CGPoint(x: w/2, y: h-50-h*11/16)
+        label.center = CGPoint(x: w/2, y: bottom - h*11/16)
         //Right alignment
         label.textAlignment = NSTextAlignment.right
         //Auto arrangement of font size
