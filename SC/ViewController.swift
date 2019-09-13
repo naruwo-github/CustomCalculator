@@ -47,6 +47,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         setElementsNormal(w: wid, h: hei)
         //Operation button setting
         setElementOption(w: wid, h: hei)
+        //Scientific Operation button setting
+        setElementScientific(w: wid, h: hei)
         
         // 端末回転の通知機能を設定します。
         let action = #selector(orientationDidChange(_:))
@@ -542,6 +544,20 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
         buttonDiv.center = CGPoint(x: wid*7, y: hei - wid*9)
         self.view.addSubview(buttonDiv)
+    }
+    
+    func setElementScientific(w: CGFloat, h: CGFloat) {
+        let button0 = UIButton(type: UIButton.ButtonType.system)
+        button0.tag = 1
+        button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        button0.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+        button0.setTitle("0", for: UIControl.State.normal)
+        button0.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        button0.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
+        button0.layer.cornerRadius = 30
+        button0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        button0.center = CGPoint(x: 1000, y: 1000)
+        self.view.addSubview(button0)
     }
     
     //横向き
