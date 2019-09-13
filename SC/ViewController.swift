@@ -546,18 +546,118 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.view.addSubview(buttonDiv)
     }
     
+    //Scientific calculator operation
     func setElementScientific(w: CGFloat, h: CGFloat) {
-        let button0 = UIButton(type: UIButton.ButtonType.system)
-        button0.tag = 1
-        button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        button0.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
-        button0.setTitle("0", for: UIControl.State.normal)
-        button0.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        button0.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
-        button0.layer.cornerRadius = 30
-        button0.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        button0.center = CGPoint(x: 1000, y: 1000)
-        self.view.addSubview(button0)
+        //make buttons of scientific operation
+        for index in 21..<51 {
+            let button = UIButton(type: UIButton.ButtonType.system)
+            button.tag = index
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+            button.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+            button.setTitle("", for: UIControl.State.normal)
+            button.setTitleColor(UIColor.black, for: UIControl.State.normal)
+            button.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
+            button.layer.cornerRadius = 30
+            button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+            button.center = CGPoint(x: 1000, y: 1000)
+            self.view.addSubview(button)
+        }
+        
+        //line1
+        if let button21 = self.view.viewWithTag(21) as? UIButton {
+            button21.setTitle("Rad", for: UIControl.State.normal)
+        }
+        if let button22 = self.view.viewWithTag(22) as? UIButton {
+            button22.setTitle("sinh", for: UIControl.State.normal)
+        }
+        if let button23 = self.view.viewWithTag(23) as? UIButton {
+            button23.setTitle("cosh", for: UIControl.State.normal)
+        }
+        if let button24 = self.view.viewWithTag(24) as? UIButton {
+            button24.setTitle("tanh", for: UIControl.State.normal)
+        }
+        if let button25 = self.view.viewWithTag(25) as? UIButton {
+            button25.setTitle("π", for: UIControl.State.normal)
+        }
+        if let button26 = self.view.viewWithTag(26) as? UIButton {
+            button26.setTitle("Rand", for: UIControl.State.normal)
+        }
+        //line2
+        if let button27 = self.view.viewWithTag(27) as? UIButton {
+            button27.setTitle("x!", for: UIControl.State.normal)
+        }
+        if let button28 = self.view.viewWithTag(28) as? UIButton {
+            button28.setTitle("sin", for: UIControl.State.normal)
+        }
+        if let button29 = self.view.viewWithTag(29) as? UIButton {
+            button29.setTitle("cos", for: UIControl.State.normal)
+        }
+        if let button30 = self.view.viewWithTag(30) as? UIButton {
+            button30.setTitle("tan", for: UIControl.State.normal)
+        }
+        if let button31 = self.view.viewWithTag(31) as? UIButton {
+            button31.setTitle("e", for: UIControl.State.normal)
+        }
+        if let button32 = self.view.viewWithTag(32) as? UIButton {
+            button32.setTitle("EE", for: UIControl.State.normal)
+        }
+        //line3
+        if let button33 = self.view.viewWithTag(33) as? UIButton {
+            button33.setTitle("1/x", for: UIControl.State.normal)
+        }
+        if let button34 = self.view.viewWithTag(34) as? UIButton {
+            button34.setTitle("2√x", for: UIControl.State.normal)
+        }
+        if let button35 = self.view.viewWithTag(35) as? UIButton {
+            button35.setTitle("3√x", for: UIControl.State.normal)
+        }
+        if let button36 = self.view.viewWithTag(36) as? UIButton {
+            button36.setTitle("y√x", for: UIControl.State.normal)
+        }
+        if let button37 = self.view.viewWithTag(37) as? UIButton {
+            button37.setTitle("ln", for: UIControl.State.normal)
+        }
+        if let button38 = self.view.viewWithTag(38) as? UIButton {
+            button38.setTitle("log10", for: UIControl.State.normal)
+        }
+        //line4
+        if let button39 = self.view.viewWithTag(39) as? UIButton {
+            button39.setTitle("2nd", for: UIControl.State.normal)
+        }
+        if let button40 = self.view.viewWithTag(40) as? UIButton {
+            button40.setTitle("x2", for: UIControl.State.normal)
+        }
+        if let button41 = self.view.viewWithTag(41) as? UIButton {
+            button41.setTitle("x3", for: UIControl.State.normal)
+        }
+        if let button42 = self.view.viewWithTag(42) as? UIButton {
+            button42.setTitle("xy", for: UIControl.State.normal)
+        }
+        if let button43 = self.view.viewWithTag(43) as? UIButton {
+            button43.setTitle("ex", for: UIControl.State.normal)
+        }
+        if let button44 = self.view.viewWithTag(44) as? UIButton {
+            button44.setTitle("10x", for: UIControl.State.normal)
+        }
+        //line5
+        if let button45 = self.view.viewWithTag(45) as? UIButton {
+            button45.setTitle("(", for: UIControl.State.normal)
+        }
+        if let button46 = self.view.viewWithTag(46) as? UIButton {
+            button46.setTitle(")", for: UIControl.State.normal)
+        }
+        if let button47 = self.view.viewWithTag(47) as? UIButton {
+            button47.setTitle("mc", for: UIControl.State.normal)
+        }
+        if let button48 = self.view.viewWithTag(48) as? UIButton {
+            button48.setTitle("m+", for: UIControl.State.normal)
+        }
+        if let button49 = self.view.viewWithTag(49) as? UIButton {
+            button49.setTitle("m-", for: UIControl.State.normal)
+        }
+        if let button50 = self.view.viewWithTag(50) as? UIButton {
+            button50.setTitle("mr", for: UIControl.State.normal)
+        }
     }
     
     //横向き
