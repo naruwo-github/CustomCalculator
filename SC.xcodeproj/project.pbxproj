@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0589F063232B9360009267A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0589F062232B9360009267A2 /* GoogleService-Info.plist */; };
 		05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */; };
 		05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D72324CD5E008F5ED6 /* ViewController.swift */; };
 		05DFA5DB2324CD5E008F5ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFA5D92324CD5E008F5ED6 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0589F062232B9360009267A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		05DFA5D22324CD5E008F5ED6 /* SC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05DFA5D72324CD5E008F5ED6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				05DFA5DC2324CD5F008F5ED6 /* Assets.xcassets */,
 				05DFA5DE2324CD5F008F5ED6 /* LaunchScreen.storyboard */,
 				05DFA5E12324CD5F008F5ED6 /* Info.plist */,
+				0589F062232B9360009267A2 /* GoogleService-Info.plist */,
 			);
 			path = SC;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05DFA5E02324CD5F008F5ED6 /* LaunchScreen.storyboard in Resources */,
+				0589F063232B9360009267A2 /* GoogleService-Info.plist in Resources */,
 				05DFA5DD2324CD5F008F5ED6 /* Assets.xcassets in Resources */,
 				05DFA5DB2324CD5E008F5ED6 /* Main.storyboard in Resources */,
 			);
