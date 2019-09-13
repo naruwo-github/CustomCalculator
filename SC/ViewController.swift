@@ -547,132 +547,137 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //横向き
     func setLandscape(w: CGFloat, h: CGFloat) {
         //buttons size
-        let interval: CGFloat = 5
-        let side: CGFloat = w/10 - interval*2
+        let interval: CGFloat = 3
+        let sideWid: CGFloat = w/10 - interval*2
+        let sideHei: CGFloat = h/6 - interval*2
         
         let wid = w / 20
-        let hei = h
+        let hei = h / 12
+        
+        //label position
+        label.frame = CGRect(x: 0, y: 0, width: w, height: sideHei)
+        label.center = CGPoint(x: w/2, y: h - hei*11)
         
         if let button0 = self.view.viewWithTag(1) as? UIButton {
             button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button0.layer.cornerRadius = 30
-            button0.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button0.center = CGPoint(x: wid*3, y: hei - wid)
+            button0.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button0.center = CGPoint(x: wid*3, y: h - hei)
         }
         if let button1 = self.view.viewWithTag(2) as? UIButton {
             button1.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button1.layer.cornerRadius = 30
-            button1.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button1.center = CGPoint(x: wid, y: hei - wid*3)
+            button1.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button1.center = CGPoint(x: wid, y: h - hei*3)
         }
         if let button2 = self.view.viewWithTag(3) as? UIButton {
             button2.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button2.layer.cornerRadius = 30
-            button2.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button2.center = CGPoint(x: wid*3, y: hei - wid*3)
+            button2.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button2.center = CGPoint(x: wid*3, y: h - hei*3)
         }
         if let button3 = self.view.viewWithTag(4) as? UIButton {
             button3.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button3.layer.cornerRadius = 30
-            button3.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button3.center = CGPoint(x: wid*5, y: hei - wid*3)
+            button3.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button3.center = CGPoint(x: wid*5, y: h - hei*3)
         }
         if let button4 = self.view.viewWithTag(5) as? UIButton {
             button4.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button4.layer.cornerRadius = 30
-            button4.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button4.center = CGPoint(x: wid, y: hei - wid*5)
+            button4.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button4.center = CGPoint(x: wid, y: h - hei*5)
         }
         if let button5 = self.view.viewWithTag(6) as? UIButton {
             button5.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button5.layer.cornerRadius = 30
-            button5.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button5.center = CGPoint(x: wid*3, y: hei - wid*5)
+            button5.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button5.center = CGPoint(x: wid*3, y: h - hei*5)
         }
         if let button6 = self.view.viewWithTag(7) as? UIButton {
             button6.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button6.layer.cornerRadius = 30
-            button6.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button6.center = CGPoint(x: wid*5, y: hei - wid*5)
+            button6.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button6.center = CGPoint(x: wid*5, y: h - hei*5)
         }
         if let button7 = self.view.viewWithTag(8) as? UIButton {
             button7.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button7.layer.cornerRadius = 30
-            button7.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button7.center = CGPoint(x: wid, y: hei - wid*7)
+            button7.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button7.center = CGPoint(x: wid, y: h - hei*7)
         }
         if let button8 = self.view.viewWithTag(9) as? UIButton {
             button8.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button8.layer.cornerRadius = 30
-            button8.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button8.center = CGPoint(x: wid*3, y: hei - wid*7)
+            button8.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button8.center = CGPoint(x: wid*3, y: h - hei*7)
         }
         if let button9 = self.view.viewWithTag(10) as? UIButton {
             button9.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button9.layer.cornerRadius = 30
-            button9.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button9.center = CGPoint(x: wid*5, y: hei - wid*7)
+            button9.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button9.center = CGPoint(x: wid*5, y: h - hei*7)
         }
         
         if let buttonC = self.view.viewWithTag(11) as? UIButton {
             buttonC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonC.layer.cornerRadius = 30
-            buttonC.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonC.center = CGPoint(x: wid, y: hei - wid)
+            buttonC.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonC.center = CGPoint(x: wid, y: h - hei)
         }
         if let buttonP = self.view.viewWithTag(12) as? UIButton {
             buttonP.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonP.layer.cornerRadius = 30
-            buttonP.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonP.center = CGPoint(x: wid*5, y: hei - wid)
+            buttonP.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonP.center = CGPoint(x: wid*5, y: h - hei)
         }
         if let buttonEqu = self.view.viewWithTag(13) as? UIButton {
             buttonEqu.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonEqu.layer.cornerRadius = 30
-            buttonEqu.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonEqu.center = CGPoint(x: wid*7, y: hei - wid)
+            buttonEqu.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonEqu.center = CGPoint(x: wid*7, y: h - hei)
         }
         if let buttonAdd = self.view.viewWithTag(14) as? UIButton {
             buttonAdd.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonAdd.layer.cornerRadius = 30
-            buttonAdd.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonAdd.center = CGPoint(x: wid*7, y: hei - wid*3)
+            buttonAdd.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonAdd.center = CGPoint(x: wid*7, y: h - hei*3)
         }
         if let buttonSub = self.view.viewWithTag(15) as? UIButton {
             buttonSub.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonSub.layer.cornerRadius = 30
-            buttonSub.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonSub.center = CGPoint(x: wid*7, y: hei - wid*5)
+            buttonSub.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonSub.center = CGPoint(x: wid*7, y: h - hei*5)
         }
         if let buttonMul = self.view.viewWithTag(16) as? UIButton {
             buttonMul.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonMul.layer.cornerRadius = 30
-            buttonMul.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonMul.center = CGPoint(x: wid*7, y: hei - wid*7)
+            buttonMul.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonMul.center = CGPoint(x: wid*7, y: h - hei*7)
         }
         if let buttonAC = self.view.viewWithTag(17) as? UIButton {
             buttonAC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonAC.layer.cornerRadius = 30
-            buttonAC.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonAC.center = CGPoint(x: wid, y: hei - wid*9)
+            buttonAC.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonAC.center = CGPoint(x: wid, y: h - hei*9)
         }
         if let buttonAS = self.view.viewWithTag(18) as? UIButton {
             buttonAS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonAS.layer.cornerRadius = 30
-            buttonAS.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonAS.center = CGPoint(x: wid*3, y: hei - wid*9)
+            buttonAS.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonAS.center = CGPoint(x: wid*3, y: h - hei*9)
         }
         if let buttonRem = self.view.viewWithTag(19) as? UIButton {
             buttonRem.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonRem.layer.cornerRadius = 30
-            buttonRem.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonRem.center = CGPoint(x: wid*5, y: hei - wid*9)
+            buttonRem.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonRem.center = CGPoint(x: wid*5, y: h - hei*9)
         }
         if let buttonDiv = self.view.viewWithTag(20) as? UIButton {
             buttonDiv.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             buttonDiv.layer.cornerRadius = 30
-            buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            buttonDiv.center = CGPoint(x: wid*7, y: hei - wid*9)
+            buttonDiv.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            buttonDiv.center = CGPoint(x: wid*7, y: h - hei*9)
         }
     }
     
@@ -684,6 +689,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         
         let wid = w / 8
         let hei = h - 60
+        
+        //label position
+        label.frame = CGRect(x: 0, y: 0, width: w, height: w/3)
+        label.center = CGPoint(x: w/2, y: h - 60 - wid*11)
         
         if let button0 = self.view.viewWithTag(1) as? UIButton {
             button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -810,35 +819,35 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("adViewDidReceiveAd")
+        //print("adViewDidReceiveAd")
     }
     
     /// Tells the delegate an ad request failed.
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
-        print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+        //print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
     }
     
     /// Tells the delegate that a full-screen view will be presented in response
     /// to the user clicking on an ad.
     func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
+        //print("adViewWillPresentScreen")
     }
     
     /// Tells the delegate that the full-screen view will be dismissed.
     func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
+        //print("adViewWillDismissScreen")
     }
     
     /// Tells the delegate that the full-screen view has been dismissed.
     func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
+        //print("adViewDidDismissScreen")
     }
     
     /// Tells the delegate that a user click will open another app (such as
     /// the App Store), backgrounding the current app.
     func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
+        //print("adViewWillLeaveApplication")
     }
 }
 
