@@ -552,11 +552,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         for index in 21..<51 {
             let button = UIButton(type: UIButton.ButtonType.system)
             button.tag = index
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-            button.addTarget(self, action: #selector(numButton(_:)), for: UIControl.Event.touchUpInside)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+            //button.titleLabel?.adjustsFontSizeToFitWidth = true
+            button.addTarget(self, action: #selector(otherButton(_:)), for: UIControl.Event.touchUpInside)
             button.setTitle("", for: UIControl.State.normal)
             button.setTitleColor(UIColor.black, for: UIControl.State.normal)
-            button.backgroundColor = UIColor.init(red: 0.8, green: 0.8, blue: 0.6, alpha: 1)
+            button.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
             button.layer.cornerRadius = 30
             button.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
             button.center = CGPoint(x: 1000, y: 1000)
@@ -795,6 +796,132 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             buttonDiv.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
             buttonDiv.center = CGPoint(x: wid*7, y: h - hei*9)
         }
+        
+        //line1
+        if let button21 = self.view.viewWithTag(21) as? UIButton {
+            button21.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button21.center = CGPoint(x: wid*9, y: h - hei)
+        }
+        if let button22 = self.view.viewWithTag(22) as? UIButton {
+            button22.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button22.center = CGPoint(x: wid*11, y: h - hei)
+        }
+        if let button23 = self.view.viewWithTag(23) as? UIButton {
+            button23.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button23.center = CGPoint(x: wid*13, y: h - hei)
+        }
+        if let button24 = self.view.viewWithTag(24) as? UIButton {
+            button24.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button24.center = CGPoint(x: wid*15, y: h - hei)
+        }
+        if let button25 = self.view.viewWithTag(25) as? UIButton {
+            button25.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button25.center = CGPoint(x: wid*17, y: h - hei)
+        }
+        if let button26 = self.view.viewWithTag(26) as? UIButton {
+            button26.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button26.center = CGPoint(x: wid*19, y: h - hei)
+        }
+        //line2
+        if let button27 = self.view.viewWithTag(27) as? UIButton {
+            button27.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button27.center = CGPoint(x: wid*9, y: h - hei*3)
+        }
+        if let button28 = self.view.viewWithTag(28) as? UIButton {
+            button28.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button28.center = CGPoint(x: wid*11, y: h - hei*3)
+        }
+        if let button29 = self.view.viewWithTag(29) as? UIButton {
+            button29.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button29.center = CGPoint(x: wid*13, y: h - hei*3)
+        }
+        if let button30 = self.view.viewWithTag(30) as? UIButton {
+            button30.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button30.center = CGPoint(x: wid*15, y: h - hei*3)
+        }
+        if let button31 = self.view.viewWithTag(31) as? UIButton {
+            button31.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button31.center = CGPoint(x: wid*17, y: h - hei*3)
+        }
+        if let button32 = self.view.viewWithTag(32) as? UIButton {
+            button32.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button32.center = CGPoint(x: wid*19, y: h - hei*3)
+        }
+        //line3
+        if let button33 = self.view.viewWithTag(33) as? UIButton {
+            button33.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button33.center = CGPoint(x: wid*9, y: h - hei*5)
+        }
+        if let button34 = self.view.viewWithTag(34) as? UIButton {
+            button34.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button34.center = CGPoint(x: wid*11, y: h - hei*5)
+        }
+        if let button35 = self.view.viewWithTag(35) as? UIButton {
+            button35.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button35.center = CGPoint(x: wid*13, y: h - hei*5)
+        }
+        if let button36 = self.view.viewWithTag(36) as? UIButton {
+            button36.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button36.center = CGPoint(x: wid*15, y: h - hei*5)
+        }
+        if let button37 = self.view.viewWithTag(37) as? UIButton {
+            button37.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button37.center = CGPoint(x: wid*17, y: h - hei*5)
+        }
+        if let button38 = self.view.viewWithTag(38) as? UIButton {
+            button38.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button38.center = CGPoint(x: wid*19, y: h - hei*5)
+        }
+        //line4
+        if let button39 = self.view.viewWithTag(39) as? UIButton {
+            button39.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button39.center = CGPoint(x: wid*9, y: h - hei*7)
+        }
+        if let button40 = self.view.viewWithTag(40) as? UIButton {
+            button40.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button40.center = CGPoint(x: wid*11, y: h - hei*7)
+        }
+        if let button41 = self.view.viewWithTag(41) as? UIButton {
+            button41.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button41.center = CGPoint(x: wid*13, y: h - hei*7)
+        }
+        if let button42 = self.view.viewWithTag(42) as? UIButton {
+            button42.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button42.center = CGPoint(x: wid*15, y: h - hei*7)
+        }
+        if let button43 = self.view.viewWithTag(43) as? UIButton {
+            button43.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button43.center = CGPoint(x: wid*17, y: h - hei*7)
+        }
+        if let button44 = self.view.viewWithTag(44) as? UIButton {
+            button44.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button44.center = CGPoint(x: wid*19, y: h - hei*7)
+        }
+        //line5
+        if let button45 = self.view.viewWithTag(45) as? UIButton {
+            button45.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button45.center = CGPoint(x: wid*9, y: h - hei*9)
+        }
+        if let button46 = self.view.viewWithTag(46) as? UIButton {
+            button46.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button46.center = CGPoint(x: wid*11, y: h - hei*9)
+        }
+        if let button47 = self.view.viewWithTag(47) as? UIButton {
+            button47.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button47.center = CGPoint(x: wid*13, y: h - hei*9)
+        }
+        if let button48 = self.view.viewWithTag(48) as? UIButton {
+            button48.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button48.center = CGPoint(x: wid*15, y: h - hei*9)
+        }
+        if let button49 = self.view.viewWithTag(49) as? UIButton {
+            button49.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button49.center = CGPoint(x: wid*17, y: h - hei*9)
+        }
+        if let button50 = self.view.viewWithTag(50) as? UIButton {
+            button50.frame = CGRect(x: 0, y: 0, width: sideWid, height: sideHei)
+            button50.center = CGPoint(x: wid*19, y: h - hei*9)
+        }
     }
     
     //縦向き
@@ -930,6 +1057,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             buttonDiv.layer.cornerRadius = 30
             buttonDiv.frame = CGRect(x: 0, y: 0, width: side, height: side)
             buttonDiv.center = CGPoint(x: wid*7, y: hei - wid*9)
+        }
+        
+        //do not display scientific buttons
+        for index in 21..<51 {
+            if let button = self.view.viewWithTag(index) as? UIButton {
+                button.center = CGPoint(x: 1000, y: 1000)
+            }
         }
     }
     
