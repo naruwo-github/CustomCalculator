@@ -188,10 +188,14 @@ class ViewController: UIViewController {
         let device = UIDevice.current
         if device.orientation.isLandscape {
             // 横向きの場合
-            setLandscape(w: wid, h: hei)
+            if self.view.frame.width > self.view.frame.height {
+                setLandscape(w: wid, h: hei)
+            }
         } else {
             // 縦向きの場合
-            setPortrate(w: wid, h: hei)
+            if self.view.frame.width < self.view.frame.height {
+                setPortrate(w: wid, h: hei)
+            }
         }
     }
     
