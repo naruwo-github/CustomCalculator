@@ -479,17 +479,17 @@ class ViewController: UIViewController {
     //横向き
     func setLandscape(w: CGFloat, h: CGFloat) {
         //buttons size
-        let interval: CGFloat = 10
-        let side: CGFloat = w/4 - interval*2
+        let interval: CGFloat = 5
+        let side: CGFloat = w/10 - interval*2
         
-        let wid = w / 8
-        let hei = h - 60
+        let wid = w / 20
+        let hei = h
         
         if let button0 = self.view.viewWithTag(0) as? UIButton {
             button0.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             button0.layer.cornerRadius = 30
             button0.frame = CGRect(x: 0, y: 0, width: side, height: side)
-            button0.center = CGPoint(x: wid*3, y: hei - wid)
+            button0.center = CGPoint(x: wid*3, y: hei - wid*2)
         }
         if let button1 = self.view.viewWithTag(1) as? UIButton {
             button1.titleLabel?.font = UIFont.systemFont(ofSize: 30)
