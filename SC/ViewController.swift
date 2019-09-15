@@ -347,8 +347,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text = String(numOnScreen)
         } else if sender.tag == 32 {
             //EE
-            //
-            //
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = preNum*pow(10, preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 33 {
             //1/x
             //最後がoperationじゃないかの確認
@@ -383,8 +389,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text = String(numOnScreen)
         } else if sender.tag == 36 {
             //y√x
-            //
-            //
+//            //最後がoperationじゃないかの確認
+//            if getLastChar() >= "0" && getLastChar() <= "9" {
+//            } else {
+//                _ = label.text?.popLast()
+//            }
+//            preNum = NSString(string: label.text!).floatValue
+//            label.text?.append("÷")
+//            operation = sender.tag
+//            performingMath = true
         } else if sender.tag == 37 {
             //ln
             //
