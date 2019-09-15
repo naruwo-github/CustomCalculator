@@ -238,12 +238,38 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             performingMath = true
         } else if sender.tag == 21 {
             //Rad
+            //
+            //
         } else if sender.tag == 22 {
             //sinh
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = sinh(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 23 {
             //cosh
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = cosh(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 24 {
             //tanh
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = tanh(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 25 {
             //π
             //最後がoperationじゃないかの確認
@@ -256,6 +282,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text = String(numOnScreen)
         } else if sender.tag == 26 {
             //Rand
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = Float.random(in: 0 ..< 1)
+            label.text = String(numOnScreen)
         } else if sender.tag == 27 {
             //x!
             //最後がoperationじゃないかの確認
