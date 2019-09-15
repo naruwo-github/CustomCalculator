@@ -249,6 +249,18 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //Rand
         } else if sender.tag == 27 {
             //x!
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            var tmp = 1
+            let intvar: Int = Int(preNum)
+            for i in 1..<intvar+1 {
+                tmp *= i
+            }
+            label.text = String(tmp)
         } else if sender.tag == 28 {
             //sin
         } else if sender.tag == 29 {
