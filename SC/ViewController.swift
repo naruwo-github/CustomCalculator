@@ -212,6 +212,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             preNum = NSString(string: label.text!).floatValue
             var tmp = NSString(string: label.text!).floatValue
             tmp = tmp * -1.0
+            numOnScreen = tmp
             label.text = String(tmp)
         } else if sender.tag == 19 {
             //%
@@ -245,6 +246,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //tanh
         } else if sender.tag == 25 {
             //π
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = Float.pi
+            label.text = String(numOnScreen)
         } else if sender.tag == 26 {
             //Rand
         } else if sender.tag == 27 {
@@ -260,6 +269,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             for i in 1..<intvar+1 {
                 tmp *= i
             }
+            numOnScreen = Float(tmp)
             label.text = String(tmp)
         } else if sender.tag == 28 {
             //sin
@@ -269,32 +279,111 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //tan
         } else if sender.tag == 31 {
             //e
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = Float(M_E)
+            label.text = String(numOnScreen)
         } else if sender.tag == 32 {
             //EE
+            //
+            //
         } else if sender.tag == 33 {
             //1/x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            if preNum != 0 {
+                numOnScreen = 1/preNum
+                label.text = String(numOnScreen)
+            }
         } else if sender.tag == 34 {
             //2√x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = sqrt(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 35 {
             //3√x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            //numOnScreen = sqrt(preNum)
+            numOnScreen = pow(preNum, 1/3)
+            label.text = String(numOnScreen)
         } else if sender.tag == 36 {
             //y√x
+            //
+            //
         } else if sender.tag == 37 {
             //ln
+            //
+            //
         } else if sender.tag == 38 {
             //log10
+            //
+            //
         } else if sender.tag == 39 {
             //2nd
+            //
+            //
         } else if sender.tag == 40 {
             //x^2
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = pow(preNum, 2)
+            label.text = String(numOnScreen)
         } else if sender.tag == 41 {
             //x^3
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = pow(preNum, 3)
+            label.text = String(numOnScreen)
         } else if sender.tag == 42 {
             //x^y
+            //
+            //
         } else if sender.tag == 43 {
             //e^x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = exp(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 44 {
             //10^x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = pow(10, preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 45 {
             //(
         } else if sender.tag == 46 {
