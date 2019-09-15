@@ -235,6 +235,66 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text?.append("÷")
             operation = sender.tag
             performingMath = true
+        } else if sender.tag == 21 {
+            //Rad
+        } else if sender.tag == 22 {
+            //sinh
+        } else if sender.tag == 23 {
+            //cosh
+        } else if sender.tag == 24 {
+            //tanh
+        } else if sender.tag == 25 {
+            //π
+        } else if sender.tag == 26 {
+            //Rand
+        } else if sender.tag == 27 {
+            //x!
+        } else if sender.tag == 28 {
+            //sin
+        } else if sender.tag == 29 {
+            //cos
+        } else if sender.tag == 30 {
+            //tan
+        } else if sender.tag == 31 {
+            //e
+        } else if sender.tag == 32 {
+            //EE
+        } else if sender.tag == 33 {
+            //1/x
+        } else if sender.tag == 34 {
+            //2√x
+        } else if sender.tag == 35 {
+            //3√x
+        } else if sender.tag == 36 {
+            //y√x
+        } else if sender.tag == 37 {
+            //ln
+        } else if sender.tag == 38 {
+            //log10
+        } else if sender.tag == 39 {
+            //2nd
+        } else if sender.tag == 40 {
+            //x^2
+        } else if sender.tag == 41 {
+            //x^3
+        } else if sender.tag == 42 {
+            //x^y
+        } else if sender.tag == 43 {
+            //e^x
+        } else if sender.tag == 44 {
+            //10^x
+        } else if sender.tag == 45 {
+            //(
+        } else if sender.tag == 46 {
+            //)
+        } else if sender.tag == 47 {
+            //mc
+        } else if sender.tag == 48 {
+            //m+
+        } else if sender.tag == 49 {
+            //m-
+        } else if sender.tag == 50 {
+            //nr
         }
     }
     
