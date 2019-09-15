@@ -273,10 +273,34 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text = String(tmp)
         } else if sender.tag == 28 {
             //sin
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = sin(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 29 {
             //cos
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = cos(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 30 {
             //tan
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = tan(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 31 {
             //e
             //最後がoperationじゃないかの確認
@@ -321,7 +345,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                 _ = label.text?.popLast()
             }
             preNum = NSString(string: label.text!).floatValue
-            //numOnScreen = sqrt(preNum)
             numOnScreen = pow(preNum, 1/3)
             label.text = String(numOnScreen)
         } else if sender.tag == 36 {
