@@ -16,7 +16,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //Calculation result
     var label: UILabel! = UILabel()
     //Text font size
-    var fontSize: CGFloat = 80
+    var fontSize: CGFloat = 75
     //Displaying result
     var numOnScreen: Float = 0.0
     //Keep current value
@@ -167,6 +167,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                 label.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
             } else if operation == 20 {
                 label.text = String(preNum / numOnScreen)
+            } else if operation == 36 {
+                //x√y
+                label.text = String(pow(numOnScreen, preNum))
+            } else if operation == 42 {
+                //x^y
+                label.text = String(pow(preNum, numOnScreen))
             }
         } else if sender.tag == 14 {
             //+
@@ -388,16 +394,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             numOnScreen = pow(preNum, 1/3)
             label.text = String(numOnScreen)
         } else if sender.tag == 36 {
-            //y√x
-//            //最後がoperationじゃないかの確認
-//            if getLastChar() >= "0" && getLastChar() <= "9" {
-//            } else {
-//                _ = label.text?.popLast()
-//            }
-//            preNum = NSString(string: label.text!).floatValue
-//            label.text?.append("÷")
-//            operation = sender.tag
-//            performingMath = true
+            //x√y
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("√")
+            operation = sender.tag
+            performingMath = true
         } else if sender.tag == 37 {
             //ln
             //
@@ -432,8 +438,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             label.text = String(numOnScreen)
         } else if sender.tag == 42 {
             //x^y
-            //
-            //
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            label.text?.append("^")
+            operation = sender.tag
+            performingMath = true
         } else if sender.tag == 43 {
             //e^x
             //最後がoperationじゃないかの確認
@@ -844,7 +857,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             button35.setTitle("3√x", for: UIControl.State.normal)
         }
         if let button36 = self.view.viewWithTag(36) as? UIButton {
-            button36.setTitle("y√x", for: UIControl.State.normal)
+            button36.setTitle("x√y", for: UIControl.State.normal)
         }
         if let button37 = self.view.viewWithTag(37) as? UIButton {
             button37.setTitle("ln", for: UIControl.State.normal)
@@ -857,19 +870,19 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             button39.setTitle("2nd", for: UIControl.State.normal)
         }
         if let button40 = self.view.viewWithTag(40) as? UIButton {
-            button40.setTitle("x2", for: UIControl.State.normal)
+            button40.setTitle("x^2", for: UIControl.State.normal)
         }
         if let button41 = self.view.viewWithTag(41) as? UIButton {
-            button41.setTitle("x3", for: UIControl.State.normal)
+            button41.setTitle("x^3", for: UIControl.State.normal)
         }
         if let button42 = self.view.viewWithTag(42) as? UIButton {
-            button42.setTitle("xy", for: UIControl.State.normal)
+            button42.setTitle("x^y", for: UIControl.State.normal)
         }
         if let button43 = self.view.viewWithTag(43) as? UIButton {
-            button43.setTitle("ex", for: UIControl.State.normal)
+            button43.setTitle("e^x", for: UIControl.State.normal)
         }
         if let button44 = self.view.viewWithTag(44) as? UIButton {
-            button44.setTitle("10x", for: UIControl.State.normal)
+            button44.setTitle("10^x", for: UIControl.State.normal)
         }
         //line5
         if let button45 = self.view.viewWithTag(45) as? UIButton {
