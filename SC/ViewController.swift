@@ -25,6 +25,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var performingMath: Bool = false
     //Operation mode num
     var operation: Int = 0
+    //2nd flag
+    var secondFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +140,36 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
+    //calculate operation
+    func calculateOperation() {
+        if operation == 14 {
+            label.text = String(preNum + numOnScreen)
+            numOnScreen += preNum
+        } else if operation == 15 {
+            label.text = String(preNum - numOnScreen)
+            numOnScreen -= preNum
+        } else if operation == 16 {
+            label.text = String(preNum * numOnScreen)
+            numOnScreen *= preNum
+        } else if operation == 19 {
+            label.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
+            numOnScreen = preNum.truncatingRemainder(dividingBy: numOnScreen)
+        } else if operation == 20 {
+            label.text = String(preNum / numOnScreen)
+            numOnScreen /= preNum
+        } else if operation == 36 {
+            //x√y
+            label.text = String(pow(numOnScreen, preNum))
+            numOnScreen = pow(numOnScreen, preNum)
+        } else if operation == 42 {
+            //x^y
+            label.text = String(pow(preNum, numOnScreen))
+            numOnScreen = pow(preNum, numOnScreen)
+        }
+        //operation
+        operation = 0;
+    }
+    
     //Called operation button pressed
     @objc func otherButton(_ sender: UIButton) {
         if sender.tag == 11 {
@@ -159,32 +191,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             preNum = NSString(string: label.text!).floatValue
         } else if sender.tag == 13 {
             //=
-            if operation == 14 {
-                label.text = String(preNum + numOnScreen)
-                numOnScreen += preNum
-            } else if operation == 15 {
-                label.text = String(preNum - numOnScreen)
-                numOnScreen -= preNum
-            } else if operation == 16 {
-                label.text = String(preNum * numOnScreen)
-                numOnScreen *= preNum
-            } else if operation == 19 {
-                label.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
-                numOnScreen = preNum.truncatingRemainder(dividingBy: numOnScreen)
-            } else if operation == 20 {
-                label.text = String(preNum / numOnScreen)
-                numOnScreen /= preNum
-            } else if operation == 36 {
-                //x√y
-                label.text = String(pow(numOnScreen, preNum))
-                numOnScreen = pow(numOnScreen, preNum)
-            } else if operation == 42 {
-                //x^y
-                label.text = String(pow(preNum, numOnScreen))
-                numOnScreen = pow(preNum, numOnScreen)
-            }
-            //operation
-            operation = 0;
+            calculateOperation()
         } else if sender.tag == 14 {
             //+
             //最後がoperationじゃないかの確認
@@ -416,17 +423,36 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             operation = sender.tag
             performingMath = true
         } else if sender.tag == 37 {
-            //ln
-            //
-            //
+            //ln = loge
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = log(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 38 {
             //log10
-            //
-            //
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = label.text?.popLast()
+            }
+            preNum = NSString(string: label.text!).floatValue
+            numOnScreen = log10(preNum)
+            label.text = String(numOnScreen)
         } else if sender.tag == 39 {
             //2nd
             //
             //
+            /*
+            if secondFlag == false {
+                secondFlag = true
+            } else {
+                secondFlag = false
+            }
+ */
         } else if sender.tag == 40 {
             //x^2
             //最後がoperationじゃないかの確認
@@ -489,7 +515,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         } else if sender.tag == 49 {
             //m-
         } else if sender.tag == 50 {
-            //nr
+            //mr
         }
     }
     
