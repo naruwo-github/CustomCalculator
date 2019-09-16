@@ -144,8 +144,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //C
             if label.text!.count > 1 {
                 _ = label.text!.popLast()
+                numOnScreen = NSString(string: label.text!).floatValue
             } else {
                 label.text = "0"
+                numOnScreen = 0
             }
         } else if sender.tag == 12 {
             //Point
@@ -159,21 +161,30 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //=
             if operation == 14 {
                 label.text = String(preNum + numOnScreen)
+                numOnScreen += preNum
             } else if operation == 15 {
                 label.text = String(preNum - numOnScreen)
+                numOnScreen -= preNum
             } else if operation == 16 {
                 label.text = String(preNum * numOnScreen)
+                numOnScreen *= preNum
             } else if operation == 19 {
                 label.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
+                numOnScreen = preNum.truncatingRemainder(dividingBy: numOnScreen)
             } else if operation == 20 {
                 label.text = String(preNum / numOnScreen)
+                numOnScreen /= preNum
             } else if operation == 36 {
                 //x√y
                 label.text = String(pow(numOnScreen, preNum))
+                numOnScreen = pow(numOnScreen, preNum)
             } else if operation == 42 {
                 //x^y
                 label.text = String(pow(preNum, numOnScreen))
+                numOnScreen = pow(preNum, numOnScreen)
             }
+            //operation
+            operation = 0;
         } else if sender.tag == 14 {
             //+
             //最後がoperationじゃないかの確認
