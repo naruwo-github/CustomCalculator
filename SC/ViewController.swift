@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController, GADBannerViewDelegate {
-    //Advertisement
+    //Advertisement View
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     
@@ -40,7 +40,18 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         bottomBannerView.delegate = self
         //========================================================================
         
-        //
+        let width = self.view.frame.width
+        let height = self.view.frame.height
+        setNumberButtons(wid: width, hei: height)
+        setOperationButtons(wid: width, hei: height)
+    }
+    
+    //number button
+    func setNumberButtons(wid: CGFloat, hei: CGFloat) {
+    }
+    
+    //operation button
+    func setOperationButtons(wid: CGFloat, hei: CGFloat) {
     }
     
     func addTopBannerViewToView(_ bannerView: GADBannerView) {
