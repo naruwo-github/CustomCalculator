@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController, GADBannerViewDelegate {
-    //Advertisement
+    //Advertisement View
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     
