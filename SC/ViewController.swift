@@ -42,10 +42,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         
         let width = self.view.frame.width
         let height = self.view.frame.height
+        setLabels(wid: width, hei: height)
         setNumberButtons(wid: width, hei: height)
         setOperationButtons(wid: width, hei: height)
         print(width)
         print(height)
+    }
+    
+    //memory and result label
+    func setLabels(wid: CGFloat, hei: CGFloat) {
+        //2labels are implemented
     }
     
     //number button
