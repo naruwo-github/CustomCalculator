@@ -44,10 +44,55 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         let height = self.view.frame.height
         setNumberButtons(wid: width, hei: height)
         setOperationButtons(wid: width, hei: height)
+        print(width)
+        print(height)
     }
     
     //number button
     func setNumberButtons(wid: CGFloat, hei: CGFloat) {
+        //side length of buttons
+        let w = wid/4
+        let bottom = hei-100
+        //making buttons No.0~9
+        for i in 0..<10 {
+            let numButton = UIButton()
+            numButton.tag = i+1
+            numButton.setTitle(String(i), for: UIControl.State.normal)
+            numButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+            numButton.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+            numButton.frame = CGRect(x: 0, y: 0, width: w, height: w)
+            self.view.addSubview(numButton)
+        }
+        if let button0 = self.view.viewWithTag(1) {
+            button0.center = CGPoint(x: w/2*3, y: bottom)
+        }
+        if let button1 = self.view.viewWithTag(2) {
+            button1.center = CGPoint(x: w/2, y: bottom-w)
+        }
+        if let button2 = self.view.viewWithTag(3) {
+            button2.center = CGPoint(x: w/2*3, y: bottom-w)
+        }
+        if let button3 = self.view.viewWithTag(4) {
+            button3.center = CGPoint(x: w/2*5, y: bottom-w)
+        }
+        if let button4 = self.view.viewWithTag(5) {
+            button4.center = CGPoint(x: w/2, y: bottom-w*2)
+        }
+        if let button5 = self.view.viewWithTag(6) {
+            button5.center = CGPoint(x: w/2*3, y: bottom-w*2)
+        }
+        if let button6 = self.view.viewWithTag(7) {
+            button6.center = CGPoint(x: w/2*5, y: bottom-w*2)
+        }
+        if let button7 = self.view.viewWithTag(8) {
+            button7.center = CGPoint(x: w/2, y: bottom-w*3)
+        }
+        if let button8 = self.view.viewWithTag(9) {
+            button8.center = CGPoint(x: w/2*3, y: bottom-w*3)
+        }
+        if let button9 = self.view.viewWithTag(10) {
+            button9.center = CGPoint(x: w/2*5, y: bottom-w*3)
+        }
     }
     
     //operation button
