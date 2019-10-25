@@ -97,6 +97,20 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     //operation button
     func setOperationButtons(wid: CGFloat, hei: CGFloat) {
+        //side length of buttons
+        let w = wid/4
+        let bottom = hei-100
+        
+        //making operation buttons
+        //Pop last charactor
+        let buttonC = UIButton()
+        buttonC.tag = 11
+        buttonC.setTitle("C", for: UIControl.State.normal)
+        buttonC.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        buttonC.frame = CGRect(x: 0, y: 0, width: w, height: w)
+        buttonC.center = CGPoint(x: w/2, y: bottom)
+        self.view.addSubview(buttonC)
     }
     
     func addTopBannerViewToView(_ bannerView: GADBannerView) {
