@@ -13,6 +13,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //Advertisement View
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
+    //settings
+    var numOnScreen: String = "0"
+    var preNum: String = "0"
+    let resultLabel: UILabel = UILabel()
+    let memoryLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +57,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //memory and result label
     func setLabels(wid: CGFloat, hei: CGFloat) {
         //2labels are implemented
+        let w = wid/4
+        let bottom = hei-150
+        resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
+        resultLabel.backgroundColor = UIColor.white
+        resultLabel.textColor = UIColor.black
+        resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5)
+        resultLabel.text = numOnScreen
+        resultLabel.textAlignment = NSTextAlignment.right
+        resultLabel.adjustsFontSizeToFitWidth = true
+        self.view.addSubview(resultLabel)
     }
     
     //number button
