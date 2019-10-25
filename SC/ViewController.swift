@@ -16,6 +16,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //settings
     var numOnScreen: String = "0"
     var preNum: String = "0"
+    var memoryNum: String = "0"
     let resultLabel: UILabel = UILabel()
     let memoryLabel: UILabel = UILabel()
     
@@ -59,6 +60,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //2labels are implemented
         let w = wid/4
         let bottom = hei-150
+        //result label
         resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
         resultLabel.backgroundColor = UIColor.white
         resultLabel.textColor = UIColor.black
@@ -67,6 +69,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         resultLabel.textAlignment = NSTextAlignment.right
         resultLabel.adjustsFontSizeToFitWidth = true
         self.view.addSubview(resultLabel)
+        //memory label
+        memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
+        memoryLabel.backgroundColor = UIColor.gray
+        memoryLabel.textColor = UIColor.black
+        memoryLabel.center = CGPoint.init(x: w*2, y: bottom-w*6)
+        memoryLabel.text = memoryNum
+        memoryLabel.textAlignment = NSTextAlignment.right
+        memoryLabel.adjustsFontSizeToFitWidth = true
+        self.view.addSubview(memoryLabel)
     }
     
     //number button
