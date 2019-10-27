@@ -88,6 +88,18 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             }
         } else if sender.tag == 12 {
             //.
+            let last = resultLabel.text?.last
+            if resultLabel.text!.contains(".") {
+                //contain .
+                if last! == "." {
+                    resultLabel.text?.popLast()
+                }
+            } else {
+                //not contain .
+                if "0" <= last! && last! <= "9" {
+                    resultLabel.text?.append(".")
+                }
+            }
         } else if sender.tag == 13 {
             //=
         } else if sender.tag == 14 {
@@ -141,10 +153,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
  */
         } else {
             //result label
-            resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
+            resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
-            resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5)
+            resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5+10)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
