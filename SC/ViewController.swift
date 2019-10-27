@@ -16,10 +16,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //settings
     var numOnScreen: Float = 0
     var preNum: Float = 0
-    var memoryNum: Float = 0
     var operationNum: Int = 0
+    var canCalculate: Bool = false
     let resultLabel: UILabel = UILabel()
-    let memoryLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,15 +59,20 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     //Number button tapped
     @objc func numberButtonEvent(_ sender: UIButton) {
+        let last = resultLabel.text?.last
         let tagNum: Float = Float(sender.tag-1)
         if resultLabel.text == "0" || resultLabel.text == "0.0" {
             preNum = numOnScreen
             numOnScreen = tagNum
             resultLabel.text = String(sender.tag-1)
-        } else {
-            preNum = numOnScreen
+        } else if "0" <= last! && last! <= "9" {
+            //preNum = numOnScreen
             resultLabel.text?.append(String(sender.tag-1))
             numOnScreen = NSString(string: resultLabel.text!).floatValue
+        } else {
+            preNum = numOnScreen
+            numOnScreen = tagNum
+            resultLabel.text = String(sender.tag-1)
         }
     }
     
@@ -102,8 +106,32 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             }
         } else if sender.tag == 13 {
             //=
+            let last = resultLabel.text?.last
+            if operationNum != 0 && "0" <= last! && last! <= "9" {
+                if operationNum == 14 {
+                    //+
+                    let resultValue = preNum + numOnScreen
+                    preNum = numOnScreen
+                    numOnScreen = resultValue
+                    resultLabel.text = String(numOnScreen)
+                }
+                operationNum = 0
+            }
         } else if sender.tag == 14 {
             //+
+            if operationNum == 0 {
+                let last = resultLabel.text?.last
+                if "0" <= last! && last! <= "9" {
+                    resultLabel.text?.append("+")
+                    operationNum = 14
+                } else {
+                    resultLabel.text?.popLast()
+                    resultLabel.text?.append("+")
+                    operationNum = 14
+                }
+            } else {
+                
+            }
         } else if sender.tag == 15 {
             //-
         } else if sender.tag == 16 {
@@ -141,18 +169,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.font = UIFont.systemFont(ofSize: 100)
             resultLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(resultLabel)
-            /*
-            //memory label
-            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w/2)
-            memoryLabel.backgroundColor = UIColor.black
-            memoryLabel.textColor = UIColor.white
-            memoryLabel.center = CGPoint.init(x: w*2, y: bottom-w*6+w/4)
-            memoryLabel.text = memoryNum
-            memoryLabel.textAlignment = NSTextAlignment.right
-            memoryLabel.font = UIFont.systemFont(ofSize: 50)
-            memoryLabel.adjustsFontSizeToFitWidth = true
-            self.view.addSubview(memoryLabel)
- */
         } else {
             //result label
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
