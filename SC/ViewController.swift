@@ -115,6 +115,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text = "0"
         } else if sender.tag == 18 {
             //±
+            numOnScreen = -numOnScreen
+            resultLabel.text = String(numOnScreen)
         } else if sender.tag == 19 {
             //%
         } else if sender.tag == 20 {
