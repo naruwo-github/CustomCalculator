@@ -21,6 +21,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var canCalculate: Bool = false
     //operatin number +,-,×,÷,%
     var operationNum: Int = 0
+    //ipad
+    var moveToRight: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +32,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //top
         topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addTopBannerViewToView(topBannerView)
-        topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
+        //topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
         //Test
-        //topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         topBannerView.rootViewController = self
         topBannerView.load(GADRequest())
         topBannerView.delegate = self
@@ -40,19 +42,25 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //bottom
         bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBottomBannerViewToView(bottomBannerView)
-        bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
+        //bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
         //Test
-        //bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
         //========================================================================
         
-        let width = self.view.frame.width
+        var width = self.view.frame.width
         var height = self.view.frame.height
-        if UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20 {
-            //weather iphone is X or not
-            height -= 34
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            width -= 200
+            height -= 20
+            moveToRight = width/8
+        } else {
+            if UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20 {
+                //weather iphone is X or not
+                height -= 34
+            }
         }
         setLabels(wid: width, hei: height)
         setNumberButtons(wid: width, hei: height)
@@ -197,7 +205,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
-            resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5)
+            resultLabel.center = CGPoint.init(x: w*2+moveToRight, y: bottom-w*5)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
@@ -208,7 +216,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
-            resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5+10)
+            resultLabel.center = CGPoint.init(x: w*2+moveToRight, y: bottom-w*5+10)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
@@ -242,34 +250,34 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             self.view.addSubview(numButton)
         }
         if let button0 = self.view.viewWithTag(1) {
-            button0.center = CGPoint(x: w/2*3, y: bottom)
+            button0.center = CGPoint(x: w/2*3+moveToRight, y: bottom)
         }
         if let button1 = self.view.viewWithTag(2) {
-            button1.center = CGPoint(x: w/2, y: bottom-w)
+            button1.center = CGPoint(x: w/2+moveToRight, y: bottom-w)
         }
         if let button2 = self.view.viewWithTag(3) {
-            button2.center = CGPoint(x: w/2*3, y: bottom-w)
+            button2.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w)
         }
         if let button3 = self.view.viewWithTag(4) {
-            button3.center = CGPoint(x: w/2*5, y: bottom-w)
+            button3.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w)
         }
         if let button4 = self.view.viewWithTag(5) {
-            button4.center = CGPoint(x: w/2, y: bottom-w*2)
+            button4.center = CGPoint(x: w/2+moveToRight, y: bottom-w*2)
         }
         if let button5 = self.view.viewWithTag(6) {
-            button5.center = CGPoint(x: w/2*3, y: bottom-w*2)
+            button5.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*2)
         }
         if let button6 = self.view.viewWithTag(7) {
-            button6.center = CGPoint(x: w/2*5, y: bottom-w*2)
+            button6.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*2)
         }
         if let button7 = self.view.viewWithTag(8) {
-            button7.center = CGPoint(x: w/2, y: bottom-w*3)
+            button7.center = CGPoint(x: w/2+moveToRight, y: bottom-w*3)
         }
         if let button8 = self.view.viewWithTag(9) {
-            button8.center = CGPoint(x: w/2*3, y: bottom-w*3)
+            button8.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*3)
         }
         if let button9 = self.view.viewWithTag(10) {
-            button9.center = CGPoint(x: w/2*5, y: bottom-w*3)
+            button9.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*3)
         }
     }
     
@@ -288,7 +296,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonC.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonC.center = CGPoint(x: w/2, y: bottom)
+        buttonC.center = CGPoint(x: w/2+moveToRight, y: bottom)
         buttonC.layer.cornerRadius = 30
         buttonC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonC)
@@ -300,7 +308,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonP.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonP.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonP.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonP.center = CGPoint(x: w/2*5, y: bottom)
+        buttonP.center = CGPoint(x: w/2*5+moveToRight, y: bottom)
         buttonP.layer.cornerRadius = 30
         buttonP.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonP)
@@ -312,7 +320,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonE.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonE.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonE.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonE.center = CGPoint(x: w/2*7, y: bottom)
+        buttonE.center = CGPoint(x: w/2*7+moveToRight, y: bottom)
         buttonE.layer.cornerRadius = 30
         buttonE.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonE)
@@ -324,7 +332,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonA.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonA.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonA.center = CGPoint(x: w/2*7, y: bottom-w)
+        buttonA.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w)
         buttonA.layer.cornerRadius = 30
         buttonA.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonA)
@@ -336,7 +344,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonS.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonS.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonS.center = CGPoint(x: w/2*7, y: bottom-w*2)
+        buttonS.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*2)
         buttonS.layer.cornerRadius = 30
         buttonS.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonS)
@@ -348,7 +356,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonM.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonM.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonM.center = CGPoint(x: w/2*7, y: bottom-w*3)
+        buttonM.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*3)
         buttonM.layer.cornerRadius = 30
         buttonM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonM)
@@ -360,7 +368,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonAC.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonAC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonAC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonAC.center = CGPoint(x: w/2, y: bottom-w*4)
+        buttonAC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*4)
         buttonAC.layer.cornerRadius = 30
         buttonAC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonAC)
@@ -372,7 +380,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonPM.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonPM.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonPM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonPM.center = CGPoint(x: w/2*3, y: bottom-w*4)
+        buttonPM.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*4)
         buttonPM.layer.cornerRadius = 30
         buttonPM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonPM)
@@ -384,7 +392,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonSU.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonSU.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonSU.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonSU.center = CGPoint(x: w/2*5, y: bottom-w*4)
+        buttonSU.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*4)
         buttonSU.layer.cornerRadius = 30
         buttonSU.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonSU)
@@ -396,7 +404,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonD.setTitleColor(UIColor.black, for: UIControl.State.normal)
         buttonD.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonD.center = CGPoint(x: w/2*7, y: bottom-w*4)
+        buttonD.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*4)
         buttonD.layer.cornerRadius = 30
         buttonD.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonD)
