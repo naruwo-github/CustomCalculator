@@ -2,7 +2,8 @@
 
 This is a scientific calculator iOS application. It is made with Swift and can be used on iPhone and iPad (planned).
 This app can be used as a general calculator and also has a function as a scientific calculator.
-Please use according to the application.
+If you have opinions about this, do not hesitate to contact me!!!
+I'm not a good developer, so I need your help :)
 
 ## Launch & Start Screen
 <div style="text-align: center;">
@@ -10,6 +11,7 @@ Please use according to the application.
 </div>
 
 Just started developing...
+I'm planning to release this app on AppStore.
 
 
 ### 以下日本語
@@ -22,9 +24,11 @@ Just started developing...
 ・数字ボタン(0から9)
 ・加算、減算、乗算、除算(四則演算)
 ・プラスマイナス、剰余
+(以下は未実装…アップデートの際に追加を検討しております)
 ・画面横向きで関数電卓モードへ遷移
 ・Tipsボタン(各ボタンの使い方を記載したページ？へ遷移)
 
 などなど
 
 まだまだ足りない機能は山ほどありますが、頑張りたいと思います。
+皆さんの意見等ありましたら、よろしくお願いします。
