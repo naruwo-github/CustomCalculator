@@ -61,20 +61,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     //Number button tapped
     @objc func numberButtonEvent(_ sender: UIButton) {
-        let last = resultLabel.text?.last
-        let tagNum: Float = Float(sender.tag-1)
-        if resultLabel.text == "0" || resultLabel.text == "0.0" {
-            preNum = numOnScreen
-            numOnScreen = tagNum
+        if canCalculate == true || resultLabel.text == "0" {
             resultLabel.text = String(sender.tag-1)
-        } else if "0" <= last! && last! <= "9" {
-            //preNum = numOnScreen
-            resultLabel.text?.append(String(sender.tag-1))
             numOnScreen = NSString(string: resultLabel.text!).floatValue
+            canCalculate = false
         } else {
-            preNum = numOnScreen
-            numOnScreen = tagNum
-            resultLabel.text = String(sender.tag-1)
+            resultLabel.text = resultLabel.text! + String(sender.tag-1)
+            numOnScreen = NSString(string: resultLabel.text!).floatValue
         }
     }
     
@@ -82,82 +75,116 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     @objc func operationButtonEvent(_ sender: UIButton) {
         if sender.tag == 11 {
             //C
-            if numOnScreen != 0 {
-                preNum = numOnScreen
-                resultLabel.text?.popLast()
-                if resultLabel.text!.count > 0 {
-                    numOnScreen = NSString(string: resultLabel.text!).floatValue
-                } else {
-                    resultLabel.text = "0"
-                    numOnScreen = 0
-                }
+            if resultLabel.text!.count > 1 {
+                _ = resultLabel.text!.popLast()
+                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            } else {
+                resultLabel.text = "0"
+                numOnScreen = 0
             }
         } else if sender.tag == 12 {
-            //.
-            let last = resultLabel.text?.last
-            if resultLabel.text!.contains(".") {
-                //contain .
-                if last! == "." {
-                    resultLabel.text?.popLast()
-                }
+            //Point
+            if getLastChar() != "." {
+                resultLabel.text?.append(".")
             } else {
-                //not contain .
-                if "0" <= last! && last! <= "9" {
-                    resultLabel.text?.append(".")
-                }
+                _ = resultLabel.text?.popLast()
             }
+            preNum = NSString(string: resultLabel.text!).floatValue
         } else if sender.tag == 13 {
             //=
-            let last = resultLabel.text?.last
-            if operationNum != 0 && "0" <= last! && last! <= "9" {
-                if operationNum == 14 {
-                    //+
-                    let resultValue = preNum + numOnScreen
-                    preNum = numOnScreen
-                    numOnScreen = resultValue
-                    resultLabel.text = String(numOnScreen)
-                }
-                operationNum = 0
-            }
+            calculateOperation()
         } else if sender.tag == 14 {
             //+
-            if operationNum == 0 {
-                let last = resultLabel.text?.last
-                if "0" <= last! && last! <= "9" {
-                    resultLabel.text?.append("+")
-                    operationNum = 14
-                } else {
-                    resultLabel.text?.popLast()
-                    resultLabel.text?.append("+")
-                    operationNum = 14
-                }
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
-                
+                _ = resultLabel.text?.popLast()
             }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("+")
+            operationNum = sender.tag
+            canCalculate = true
         } else if sender.tag == 15 {
             //-
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("-")
+            operationNum = sender.tag
+            canCalculate = true
         } else if sender.tag == 16 {
             //×
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("×")
+            operationNum = sender.tag
+            canCalculate = true
         } else if sender.tag == 17 {
             //AC
-            preNum = numOnScreen
-            numOnScreen = 0
             resultLabel.text = "0"
+            preNum = 0
+            numOnScreen = 0
+            operationNum = 0
         } else if sender.tag == 18 {
-            //±
-            numOnScreen = -numOnScreen
-            resultLabel.text = String(numOnScreen)
+            //+/-
+            preNum = NSString(string: resultLabel.text!).floatValue
+            var tmp = NSString(string: resultLabel.text!).floatValue
+            tmp = tmp * -1.0
+            numOnScreen = tmp
+            resultLabel.text = String(tmp)
         } else if sender.tag == 19 {
             //%
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("%")
+            operationNum = sender.tag
+            canCalculate = true
         } else if sender.tag == 20 {
             //÷
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("÷")
+            operationNum = sender.tag
+            canCalculate = true
         }
     }
     
-    //Get the end character of result label
-    func getLastChar() -> Character {
-        return resultLabel.text?.last ?? "0"
+    //calculate operation
+    func calculateOperation() {
+        if operationNum == 14 {
+            resultLabel.text = String(preNum + numOnScreen)
+            numOnScreen += preNum
+        } else if operationNum == 15 {
+            resultLabel.text = String(preNum - numOnScreen)
+            numOnScreen -= preNum
+        } else if operationNum == 16 {
+            resultLabel.text = String(preNum * numOnScreen)
+            numOnScreen *= preNum
+        } else if operationNum == 19 {
+            resultLabel.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
+            numOnScreen = preNum.truncatingRemainder(dividingBy: numOnScreen)
+        } else if operationNum == 20 {
+            resultLabel.text = String(preNum / numOnScreen)
+            numOnScreen /= preNum
+        }
+        operationNum = 0;
     }
+    
     
     //memory and result label
     func setLabels(wid: CGFloat, hei: CGFloat) {
@@ -189,6 +216,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             self.view.addSubview(resultLabel)
         }
     }
+
+    //Get the end character of result label
+    func getLastChar() -> Character {
+        return resultLabel.text?.last ?? "0"
+    }
+
     
     //number button
     func setNumberButtons(wid: CGFloat, hei: CGFloat) {
