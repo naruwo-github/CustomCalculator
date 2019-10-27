@@ -76,6 +76,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     @objc func operationButtonEvent(_ sender: UIButton) {
         if sender.tag == 11 {
             //C
+            if numOnScreen != 0 {
+                preNum = numOnScreen
+                resultLabel.text?.popLast()
+                if resultLabel.text!.count > 0 {
+                    numOnScreen = NSString(string: resultLabel.text!).floatValue
+                } else {
+                    resultLabel.text = "0"
+                    numOnScreen = 0
+                }
+            }
         } else if sender.tag == 12 {
             //.
         } else if sender.tag == 13 {
@@ -88,6 +98,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //×
         } else if sender.tag == 17 {
             //AC
+            preNum = numOnScreen
+            numOnScreen = 0
+            resultLabel.text = "0"
         } else if sender.tag == 18 {
             //±
         } else if sender.tag == 19 {
