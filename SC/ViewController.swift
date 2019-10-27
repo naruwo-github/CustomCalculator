@@ -17,6 +17,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var numOnScreen: Float = 0
     var preNum: Float = 0
     var memoryNum: Float = 0
+    var operationNum: Int = 0
     let resultLabel: UILabel = UILabel()
     let memoryLabel: UILabel = UILabel()
     
@@ -60,17 +61,53 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //Number button tapped
     @objc func numberButtonEvent(_ sender: UIButton) {
         let tagNum: Float = Float(sender.tag-1)
-        preNum = numOnScreen
-        numOnScreen = tagNum
-        resultLabel.text = String(sender.tag-1)
+        if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            preNum = numOnScreen
+            numOnScreen = tagNum
+            resultLabel.text = String(sender.tag-1)
+        } else {
+            preNum = numOnScreen
+            resultLabel.text?.append(String(sender.tag-1))
+            numOnScreen = NSString(string: resultLabel.text!).floatValue
+        }
     }
     
     //Operation button tapped
     @objc func operationButtonEvent(_ sender: UIButton) {
-        let tagNum: Float = Float(sender.tag-1)
-        preNum = numOnScreen
-        numOnScreen = tagNum
-        resultLabel.text = String(sender.tag-1)
+        if sender.tag == 11 {
+            //C
+            if numOnScreen != 0 {
+                preNum = numOnScreen
+                resultLabel.text?.popLast()
+                if resultLabel.text!.count > 0 {
+                    numOnScreen = NSString(string: resultLabel.text!).floatValue
+                } else {
+                    resultLabel.text = "0"
+                    numOnScreen = 0
+                }
+            }
+        } else if sender.tag == 12 {
+            //.
+        } else if sender.tag == 13 {
+            //=
+        } else if sender.tag == 14 {
+            //+
+        } else if sender.tag == 15 {
+            //-
+        } else if sender.tag == 16 {
+            //×
+        } else if sender.tag == 17 {
+            //AC
+            preNum = numOnScreen
+            numOnScreen = 0
+            resultLabel.text = "0"
+        } else if sender.tag == 18 {
+            //±
+        } else if sender.tag == 19 {
+            //%
+        } else if sender.tag == 20 {
+            //÷
+        }
     }
     
     //memory and result label
