@@ -14,9 +14,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     //settings
-    var numOnScreen: String = "0"
-    var preNum: String = "0"
-    var memoryNum: String = "0"
+    var numOnScreen: Float = 0
+    var preNum: Float = 0
+    var memoryNum: Float = 0
     let resultLabel: UILabel = UILabel()
     let memoryLabel: UILabel = UILabel()
     
@@ -55,8 +55,22 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         setLabels(wid: width, hei: height)
         setNumberButtons(wid: width, hei: height)
         setOperationButtons(wid: width, hei: height)
-        print(width)
-        print(height)
+    }
+    
+    //Number button tapped
+    @objc func numberButtonEvent(_ sender: UIButton) {
+        let tagNum: Float = Float(sender.tag-1)
+        preNum = numOnScreen
+        numOnScreen = tagNum
+        resultLabel.text = String(sender.tag-1)
+    }
+    
+    //Operation button tapped
+    @objc func operationButtonEvent(_ sender: UIButton) {
+        let tagNum: Float = Float(sender.tag-1)
+        preNum = numOnScreen
+        numOnScreen = tagNum
+        resultLabel.text = String(sender.tag-1)
     }
     
     //memory and result label
@@ -71,7 +85,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
             resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5)
-            resultLabel.text = numOnScreen
+            resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
             resultLabel.adjustsFontSizeToFitWidth = true
@@ -94,7 +108,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
             resultLabel.center = CGPoint.init(x: w*2, y: bottom-w*5)
-            resultLabel.text = numOnScreen
+            resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
             resultLabel.adjustsFontSizeToFitWidth = true
@@ -109,7 +123,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         let bottom = hei-50-w/2
         //making buttons No.0~9
         for i in 0..<10 {
-            let numButton = UIButton()
+            let numButton = UIButton(type: UIButton.ButtonType.system)
             numButton.tag = i+1
             numButton.setTitle(String(i), for: UIControl.State.normal)
             numButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -117,6 +131,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             numButton.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
             numButton.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
             numButton.layer.cornerRadius = 30
+            numButton.addTarget(self, action: #selector(numberButtonEvent(_:)), for: UIControl.Event.touchUpInside)
             self.view.addSubview(numButton)
         }
         if let button0 = self.view.viewWithTag(1) {
@@ -159,7 +174,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         
         //making operation buttons
         //Pop last charactor
-        let buttonC = UIButton()
+        let buttonC = UIButton(type: UIButton.ButtonType.system)
         buttonC.tag = 11
         buttonC.setTitle("C", for: UIControl.State.normal)
         buttonC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -168,9 +183,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonC.center = CGPoint(x: w/2, y: bottom)
         buttonC.layer.cornerRadius = 30
+        buttonC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonC)
         //Point button ...
-        let buttonP = UIButton()
+        let buttonP = UIButton(type: UIButton.ButtonType.system)
         buttonP.tag = 12
         buttonP.setTitle(".", for: UIControl.State.normal)
         buttonP.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -179,9 +195,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonP.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonP.center = CGPoint(x: w/2*5, y: bottom)
         buttonP.layer.cornerRadius = 30
+        buttonP.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonP)
         //Equal button
-        let buttonE = UIButton()
+        let buttonE = UIButton(type: UIButton.ButtonType.system)
         buttonE.tag = 13
         buttonE.setTitle("=", for: UIControl.State.normal)
         buttonE.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -190,9 +207,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonE.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonE.center = CGPoint(x: w/2*7, y: bottom)
         buttonE.layer.cornerRadius = 30
+        buttonE.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonE)
         //Add button
-        let buttonA = UIButton()
+        let buttonA = UIButton(type: UIButton.ButtonType.system)
         buttonA.tag = 14
         buttonA.setTitle("+", for: UIControl.State.normal)
         buttonA.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -201,9 +219,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonA.center = CGPoint(x: w/2*7, y: bottom-w)
         buttonA.layer.cornerRadius = 30
+        buttonA.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonA)
         //Sub button
-        let buttonS = UIButton()
+        let buttonS = UIButton(type: UIButton.ButtonType.system)
         buttonS.tag = 15
         buttonS.setTitle("-", for: UIControl.State.normal)
         buttonS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -212,9 +231,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonS.center = CGPoint(x: w/2*7, y: bottom-w*2)
         buttonS.layer.cornerRadius = 30
+        buttonS.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonS)
         //Multiply
-        let buttonM = UIButton()
+        let buttonM = UIButton(type: UIButton.ButtonType.system)
         buttonM.tag = 16
         buttonM.setTitle("×", for: UIControl.State.normal)
         buttonM.titleLabel?.font = UIFont.systemFont(ofSize: 30)
@@ -223,21 +243,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonM.center = CGPoint(x: w/2*7, y: bottom-w*3)
         buttonM.layer.cornerRadius = 30
+        buttonM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonM)
-        //Division
-        let buttonD = UIButton()
-        buttonD.tag = 17
-        buttonD.setTitle("÷", for: UIControl.State.normal)
-        buttonD.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonD.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonD.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
-        buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonD.center = CGPoint(x: w/2*7, y: bottom-w*4)
-        buttonD.layer.cornerRadius = 30
-        self.view.addSubview(buttonD)
         //All Clear button
-        let buttonAC = UIButton()
-        buttonAC.tag = 18
+        let buttonAC = UIButton(type: UIButton.ButtonType.system)
+        buttonAC.tag = 17
         buttonAC.setTitle("AC", for: UIControl.State.normal)
         buttonAC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonAC.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -245,10 +255,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonAC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonAC.center = CGPoint(x: w/2, y: bottom-w*4)
         buttonAC.layer.cornerRadius = 30
+        buttonAC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonAC)
         //Plus Minus button
-        let buttonPM = UIButton()
-        buttonPM.tag = 19
+        let buttonPM = UIButton(type: UIButton.ButtonType.system)
+        buttonPM.tag = 18
         buttonPM.setTitle("±", for: UIControl.State.normal)
         buttonPM.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonPM.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -256,10 +267,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonPM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPM.center = CGPoint(x: w/2*3, y: bottom-w*4)
         buttonPM.layer.cornerRadius = 30
+        buttonPM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonPM)
         //Surplus button
-        let buttonSU = UIButton()
-        buttonSU.tag = 20
+        let buttonSU = UIButton(type: UIButton.ButtonType.system)
+        buttonSU.tag = 19
         buttonSU.setTitle("%", for: UIControl.State.normal)
         buttonSU.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         buttonSU.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -267,7 +279,20 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonSU.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonSU.center = CGPoint(x: w/2*5, y: bottom-w*4)
         buttonSU.layer.cornerRadius = 30
+        buttonSU.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonSU)
+        //Division
+        let buttonD = UIButton(type: UIButton.ButtonType.system)
+        buttonD.tag = 20
+        buttonD.setTitle("÷", for: UIControl.State.normal)
+        buttonD.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonD.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonD.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonD.center = CGPoint(x: w/2*7, y: bottom-w*4)
+        buttonD.layer.cornerRadius = 30
+        buttonD.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonD)
     }
     
     func addTopBannerViewToView(_ bannerView: GADBannerView) {
