@@ -14,11 +14,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     //settings
+    let resultLabel: UILabel = UILabel()
     var numOnScreen: Float = 0
     var preNum: Float = 0
-    var operationNum: Int = 0
+    //operation flag
     var canCalculate: Bool = false
-    let resultLabel: UILabel = UILabel()
+    //operatin number +,-,×,÷,%
+    var operationNum: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +152,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         } else if sender.tag == 20 {
             //÷
         }
+    }
+    
+    //Get the end character of result label
+    func getLastChar() -> Character {
+        return resultLabel.text?.last ?? "0"
     }
     
     //memory and result label
