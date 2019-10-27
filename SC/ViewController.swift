@@ -30,9 +30,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //top
         topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addTopBannerViewToView(topBannerView)
-        //topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
+        topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
         //Test
-        topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        //topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         topBannerView.rootViewController = self
         topBannerView.load(GADRequest())
         topBannerView.delegate = self
@@ -40,9 +40,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //bottom
         bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBottomBannerViewToView(bottomBannerView)
-        //bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
+        bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
         //Test
-        bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        //bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
