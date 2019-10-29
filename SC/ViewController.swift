@@ -32,9 +32,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //top
         topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addTopBannerViewToView(topBannerView)
-        topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
+        //topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
         //Test
-        //topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         topBannerView.rootViewController = self
         topBannerView.load(GADRequest())
         topBannerView.delegate = self
@@ -42,9 +42,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //bottom
         bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBottomBannerViewToView(bottomBannerView)
-        bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
+        //bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
         //Test
-        //bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
@@ -197,7 +197,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //memory and result label
     func setLabels(wid: CGFloat, hei: CGFloat) {
         //2labels are implemented
-        let w = wid/4
+        let w = wid/5
         let bottom = hei-50-w/2
         if UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20 {
             //weather iphone is X or not
@@ -205,7 +205,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
-            resultLabel.center = CGPoint.init(x: w*2+moveToRight, y: bottom-w*5)
+            resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
@@ -216,7 +216,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
             resultLabel.backgroundColor = UIColor.black
             resultLabel.textColor = UIColor.white
-            resultLabel.center = CGPoint.init(x: w*2+moveToRight, y: bottom-w*5+10)
+            resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6+10)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
             resultLabel.font = UIFont.systemFont(ofSize: 100)
@@ -234,7 +234,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //number button
     func setNumberButtons(wid: CGFloat, hei: CGFloat) {
         //side length of buttons
-        let w = wid/4
+        let w = wid/5
         let bottom = hei-50-w/2
         //making buttons No.0~9
         for i in 0..<10 {
@@ -284,7 +284,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //operation button
     func setOperationButtons(wid: CGFloat, hei: CGFloat) {
         //side length of buttons
-        let w = wid/4
+        let w = wid/5
         let bottom = hei-50-w/2
         
         //making operation buttons
@@ -408,6 +408,126 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonD.layer.cornerRadius = 30
         buttonD.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonD)
+        //√
+        let buttonR = UIButton(type: UIButton.ButtonType.system)
+        buttonR.tag = 21
+        buttonR.setTitle("√", for: UIControl.State.normal)
+        buttonR.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonR.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonR.center = CGPoint(x: w/2*9+moveToRight, y: bottom)
+        buttonR.layer.cornerRadius = 30
+        buttonR.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonR)
+        //!
+        let buttonFactorial = UIButton(type: UIButton.ButtonType.system)
+        buttonFactorial.tag = 22
+        buttonFactorial.setTitle("!", for: UIControl.State.normal)
+        buttonFactorial.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonFactorial.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonFactorial.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonFactorial.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonFactorial.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w)
+        buttonFactorial.layer.cornerRadius = 30
+        buttonFactorial.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonFactorial)
+        //1/x
+        let buttonFraction = UIButton(type: UIButton.ButtonType.system)
+        buttonFraction.tag = 23
+        buttonFraction.setTitle("1/x", for: UIControl.State.normal)
+        buttonFraction.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonFraction.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonFraction.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonFraction.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonFraction.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
+        buttonFraction.layer.cornerRadius = 30
+        buttonFraction.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonFraction)
+        //^x
+        let buttonPower = UIButton(type: UIButton.ButtonType.system)
+        buttonPower.tag = 24
+        buttonPower.setTitle("^x", for: UIControl.State.normal)
+        buttonPower.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonPower.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*3)
+        buttonPower.layer.cornerRadius = 30
+        buttonPower.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonPower)
+        //10^x
+        let buttonTenPower = UIButton(type: UIButton.ButtonType.system)
+        buttonTenPower.tag = 25
+        buttonTenPower.setTitle("10^x", for: UIControl.State.normal)
+        buttonTenPower.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonTenPower.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonTenPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonTenPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonTenPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*4)
+        buttonTenPower.layer.cornerRadius = 30
+        buttonTenPower.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonTenPower)
+        //mc
+        let buttonMC = UIButton(type: UIButton.ButtonType.system)
+        buttonMC.tag = 26
+        buttonMC.setTitle("mc", for: UIControl.State.normal)
+        buttonMC.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonMC.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonMC.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonMC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonMC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*5)
+        buttonMC.layer.cornerRadius = 30
+        buttonMC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonMC)
+        //m+
+        let buttonMA = UIButton(type: UIButton.ButtonType.system)
+        buttonMA.tag = 27
+        buttonMA.setTitle("m+", for: UIControl.State.normal)
+        buttonMA.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonMA.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonMA.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonMA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonMA.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*5)
+        buttonMA.layer.cornerRadius = 30
+        buttonMA.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonMA)
+        //m-
+        let buttonMS = UIButton(type: UIButton.ButtonType.system)
+        buttonMS.tag = 28
+        buttonMS.setTitle("m-", for: UIControl.State.normal)
+        buttonMS.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonMS.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonMS.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonMS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonMS.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*5)
+        buttonMS.layer.cornerRadius = 30
+        buttonMS.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonMS)
+        //mr
+        let buttonMR = UIButton(type: UIButton.ButtonType.system)
+        buttonMR.tag = 29
+        buttonMR.setTitle("mr", for: UIControl.State.normal)
+        buttonMR.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonMR.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonMR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonMR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonMR.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*5)
+        buttonMR.layer.cornerRadius = 30
+        buttonMR.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonMR)
+        //?
+        let buttonHatena = UIButton(type: UIButton.ButtonType.system)
+        buttonHatena.tag = 30
+        buttonHatena.setTitle("?", for: UIControl.State.normal)
+        buttonHatena.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonHatena.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonHatena.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonHatena.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonHatena.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*5)
+        buttonHatena.layer.cornerRadius = 30
+        buttonHatena.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonHatena)
     }
     
     func addTopBannerViewToView(_ bannerView: GADBannerView) {
