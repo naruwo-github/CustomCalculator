@@ -23,6 +23,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     var operationNum: Int = 0
     //ipad
     var moveToRight: CGFloat = 0
+    //memory
+    let memoryLabel: UILabel = UILabel()
+    var memoryNumOnScreen: Float = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -208,7 +211,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
-            resultLabel.font = UIFont.systemFont(ofSize: 100)
+            resultLabel.font = UIFont.systemFont(ofSize: 80)
             resultLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(resultLabel)
         } else {
@@ -219,7 +222,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6+10)
             resultLabel.text = "0"
             resultLabel.textAlignment = NSTextAlignment.right
-            resultLabel.font = UIFont.systemFont(ofSize: 100)
+            resultLabel.font = UIFont.systemFont(ofSize: 80)
             resultLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(resultLabel)
         }
