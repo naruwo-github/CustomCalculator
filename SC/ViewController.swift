@@ -186,6 +186,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //!
         } else if sender.tag == 23 {
             //1/x
+            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            } else {
+                preNum = NSString(string: resultLabel.text!).floatValue
+                resultLabel.text = String(1/numOnScreen)
+                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            }
         } else if sender.tag == 24 {
             //^x
         } else if sender.tag == 25 {
