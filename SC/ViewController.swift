@@ -214,6 +214,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.font = UIFont.systemFont(ofSize: 80)
             resultLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(resultLabel)
+            
+            //memory label
+            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
+            memoryLabel.backgroundColor = UIColor.black
+            memoryLabel.textColor = UIColor.white
+            memoryLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*7)
+            memoryLabel.text = "0"
+            memoryLabel.textAlignment = NSTextAlignment.right
+            memoryLabel.font = UIFont.systemFont(ofSize: 40)
+            memoryLabel.adjustsFontSizeToFitWidth = true
+            self.view.addSubview(memoryLabel)
         } else {
             //result label
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
@@ -225,6 +236,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.font = UIFont.systemFont(ofSize: 80)
             resultLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(resultLabel)
+            
+            //memory label
+            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
+            memoryLabel.backgroundColor = UIColor.black
+            memoryLabel.textColor = UIColor.white
+            memoryLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*7)
+            memoryLabel.text = "0"
+            memoryLabel.textAlignment = NSTextAlignment.right
+            memoryLabel.font = UIFont.systemFont(ofSize: 40)
+            memoryLabel.adjustsFontSizeToFitWidth = true
+            self.view.addSubview(memoryLabel)
         }
     }
 
