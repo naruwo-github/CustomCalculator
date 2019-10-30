@@ -172,6 +172,28 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("÷")
             operationNum = sender.tag
             canCalculate = true
+        } else if sender.tag == 21 {
+        } else if sender.tag == 22 {
+        } else if sender.tag == 23 {
+        } else if sender.tag == 24 {
+        } else if sender.tag == 25 {
+        } else if sender.tag == 26 {
+            //mc
+            memoryNumOnScreen = 0
+            memoryLabel.text = String(memoryNumOnScreen)
+        } else if sender.tag == 27 {
+            //m+
+            memoryNumOnScreen += numOnScreen
+            memoryLabel.text = String(memoryNumOnScreen)
+        } else if sender.tag == 28 {
+            //m-
+            memoryNumOnScreen -= numOnScreen
+            memoryLabel.text = String(memoryNumOnScreen)
+        } else if sender.tag == 29 {
+            //mr
+            numOnScreen = memoryNumOnScreen
+            resultLabel.text = String(numOnScreen)
+        } else if sender.tag == 30 {
         }
     }
     
