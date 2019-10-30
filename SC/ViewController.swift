@@ -173,10 +173,23 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             operationNum = sender.tag
             canCalculate = true
         } else if sender.tag == 21 {
+            //√
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+                preNum = NSString(string: resultLabel.text!).floatValue
+                resultLabel.text = String(sqrtf(numOnScreen))
+                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
         } else if sender.tag == 22 {
+            //!
         } else if sender.tag == 23 {
+            //1/x
         } else if sender.tag == 24 {
+            //^x
         } else if sender.tag == 25 {
+            //10^x
         } else if sender.tag == 26 {
             //mc
             memoryNumOnScreen = 0
