@@ -27,6 +27,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     let memoryLabel: UILabel = UILabel()
     var memoryNumOnScreen: Float = 0
     let memoryMark = UILabel()
+    //URL
+    let url = NSURL(string: "https://chan-naru.hatenablog.com/entry/2019/10/27/141656")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -244,6 +246,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text = String(numOnScreen)
         } else if sender.tag == 30 {
             //Hatena Button
+            if UIApplication.shared.canOpenURL(url! as URL){
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            }
         }
     }
     
