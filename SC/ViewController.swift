@@ -109,6 +109,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             calculateOperation()
         } else if sender.tag == 14 {
             //+
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
@@ -120,6 +121,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             canCalculate = true
         } else if sender.tag == 15 {
             //-
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
@@ -131,6 +133,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             canCalculate = true
         } else if sender.tag == 16 {
             //×
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
@@ -155,6 +158,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text = String(tmp)
         } else if sender.tag == 19 {
             //%
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
@@ -166,6 +170,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             canCalculate = true
         } else if sender.tag == 20 {
             //÷
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
@@ -210,6 +215,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             }
         } else if sender.tag == 24 {
             //^x
+            calculateOperation()
             //最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
