@@ -208,6 +208,15 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             }
         } else if sender.tag == 24 {
             //^x
+            //最後がoperationじゃないかの確認
+            if getLastChar() >= "0" && getLastChar() <= "9" {
+            } else {
+                _ = resultLabel.text?.popLast()
+            }
+            preNum = NSString(string: resultLabel.text!).floatValue
+            resultLabel.text?.append("^")
+            operationNum = sender.tag
+            canCalculate = true
         } else if sender.tag == 25 {
             //10^x
             //最後がoperationじゃないかの確認
@@ -254,6 +263,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         } else if operationNum == 20 {
             resultLabel.text = String(preNum / numOnScreen)
             numOnScreen /= preNum
+        } else if operationNum == 24 {
+            resultLabel.text = String(powf(preNum, numOnScreen))
+            numOnScreen = powf(preNum, numOnScreen)
         }
         operationNum = 0;
     }
