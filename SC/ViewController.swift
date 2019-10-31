@@ -26,6 +26,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     //memory
     let memoryLabel: UILabel = UILabel()
     var memoryNumOnScreen: Float = 0
+    let memoryMark = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -260,12 +261,19 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
             memoryLabel.backgroundColor = UIColor.black
             memoryLabel.textColor = UIColor.white
-            memoryLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*7)
+            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7)
             memoryLabel.text = "0"
             memoryLabel.textAlignment = NSTextAlignment.right
             memoryLabel.font = UIFont.systemFont(ofSize: 40)
             memoryLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(memoryLabel)
+            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
+            memoryMark.backgroundColor = UIColor.black
+            memoryMark.textColor = UIColor.white
+            memoryMark.center = CGPoint.init(x: wid/4+w/2+moveToRight, y: bottom-w*7)
+            memoryMark.font = UIFont.systemFont(ofSize: 20)
+            memoryMark.text = "Memory"
+            self.view.addSubview(memoryMark)
         } else {
             //result label
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
@@ -282,12 +290,19 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
             memoryLabel.backgroundColor = UIColor.black
             memoryLabel.textColor = UIColor.white
-            memoryLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*7)
+            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7)
             memoryLabel.text = "0"
             memoryLabel.textAlignment = NSTextAlignment.right
             memoryLabel.font = UIFont.systemFont(ofSize: 40)
             memoryLabel.adjustsFontSizeToFitWidth = true
             self.view.addSubview(memoryLabel)
+            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
+            memoryMark.backgroundColor = UIColor.black
+            memoryMark.textColor = UIColor.white
+            memoryMark.center = CGPoint.init(x: wid/4+w/2+moveToRight, y: bottom-w*7)
+            memoryMark.font = UIFont.systemFont(ofSize: 20)
+            memoryMark.text = "Memory"
+            self.view.addSubview(memoryMark)
         }
     }
 
