@@ -185,8 +185,21 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             }
         } else if sender.tag == 22 {
             //!
+            //最後がoperationじゃないかの確認
+            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            } else {
+                preNum = NSString(string: resultLabel.text!).floatValue
+                let roop = Int(numOnScreen)
+                var ans = 1
+                for i in 0..<roop {
+                    ans *= i+1
+                }
+                resultLabel.text = String(ans)
+                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            }
         } else if sender.tag == 23 {
             //1/x
+            //最後がoperationじゃないかの確認
             if resultLabel.text == "0" || resultLabel.text == "0.0" {
             } else {
                 preNum = NSString(string: resultLabel.text!).floatValue
@@ -197,6 +210,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //^x
         } else if sender.tag == 25 {
             //10^x
+            //最後がoperationじゃないかの確認
+            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            } else {
+                preNum = NSString(string: resultLabel.text!).floatValue
+                resultLabel.text = String(powf(10, numOnScreen))
+                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            }
         } else if sender.tag == 26 {
             //mc
             memoryNumOnScreen = 0
