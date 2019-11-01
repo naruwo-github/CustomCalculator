@@ -316,21 +316,21 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6)
             //memory label
-            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
-            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/4)
+            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2-2)
+            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/4+1)
             //memory text
-            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2)
-            memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/4)
+            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2-2)
+            memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/4+1)
         } else {
             //result label
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6+10)
             //memory label
-            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2)
-            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/16*7)
+            memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2-2)
+            memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/16*7+1)
             //memory text
-            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2)
-            memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/16*7)
+            memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2-2)
+            memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/16*7+1)
         }
     }
 
