@@ -542,17 +542,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonFactorial.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonFactorial)
         //1/x
-        let buttonFraction = UIButton(type: UIButton.ButtonType.system)
-        buttonFraction.tag = 23
-        buttonFraction.setTitle("1/x", for: UIControl.State.normal)
-        buttonFraction.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        buttonFraction.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        buttonFraction.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
-        buttonFraction.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-        buttonFraction.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
-        buttonFraction.layer.cornerRadius = 30
-        buttonFraction.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
-        self.view.addSubview(buttonFraction)
+        let buttonReciprocal = UIButton(type: UIButton.ButtonType.system)
+        buttonReciprocal.tag = 23
+        buttonReciprocal.setTitle("1/x", for: UIControl.State.normal)
+        buttonReciprocal.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        buttonReciprocal.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        buttonReciprocal.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        buttonReciprocal.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
+        buttonReciprocal.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
+        buttonReciprocal.layer.cornerRadius = 30
+        buttonReciprocal.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(buttonReciprocal)
         //^x
         let buttonPower = UIButton(type: UIButton.ButtonType.system)
         buttonPower.tag = 24
