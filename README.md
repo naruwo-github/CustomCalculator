@@ -8,11 +8,8 @@ I'm not a good developer, so I need your help :)
 
 ## Launch & Start Screen
 <div style="text-align: center;">
-<img src="src/SC1.png" width="200" />   <img src="src/SC2.png" width="200" />
+<img src="src/LaunchScreen.png" width="200" />  <img src="src/SC1.png" width="200" />   <img src="src/SC2.png" width="200" />
 </div>
-
-Just started developing...
-I'm planning to release this app on AppStore.
 
 
 ### 以下日本語
