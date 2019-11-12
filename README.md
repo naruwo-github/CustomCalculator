@@ -1,13 +1,14 @@
-# ScientificCalculator
+# PSCalculator
+### Petit Scientific Calculator is on AppStore now!!
 
-This is a scientific calculator iOS application. It is made with Swift and can be used on iPhone and iPad (planned).
+This is a scientific calculator iOS application. It is made with Swift and can be used on iPhone and iPad(now free on AppStore).
 This app can be used as a general calculator and also has a function as a scientific calculator.
 If you have opinions about this, do not hesitate to contact me!!!
 I'm not a good developer, so I need your help :)
 
 ## Launch & Start Screen
 <div style="text-align: center;">
-<img src="src/LaunchScreen.png" width="200" />   <img src="src/StartScreen.png" width="200" />
+<img src="src/SC1.png" width="200" />   <img src="src/SC2.png" width="200" />
 </div>
 
 Just started developing...
