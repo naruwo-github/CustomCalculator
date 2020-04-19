@@ -1,10 +1,4 @@
-# PSCalculator
-### Petit Scientific Calculator is on AppStore now!!
-
-This is a scientific calculator iOS application. It is made with Swift and can be used on iPhone and iPad(now free on AppStore).
-This app can be used as a general calculator and also has a function as a scientific calculator.
-If you have opinions about this, do not hesitate to contact me!!!
-I'm not a good developer, so I need your help :)
+# CustomCalculator
 
 ## Launch & Start Screen
 <div style="text-align: center;">
@@ -12,15 +6,14 @@ I'm not a good developer, so I need your help :)
 </div>
 
 
-### 以下日本語
-  若干関数な電卓アプリケーションです。iOSで提供しています。
-関数電卓はボタンが多すぎるけど、階乗や累乗は使うよな〜ていう人にお勧めしたいです。
-現在開発中で、バージョン1.0はリリースされています。
+#### どんなもの？
+電卓って、なんと言おうが電卓ですよね？
+デザインに若干の違いはあれど、ほとんどおんなじ見た目。。。
 
-機能(予定)
-・加算、減算、乗算、除算(四則演算)
-・プラスマイナス、剰余、階乗、累乗などなど
-・Tips(?)ボタン(各ボタンの使い方を記載したページへ遷移)
+#### 電卓にもアイデンティティを取り入れた！そんなあなたに！
+この「カスタム電卓」はおすすめです(開発段階)
 
-まだまだ足りない機能は山ほどありますが、頑張りたいと思います。
-皆さんの意見等ありましたら、よろしくお願いします。
+これは、ボタンの配置場所や各部品の色などを好きに変更できる電卓です。
+自分だけのオリジナル電卓を使おう。
+
+＊現在カスタム機能を持ったバージョンを開発中です。
