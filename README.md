@@ -1,4 +1,4 @@
-# CustomCalculator
+# カスタム電卓！
 
 ## Launch & Start Screen
 <div style="text-align: center;">
