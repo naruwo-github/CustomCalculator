@@ -94,6 +94,7 @@
                                             <constraint firstAttribute="bottom" secondItem="tpv-eH-hel" secondAttribute="bottom" constant="5" id="ENl-fa-3VN"/>
                                             <constraint firstItem="tpv-eH-hel" firstAttribute="top" secondItem="F8h-zu-ifA" secondAttribute="bottom" constant="5" id="Hqj-Nb-VIe"/>
                                             <constraint firstAttribute="trailing" secondItem="tpv-eH-hel" secondAttribute="trailing" id="c7T-K5-aIk"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F8h-zu-ifA" secondAttribute="trailing" constant="20" symbolic="YES" id="cHO-jm-TNa"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="height" secondItem="l6c-Ov-igm" secondAttribute="height" multiplier="0.3" id="cse-gG-lTY"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="leading" secondItem="l6c-Ov-igm" secondAttribute="leading" id="gac-6j-qk7"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="width" secondItem="l6c-Ov-igm" secondAttribute="width" multiplier="0.3" id="qhy-12-mq7"/>
@@ -102,7 +103,6 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzo-rN-Mn9" userLabel="ButtonsView">
                                         <rect key="frame" x="0.0" y="142" width="375" height="425"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -143,7 +143,10 @@
                     </view>
                     <connections>
                         <outlet property="bottomAdView" destination="Gmu-mm-VO1" id="CDv-2M-EjE"/>
+                        <outlet property="buttonsView" destination="Hzo-rN-Mn9" id="oPq-xf-SNG"/>
                         <outlet property="calculatorView" destination="Sw4-Cx-PdV" id="XJ9-WB-YV9"/>
+                        <outlet property="memoryLabel" destination="ZsF-z8-iLf" id="ktU-j8-3Fb"/>
+                        <outlet property="resultLabel" destination="tpv-eH-hel" id="9MA-tt-Vn3"/>
                         <outlet property="topAdView" destination="eDS-bG-5jO" id="jNy-ZP-SGF"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,11 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var bottomAdView: UIView!
     @IBOutlet weak var calculatorView: UIView!
     
+    @IBOutlet weak var memoryLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var buttonsView: UIView!
+    
+    
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     
