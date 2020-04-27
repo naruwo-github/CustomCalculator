@@ -67,6 +67,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="awb-Pm-eTc"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomAdView" destination="Gmu-mm-VO1" id="CDv-2M-EjE"/>
+                        <outlet property="calculatorView" destination="Sw4-Cx-PdV" id="XJ9-WB-YV9"/>
+                        <outlet property="topAdView" destination="eDS-bG-5jO" id="jNy-ZP-SGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vv5-up-q1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

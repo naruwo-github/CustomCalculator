@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class CalculateViewController: UIViewController {
+    @IBOutlet weak var topAdView: UIView!
+    @IBOutlet weak var bottomAdView: UIView!
+    @IBOutlet weak var calculatorView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
