@@ -32,10 +32,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //========================================================================
-        //=====Advertisement=====
-        // In this case, we instantiate the banner with desired ad size.
-        //top
         topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addTopBannerViewToView(topBannerView)
         topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
@@ -45,7 +41,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         topBannerView.load(GADRequest())
         topBannerView.delegate = self
         
-        //bottom
         bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBottomBannerViewToView(bottomBannerView)
         bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
@@ -54,7 +49,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
-        //========================================================================
         
         var width = self.view.frame.width
         var height = self.view.frame.height

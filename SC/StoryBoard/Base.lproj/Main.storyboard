@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hi4-gk-dYt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +21,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="130"/>
+        </scene>
+        <!--Calculate View Controller-->
+        <scene sceneID="I5Z-eI-8vx">
+            <objects>
+                <viewController id="hi4-gk-dYt" customClass="CalculateViewController" customModule="CustomCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qqo-DB-ZwH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDS-bG-5jO" userLabel="Top Ad View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yLd-Iq-HSf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmu-mm-VO1" userLabel="Bottom Ad View">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="S4Q-c9-0gU"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw4-Cx-PdV" userLabel="Calculator View">
+                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sw4-Cx-PdV" firstAttribute="leading" secondItem="awb-Pm-eTc" secondAttribute="leading" id="4pe-S1-jJd"/>
+                            <constraint firstItem="awb-Pm-eTc" firstAttribute="trailing" secondItem="Sw4-Cx-PdV" secondAttribute="trailing" id="6OD-a3-mOT"/>
+                            <constraint firstItem="awb-Pm-eTc" firstAttribute="bottom" secondItem="Gmu-mm-VO1" secondAttribute="bottom" id="6Op-c6-bWF"/>
+                            <constraint firstItem="Gmu-mm-VO1" firstAttribute="top" secondItem="Sw4-Cx-PdV" secondAttribute="bottom" id="AfV-Lh-2sY"/>
+                            <constraint firstItem="awb-Pm-eTc" firstAttribute="trailing" secondItem="eDS-bG-5jO" secondAttribute="trailing" id="FsM-m5-wcR"/>
+                            <constraint firstItem="eDS-bG-5jO" firstAttribute="leading" secondItem="awb-Pm-eTc" secondAttribute="leading" id="OSC-eP-S8R"/>
+                            <constraint firstItem="Gmu-mm-VO1" firstAttribute="centerX" secondItem="Qqo-DB-ZwH" secondAttribute="centerX" id="ReZ-aE-0Ma"/>
+                            <constraint firstItem="eDS-bG-5jO" firstAttribute="centerX" secondItem="Qqo-DB-ZwH" secondAttribute="centerX" id="W2w-b9-IJQ"/>
+                            <constraint firstItem="awb-Pm-eTc" firstAttribute="trailing" secondItem="Gmu-mm-VO1" secondAttribute="trailing" id="a5l-m9-cty"/>
+                            <constraint firstItem="Sw4-Cx-PdV" firstAttribute="top" secondItem="eDS-bG-5jO" secondAttribute="bottom" id="bqO-mU-eMo"/>
+                            <constraint firstItem="Gmu-mm-VO1" firstAttribute="leading" secondItem="awb-Pm-eTc" secondAttribute="leading" id="dcR-aC-W1M"/>
+                            <constraint firstItem="eDS-bG-5jO" firstAttribute="top" secondItem="awb-Pm-eTc" secondAttribute="top" id="m04-Lj-vwt"/>
+                            <constraint firstItem="Sw4-Cx-PdV" firstAttribute="centerX" secondItem="Qqo-DB-ZwH" secondAttribute="centerX" id="tyX-9U-mcq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="awb-Pm-eTc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vv5-up-q1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1145" y="130"/>
         </scene>
     </scenes>
 </document>

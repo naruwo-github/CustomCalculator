@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05568F8D2359AC7D007B9BB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */; };
+		056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAD4F2457289E004FCC1D /* CalculateViewController.swift */; };
 		05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */; };
 		05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D72324CD5E008F5ED6 /* ViewController.swift */; };
 		05DFA5DB2324CD5E008F5ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFA5D92324CD5E008F5ED6 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		056DAD4F2457289E004FCC1D /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		05DFA5D22324CD5E008F5ED6 /* CustomCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05DFA5D72324CD5E008F5ED6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				05DFA5D72324CD5E008F5ED6 /* ViewController.swift */,
+				056DAD4F2457289E004FCC1D /* CalculateViewController.swift */,
 				05E190742453CE6A003546AB /* StoryBoard */,
 				05E190732453CE5C003546AB /* Delegate */,
 				05DFA5DC2324CD5F008F5ED6 /* Assets.xcassets */,
@@ -225,6 +228,7 @@
 			files = (
 				05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */,
 				05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */,
+				056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
