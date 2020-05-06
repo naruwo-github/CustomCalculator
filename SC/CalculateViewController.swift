@@ -44,25 +44,6 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
-        
-        setNumberButtons()
-    }
-    
-    func setNumberButtons() {
-        let frameWidth = self.buttonsView.frame.width
-        let frameHeight = self.buttonsView.frame.height
-        let buttonWidth = frameWidth / 4 - 5
-        let zeroButton = UIButton(type: UIButton.ButtonType.system)
-        zeroButton.tag = 0
-        zeroButton.setTitle(String(zeroButton.tag), for: UIControl.State.normal)
-        zeroButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        zeroButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        zeroButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        zeroButton.backgroundColor = greenButtonColor
-        zeroButton.frame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonWidth)
-        zeroButton.layer.cornerRadius = zeroButton.frame.height / 2
-        zeroButton.center = CGPoint(x: frameWidth/8*3, y: frameHeight/10*9)
-        self.buttonsView.addSubview(zeroButton)
     }
     
     func addTopBannerViewToView(_ bannerView: GADBannerView) {
