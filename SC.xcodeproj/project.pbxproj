@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05568F8D2359AC7D007B9BB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */; };
+		056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAD4F2457289E004FCC1D /* CalculateViewController.swift */; };
 		05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */; };
 		05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D72324CD5E008F5ED6 /* ViewController.swift */; };
 		05DFA5DB2324CD5E008F5ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DFA5D92324CD5E008F5ED6 /* Main.storyboard */; };
@@ -18,7 +19,8 @@
 
 /* Begin PBXFileReference section */
 		05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		05DFA5D22324CD5E008F5ED6 /* SC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		056DAD4F2457289E004FCC1D /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		05DFA5D22324CD5E008F5ED6 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05DFA5D72324CD5E008F5ED6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05DFA5DA2324CD5E008F5ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		05DFA5D32324CD5E008F5ED6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05DFA5D22324CD5E008F5ED6 /* SC.app */,
+				05DFA5D22324CD5E008F5ED6 /* Calculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,15 +65,32 @@
 		05DFA5D42324CD5E008F5ED6 /* SC */ = {
 			isa = PBXGroup;
 			children = (
-				05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */,
 				05DFA5D72324CD5E008F5ED6 /* ViewController.swift */,
-				05DFA5D92324CD5E008F5ED6 /* Main.storyboard */,
+				056DAD4F2457289E004FCC1D /* CalculateViewController.swift */,
+				05E190742453CE6A003546AB /* StoryBoard */,
+				05E190732453CE5C003546AB /* Delegate */,
 				05DFA5DC2324CD5F008F5ED6 /* Assets.xcassets */,
-				05DFA5DE2324CD5F008F5ED6 /* LaunchScreen.storyboard */,
 				05DFA5E12324CD5F008F5ED6 /* Info.plist */,
 				05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */,
 			);
 			path = SC;
+			sourceTree = "<group>";
+		};
+		05E190732453CE5C003546AB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		05E190742453CE6A003546AB /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				05DFA5D92324CD5E008F5ED6 /* Main.storyboard */,
+				05DFA5DE2324CD5F008F5ED6 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		1714A991874BC01733CDD151 /* Pods */ = {
@@ -110,7 +129,7 @@
 			);
 			name = SC;
 			productName = SC;
-			productReference = 05DFA5D22324CD5E008F5ED6 /* SC.app */;
+			productReference = 05DFA5D22324CD5E008F5ED6 /* Calculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -209,6 +228,7 @@
 			files = (
 				05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */,
 				05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */,
+				056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Calculator;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -384,7 +404,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Calculator;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

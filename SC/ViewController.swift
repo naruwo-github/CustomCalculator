@@ -32,10 +32,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //========================================================================
-        //=====Advertisement=====
-        // In this case, we instantiate the banner with desired ad size.
-        //top
         topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addTopBannerViewToView(topBannerView)
         topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
@@ -45,7 +41,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         topBannerView.load(GADRequest())
         topBannerView.delegate = self
         
-        //bottom
         bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
         addBottomBannerViewToView(bottomBannerView)
         bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
@@ -54,7 +49,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         bottomBannerView.rootViewController = self
         bottomBannerView.load(GADRequest())
         bottomBannerView.delegate = self
-        //========================================================================
         
         var width = self.view.frame.width
         var height = self.view.frame.height
@@ -103,7 +97,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             } else {
                 _ = resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
+            //preNum = NSString(string: resultLabel.text!).floatValue
         } else if sender.tag == 13 {
             //=
             calculateOperation()
@@ -345,6 +339,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //side length of buttons
         let w = wid/5
         let bottom = hei-50-w/2
+        let rad = (w-10)/2 - 2
         //making buttons No.0~9
         for i in 0..<10 {
             let numButton = UIButton(type: UIButton.ButtonType.system)
@@ -354,7 +349,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             numButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
             numButton.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
             numButton.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
-            numButton.layer.cornerRadius = 30
+            numButton.layer.cornerRadius = rad
             numButton.addTarget(self, action: #selector(numberButtonEvent(_:)), for: UIControl.Event.touchUpInside)
             self.view.addSubview(numButton)
         }
@@ -395,6 +390,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         //side length of buttons
         let w = wid/5
         let bottom = hei-50-w/2
+        let rad = (w-10)/2 - 2
         
         //making operation buttons
         //Pop last charactor
@@ -406,7 +402,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonC.center = CGPoint(x: w/2+moveToRight, y: bottom)
-        buttonC.layer.cornerRadius = 30
+        buttonC.layer.cornerRadius = rad
         buttonC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonC)
         //Point button ...
@@ -418,7 +414,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonP.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonP.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonP.center = CGPoint(x: w/2*5+moveToRight, y: bottom)
-        buttonP.layer.cornerRadius = 30
+        buttonP.layer.cornerRadius = rad
         buttonP.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonP)
         //Equal button
@@ -430,7 +426,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonE.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonE.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonE.center = CGPoint(x: w/2*7+moveToRight, y: bottom)
-        buttonE.layer.cornerRadius = 30
+        buttonE.layer.cornerRadius = rad
         buttonE.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonE)
         //Add button
@@ -442,7 +438,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonA.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonA.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w)
-        buttonA.layer.cornerRadius = 30
+        buttonA.layer.cornerRadius = rad
         buttonA.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonA)
         //Sub button
@@ -454,7 +450,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonS.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonS.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*2)
-        buttonS.layer.cornerRadius = 30
+        buttonS.layer.cornerRadius = rad
         buttonS.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonS)
         //Multiply
@@ -466,7 +462,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonM.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonM.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*3)
-        buttonM.layer.cornerRadius = 30
+        buttonM.layer.cornerRadius = rad
         buttonM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonM)
         //All Clear button
@@ -478,7 +474,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonAC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonAC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonAC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*4)
-        buttonAC.layer.cornerRadius = 30
+        buttonAC.layer.cornerRadius = rad
         buttonAC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonAC)
         //Plus Minus button
@@ -490,7 +486,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonPM.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonPM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPM.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*4)
-        buttonPM.layer.cornerRadius = 30
+        buttonPM.layer.cornerRadius = rad
         buttonPM.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonPM)
         //Surplus button
@@ -502,7 +498,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonSU.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
         buttonSU.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonSU.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*4)
-        buttonSU.layer.cornerRadius = 30
+        buttonSU.layer.cornerRadius = rad
         buttonSU.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonSU)
         //Division
@@ -514,7 +510,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonD.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
         buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonD.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*4)
-        buttonD.layer.cornerRadius = 30
+        buttonD.layer.cornerRadius = rad
         buttonD.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonD)
         //√
@@ -526,7 +522,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonR.center = CGPoint(x: w/2*9+moveToRight, y: bottom)
-        buttonR.layer.cornerRadius = 30
+        buttonR.layer.cornerRadius = rad
         buttonR.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonR)
         //!
@@ -538,7 +534,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonFactorial.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonFactorial.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonFactorial.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w)
-        buttonFactorial.layer.cornerRadius = 30
+        buttonFactorial.layer.cornerRadius = rad
         buttonFactorial.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonFactorial)
         //1/x
@@ -550,7 +546,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonReciprocal.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonReciprocal.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonReciprocal.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
-        buttonReciprocal.layer.cornerRadius = 30
+        buttonReciprocal.layer.cornerRadius = rad
         buttonReciprocal.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonReciprocal)
         //^x
@@ -562,7 +558,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*3)
-        buttonPower.layer.cornerRadius = 30
+        buttonPower.layer.cornerRadius = rad
         buttonPower.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonPower)
         //10^x
@@ -574,7 +570,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonTenPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonTenPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonTenPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*4)
-        buttonTenPower.layer.cornerRadius = 30
+        buttonTenPower.layer.cornerRadius = rad
         buttonTenPower.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonTenPower)
         //mc
@@ -586,7 +582,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonMC.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonMC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*5)
-        buttonMC.layer.cornerRadius = 30
+        buttonMC.layer.cornerRadius = rad
         buttonMC.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonMC)
         //m+
@@ -598,7 +594,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonMA.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonMA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMA.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*5)
-        buttonMA.layer.cornerRadius = 30
+        buttonMA.layer.cornerRadius = rad
         buttonMA.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonMA)
         //m-
@@ -610,7 +606,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonMS.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonMS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMS.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*5)
-        buttonMS.layer.cornerRadius = 30
+        buttonMS.layer.cornerRadius = rad
         buttonMS.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonMS)
         //mr
@@ -622,7 +618,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonMR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonMR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMR.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*5)
-        buttonMR.layer.cornerRadius = 30
+        buttonMR.layer.cornerRadius = rad
         buttonMR.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonMR)
         //?
@@ -634,7 +630,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonHatena.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
         buttonHatena.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonHatena.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*5)
-        buttonHatena.layer.cornerRadius = 30
+        buttonHatena.layer.cornerRadius = rad
         buttonHatena.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonHatena)
     }
@@ -738,39 +734,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                                               attribute: .top,
                                               multiplier: 1,
                                               constant: 0))
-    }
-    
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        //print("adViewDidReceiveAd")
-    }
-    
-    /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
-        //print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-    
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        //print("adViewWillPresentScreen")
-    }
-    
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        //print("adViewWillDismissScreen")
-    }
-    
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        //print("adViewDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        //print("adViewWillLeaveApplication")
     }
 }
 
