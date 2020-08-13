@@ -10,45 +10,21 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController, GADBannerViewDelegate {
-    //Advertisement View
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
-    //settings
     let resultLabel: UILabel = UILabel()
     var numOnScreen: Float = 0
     var preNum: Float = 0
-    //operation flag
-    var canCalculate: Bool = false
-    //operatin number
+    var canCalculate: Bool = false // operation flag
     var operationNum: Int = 0
-    //ipad
     var moveToRight: CGFloat = 0
-    //memory
     let memoryLabel: UILabel = UILabel()
     var memoryNumOnScreen: Float = 0
     let memoryMark = UILabel()
-    //URL
     let url = NSURL(string: "https://chan-naru.hatenablog.com/entry/2019/10/27/141656")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addTopBannerViewToView(topBannerView)
-        topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
-        //Test
-        //topBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        topBannerView.rootViewController = self
-        topBannerView.load(GADRequest())
-        topBannerView.delegate = self
-        
-        bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        addBottomBannerViewToView(bottomBannerView)
-        bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
-        //Test
-        //bottomBannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        bottomBannerView.rootViewController = self
-        bottomBannerView.load(GADRequest())
-        bottomBannerView.delegate = self
         
         var width = self.view.frame.width
         var height = self.view.frame.height
@@ -65,6 +41,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         setLabels(wid: width, hei: height)
         setNumberButtons(wid: width, hei: height)
         setOperationButtons(wid: width, hei: height)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setAdvertisement()
     }
     
     //Number button tapped
@@ -734,6 +716,22 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                                               attribute: .top,
                                               multiplier: 1,
                                               constant: 0))
+    }
+    
+    private func setAdvertisement() {
+        self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.addTopBannerViewToView(self.topBannerView)
+        self.topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
+        self.topBannerView.rootViewController = self
+        self.topBannerView.load(GADRequest())
+        self.topBannerView.delegate = self
+        
+        self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.addBottomBannerViewToView(self.bottomBannerView)
+        self.bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
+        self.bottomBannerView.rootViewController = self
+        self.bottomBannerView.load(GADRequest())
+        self.bottomBannerView.delegate = self
     }
 }
 
