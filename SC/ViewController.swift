@@ -45,7 +45,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.setAdvertisement()
     }
     
@@ -332,6 +331,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             numButton.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
             numButton.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
             numButton.layer.cornerRadius = rad
+            numButton.layer.masksToBounds = false
+            numButton.clipsToBounds = false
+            numButton.layer.shadowColor = UIColor.white.cgColor
+            numButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+            numButton.layer.shadowRadius = 4.0
+            numButton.layer.shadowOpacity = 0.4
             numButton.addTarget(self, action: #selector(numberButtonEvent(_:)), for: UIControl.Event.touchUpInside)
             self.view.addSubview(numButton)
         }
