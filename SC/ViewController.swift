@@ -10,12 +10,16 @@ import UIKit
 import GoogleMobileAds
 
 class ViewController: UIViewController, GADBannerViewDelegate {
+    
+    @IBOutlet private weak var topAdvertisementView: UIView!
+    @IBOutlet private weak var bottomAdvertisementView: UIView!
+    
     var topBannerView: GADBannerView!
     var bottomBannerView: GADBannerView!
     let resultLabel: UILabel = UILabel()
     var numOnScreen: Float = 0
     var preNum: Float = 0
-    var canCalculate: Bool = false // operation flag
+    var canCalculate: Bool = false
     var operationNum: Int = 0
     var moveToRight: CGFloat = 0
     let memoryLabel: UILabel = UILabel()
@@ -635,118 +639,19 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.view.addSubview(buttonHatena)
     }
     
-    func addTopBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        if #available(iOS 11.0, *) {
-            // In iOS 11, we need to constrain the view to the safe area.
-            positionBannerViewFullWidthAtTopOfSafeArea(bannerView)
-        } else {
-            // In lower iOS versions, safe area is not available so we use
-            // bottom layout guide and view edges.
-            positionBannerViewFullWidthAtTopOfView(bannerView)
-        }
-    }
-    
-    func addBottomBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(bannerView)
-        if #available(iOS 11.0, *) {
-            // In iOS 11, we need to constrain the view to the safe area.
-            positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
-        } else {
-            // In lower iOS versions, safe area is not available so we use
-            // bottom layout guide and view edges.
-            positionBannerViewFullWidthAtBottomOfView(bannerView)
-        }
-    }
-    
-    // MARK: - view positioning
-    @available (iOS 11, *)
-    func positionBannerViewFullWidthAtTopOfSafeArea(_ bannerView: UIView) {
-        // Position the banner. Stick it to the bottom of the Safe Area.
-        // Make it constrained to the edges of the safe area.
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
-            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
-            guide.topAnchor.constraint(equalTo: bannerView.topAnchor)
-            ])
-    }
-    
-    @available (iOS 11, *)
-    func positionBannerViewFullWidthAtBottomOfSafeArea(_ bannerView: UIView) {
-        // Position the banner. Stick it to the bottom of the Safe Area.
-        // Make it constrained to the edges of the safe area.
-        let guide = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
-            guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
-            guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
-            ])
-    }
-    
-    func positionBannerViewFullWidthAtTopOfView(_ bannerView: UIView) {
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .leading,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .leading,
-                                              multiplier: 1,
-                                              constant: 0))
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .trailing,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .trailing,
-                                              multiplier: 1,
-                                              constant: 0))
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .top,
-                                              relatedBy: .equal,
-                                              toItem: topLayoutGuide,
-                                              attribute: .bottom,
-                                              multiplier: 1,
-                                              constant: 0))
-    }
-    
-    func positionBannerViewFullWidthAtBottomOfView(_ bannerView: UIView) {
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .leading,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .leading,
-                                              multiplier: 1,
-                                              constant: 0))
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .trailing,
-                                              relatedBy: .equal,
-                                              toItem: view,
-                                              attribute: .trailing,
-                                              multiplier: 1,
-                                              constant: 0))
-        view.addConstraint(NSLayoutConstraint(item: bannerView,
-                                              attribute: .bottom,
-                                              relatedBy: .equal,
-                                              toItem: bottomLayoutGuide,
-                                              attribute: .top,
-                                              multiplier: 1,
-                                              constant: 0))
-    }
-    
     private func setAdvertisement() {
         self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.addTopBannerViewToView(self.topBannerView)
         self.topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
         self.topBannerView.rootViewController = self
         self.topBannerView.load(GADRequest())
         self.topBannerView.delegate = self
+        self.topAdvertisementView.addSubview(self.topBannerView)
         
         self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.addBottomBannerViewToView(self.bottomBannerView)
         self.bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
         self.bottomBannerView.rootViewController = self
         self.bottomBannerView.load(GADRequest())
         self.bottomBannerView.delegate = self
+        self.bottomAdvertisementView.addSubview(self.bottomBannerView)
     }
 }
