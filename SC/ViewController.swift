@@ -34,13 +34,14 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             moveToRight = width/8
         } else {
             if UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20 {
-                //weather iphone is X or not
                 height -= 34
             }
         }
         setLabels(wid: width, hei: height)
         setNumberButtons(wid: width, hei: height)
-        setOperationButtons(wid: width, hei: height)
+        
+        self.setupOperationButtonsFormarHalf(wid: width, hei: height)
+        self.setupOperationButtonsLatterHalf(wid: width, hei: height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +49,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.setAdvertisement()
     }
     
-    //Number button tapped
     @objc func numberButtonEvent(_ sender: UIButton) {
         if canCalculate == true || resultLabel.text == "0" {
             resultLabel.text = String(sender.tag-1)
@@ -60,8 +60,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    //Operation button tapped
-    @objc func operationButtonEvent(_ sender: UIButton) {
+    private func operationButtonEventLowerTwenty(sender: UIButton) {
         if sender.tag == 11 {
             //C
             if resultLabel.text!.count > 1 {
@@ -143,7 +142,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("%")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 20 {
+        }
+    }
+    
+    private func operationButtonEventUpperTwenty(sender: UIButton) {
+        if sender.tag == 20 {
             //÷
             calculateOperation()
             //最後がoperationじゃないかの確認
@@ -233,6 +236,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
+    //Operation button tapped
+    @objc func operationButtonEvent(_ sender: UIButton) {
+        if sender.tag < 20 {
+            self.operationButtonEventLowerTwenty(sender: sender)
+        } else {
+            self.operationButtonEventUpperTwenty(sender: sender)
+        }
+        
+    }
+    
     //calculate operation
     func calculateOperation() {
         if operationNum == 14 {
@@ -256,7 +269,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
         operationNum = 0
     }
-    
     
     //memory and result label
     func setLabels(wid: CGFloat, hei: CGFloat) {
@@ -314,7 +326,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         return resultLabel.text?.last ?? "0"
     }
 
-    
     //number button
     func setNumberButtons(wid: CGFloat, hei: CGFloat) {
         //side length of buttons
@@ -372,14 +383,10 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    //operation button
-    func setOperationButtons(wid: CGFloat, hei: CGFloat) {
-        //side length of buttons
+    private func setupOperationButtonsFormarHalf(wid: CGFloat, hei: CGFloat) {
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
-        
-        //making operation buttons
         //Pop last charactor
         let buttonC = UIButton(type: UIButton.ButtonType.system)
         buttonC.tag = 11
@@ -488,6 +495,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         buttonSU.layer.cornerRadius = rad
         buttonSU.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(buttonSU)
+    }
+    
+    private func setupOperationButtonsLatterHalf(wid: CGFloat, hei: CGFloat) {
+        let w = wid/5
+        let bottom = hei-50-w/2
+        let rad = (w-10)/2 - 2
         //Division
         let buttonD = UIButton(type: UIButton.ButtonType.system)
         buttonD.tag = 20
