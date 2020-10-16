@@ -51,8 +51,7 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
             positionBannerViewFullWidthAtTopOfSafeArea(bannerView)
-        }
-        else {
+        } else {
             positionBannerViewFullWidthAtTopOfView(bannerView)
         }
     }
@@ -62,8 +61,7 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
         view.addSubview(bannerView)
         if #available(iOS 11.0, *) {
             positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
-        }
-        else {
+        } else {
             positionBannerViewFullWidthAtBottomOfView(bannerView)
         }
     }

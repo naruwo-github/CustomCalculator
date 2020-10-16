@@ -128,7 +128,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             //+/-
             preNum = NSString(string: resultLabel.text!).floatValue
             var tmp = NSString(string: resultLabel.text!).floatValue
-            tmp = tmp * -1.0
+            tmp *= -1.0
             numOnScreen = tmp
             resultLabel.text = String(tmp)
         } else if sender.tag == 19 {
@@ -227,7 +227,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text = String(numOnScreen)
         } else if sender.tag == 30 {
             //Hatena Button
-            if UIApplication.shared.canOpenURL(url! as URL){
+            if UIApplication.shared.canOpenURL(url! as URL) {
                 UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
             }
         }
@@ -254,7 +254,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text = String(powf(preNum, numOnScreen))
             numOnScreen = powf(preNum, numOnScreen)
         }
-        operationNum = 0;
+        operationNum = 0
     }
     
     
@@ -628,8 +628,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         if #available(iOS 11.0, *) {
             // In iOS 11, we need to constrain the view to the safe area.
             positionBannerViewFullWidthAtTopOfSafeArea(bannerView)
-        }
-        else {
+        } else {
             // In lower iOS versions, safe area is not available so we use
             // bottom layout guide and view edges.
             positionBannerViewFullWidthAtTopOfView(bannerView)
@@ -642,8 +641,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         if #available(iOS 11.0, *) {
             // In iOS 11, we need to constrain the view to the safe area.
             positionBannerViewFullWidthAtBottomOfSafeArea(bannerView)
-        }
-        else {
+        } else {
             // In lower iOS versions, safe area is not available so we use
             // bottom layout guide and view edges.
             positionBannerViewFullWidthAtBottomOfView(bannerView)
@@ -739,4 +737,3 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.bottomBannerView.delegate = self
     }
 }
-

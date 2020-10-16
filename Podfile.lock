@@ -69,11 +69,13 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SwiftLint (0.40.3)
 
 DEPENDENCIES:
   - Firebase/AdMob
   - Firebase/Analytics
   - Firebase/Core
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -89,6 +91,7 @@ SPEC REPOS:
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
     - nanopb
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
@@ -103,7 +106,8 @@ SPEC CHECKSUMS:
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: f24953c1791b52033e3ca3919b830b952a85722a
+PODFILE CHECKSUM: c0867942bfb0ef8e2eb83fcadac9314e9baf9406
 
 COCOAPODS: 1.8.4
