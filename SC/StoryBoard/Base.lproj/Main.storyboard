@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hi4-gk-dYt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,13 +134,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWF-gk-WKt" userLabel="ButtonView1">
                                                 <rect key="frame" x="0.0" y="435" width="103.5" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="93.5" height="93.5"/>
-                                                        <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="A">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -154,13 +159,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KQ-xC-xC9" userLabel="ButtonView2">
                                                 <rect key="frame" x="103.5" y="434.5" width="104" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkZ-t1-0DQ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkZ-t1-0DQ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="94" height="94"/>
-                                                        <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="B">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -173,13 +183,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBO-3T-Nek" userLabel="ButtonView3">
                                                 <rect key="frame" x="207.5" y="434.5" width="103.5" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="93.5" height="94"/>
-                                                        <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="C">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -193,13 +208,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-ep-zpZ" userLabel="ButtonView4">
                                                 <rect key="frame" x="311" y="434.5" width="104" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="94" height="94"/>
-                                                        <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <state key="normal" title="D">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -212,125 +232,291 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-yM-VgD" userLabel="ButtonView5">
                                                 <rect key="frame" x="0.0" y="331" width="104" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K">
-                                                        <rect key="frame" x="24" y="31.5" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="94"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="E">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="jdH-P2-y0K" firstAttribute="centerX" secondItem="4zM-yM-VgD" secondAttribute="centerX" id="aJF-JI-Shu"/>
+                                                    <constraint firstItem="jdH-P2-y0K" firstAttribute="leading" secondItem="4zM-yM-VgD" secondAttribute="leading" constant="5" id="aW4-UU-bva"/>
+                                                    <constraint firstItem="jdH-P2-y0K" firstAttribute="centerY" secondItem="4zM-yM-VgD" secondAttribute="centerY" id="jfD-Pl-1c5"/>
+                                                    <constraint firstItem="jdH-P2-y0K" firstAttribute="top" secondItem="4zM-yM-VgD" secondAttribute="top" constant="5" id="l9f-fG-7lV"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSr-wY-ERL" userLabel="ButtonView6">
                                                 <rect key="frame" x="104" y="331" width="103.5" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="F">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="MSr-wY-ERL" secondAttribute="height" multiplier="1:1" id="J8j-ng-Xy4"/>
+                                                    <constraint firstItem="H3g-49-1AA" firstAttribute="centerX" secondItem="MSr-wY-ERL" secondAttribute="centerX" id="avr-3v-22X"/>
+                                                    <constraint firstItem="H3g-49-1AA" firstAttribute="leading" secondItem="MSr-wY-ERL" secondAttribute="leading" constant="5" id="fqW-f1-n07"/>
+                                                    <constraint firstItem="H3g-49-1AA" firstAttribute="top" secondItem="MSr-wY-ERL" secondAttribute="top" constant="5" id="gHd-31-kl4"/>
+                                                    <constraint firstItem="H3g-49-1AA" firstAttribute="centerY" secondItem="MSr-wY-ERL" secondAttribute="centerY" id="jN7-TD-uvJ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-x1-mMR" userLabel="ButtonView7">
                                                 <rect key="frame" x="207.5" y="331" width="104" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="G">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kCx-3C-2Wv" firstAttribute="centerY" secondItem="xDb-x1-mMR" secondAttribute="centerY" id="2jq-Qi-fPE"/>
+                                                    <constraint firstItem="kCx-3C-2Wv" firstAttribute="centerX" secondItem="xDb-x1-mMR" secondAttribute="centerX" id="O6l-D0-fZv"/>
+                                                    <constraint firstItem="kCx-3C-2Wv" firstAttribute="leading" secondItem="xDb-x1-mMR" secondAttribute="leading" constant="5" id="jat-mw-Jyb"/>
+                                                    <constraint firstItem="kCx-3C-2Wv" firstAttribute="top" secondItem="xDb-x1-mMR" secondAttribute="top" constant="5" id="kUJ-ub-GgV"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-BZ-6YT" userLabel="ButtonView8">
                                                 <rect key="frame" x="311.5" y="331" width="103.5" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="H">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WR6-qV-M06" firstAttribute="top" secondItem="EQb-BZ-6YT" secondAttribute="top" constant="5" id="Idr-lu-qXW"/>
+                                                    <constraint firstItem="WR6-qV-M06" firstAttribute="centerX" secondItem="EQb-BZ-6YT" secondAttribute="centerX" id="Kth-wU-6jp"/>
+                                                    <constraint firstItem="WR6-qV-M06" firstAttribute="centerY" secondItem="EQb-BZ-6YT" secondAttribute="centerY" id="UXz-P4-YTK"/>
+                                                    <constraint firstItem="WR6-qV-M06" firstAttribute="leading" secondItem="EQb-BZ-6YT" secondAttribute="leading" constant="5" id="cP2-9K-SaY"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-bl-EeM" userLabel="ButtonView9">
                                                 <rect key="frame" x="0.0" y="227.5" width="104" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU">
-                                                        <rect key="frame" x="24" y="31.5" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="I">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nQb-GL-zaU" firstAttribute="top" secondItem="tsy-bl-EeM" secondAttribute="top" constant="5" id="BzR-lC-JUY"/>
+                                                    <constraint firstItem="nQb-GL-zaU" firstAttribute="centerY" secondItem="tsy-bl-EeM" secondAttribute="centerY" id="CT2-u4-7DF"/>
+                                                    <constraint firstItem="nQb-GL-zaU" firstAttribute="leading" secondItem="tsy-bl-EeM" secondAttribute="leading" constant="5" id="el7-uF-vjD"/>
+                                                    <constraint firstItem="nQb-GL-zaU" firstAttribute="centerX" secondItem="tsy-bl-EeM" secondAttribute="centerX" id="jnb-yC-nFx"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8M-qyP" userLabel="ButtonView10">
                                                 <rect key="frame" x="104" y="227" width="103.5" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="94"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="J">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ZAF-qn-Y1a" firstAttribute="leading" secondItem="7Lc-8M-qyP" secondAttribute="leading" constant="5" id="Jag-ny-den"/>
+                                                    <constraint firstItem="ZAF-qn-Y1a" firstAttribute="top" secondItem="7Lc-8M-qyP" secondAttribute="top" constant="5" id="jF7-eh-n3T"/>
+                                                    <constraint firstItem="ZAF-qn-Y1a" firstAttribute="centerY" secondItem="7Lc-8M-qyP" secondAttribute="centerY" id="jmJ-LP-wj9"/>
+                                                    <constraint firstItem="ZAF-qn-Y1a" firstAttribute="centerX" secondItem="7Lc-8M-qyP" secondAttribute="centerX" id="vmL-sQ-YHw"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-EV-MXd" userLabel="ButtonView11">
                                                 <rect key="frame" x="207.5" y="227" width="104" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="94"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="K">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="aRu-MR-Rqw" firstAttribute="centerX" secondItem="KmK-EV-MXd" secondAttribute="centerX" id="Bgq-4R-L5p"/>
+                                                    <constraint firstItem="aRu-MR-Rqw" firstAttribute="leading" secondItem="KmK-EV-MXd" secondAttribute="leading" constant="5" id="Vkf-15-BYm"/>
+                                                    <constraint firstItem="aRu-MR-Rqw" firstAttribute="centerY" secondItem="KmK-EV-MXd" secondAttribute="centerY" id="XNw-vh-vV8"/>
+                                                    <constraint firstItem="aRu-MR-Rqw" firstAttribute="top" secondItem="KmK-EV-MXd" secondAttribute="top" constant="5" id="ph4-Fy-y5j"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-v0-C9y" userLabel="ButtonView12">
                                                 <rect key="frame" x="311.5" y="227" width="103.5" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="94"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="L">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="JfW-lp-hZR" firstAttribute="leading" secondItem="NeX-v0-C9y" secondAttribute="leading" constant="5" id="RjT-df-yHS"/>
+                                                    <constraint firstItem="JfW-lp-hZR" firstAttribute="centerX" secondItem="NeX-v0-C9y" secondAttribute="centerX" id="eiR-oq-bQX"/>
+                                                    <constraint firstItem="JfW-lp-hZR" firstAttribute="top" secondItem="NeX-v0-C9y" secondAttribute="top" constant="5" id="h3T-8G-M06"/>
+                                                    <constraint firstItem="JfW-lp-hZR" firstAttribute="centerY" secondItem="NeX-v0-C9y" secondAttribute="centerY" id="ldA-GR-8EZ"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-eN-fBd" userLabel="ButtonView13">
                                                 <rect key="frame" x="0.0" y="123.5" width="104" height="104"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ">
-                                                        <rect key="frame" x="24" y="31.5" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="94"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="M">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="RAo-g1-vVJ" firstAttribute="centerY" secondItem="WDy-eN-fBd" secondAttribute="centerY" id="23A-kL-nGq"/>
+                                                    <constraint firstItem="RAo-g1-vVJ" firstAttribute="centerX" secondItem="WDy-eN-fBd" secondAttribute="centerX" id="rdA-nv-xzX"/>
+                                                    <constraint firstItem="RAo-g1-vVJ" firstAttribute="top" secondItem="WDy-eN-fBd" secondAttribute="top" constant="5" id="y7c-5a-P81"/>
+                                                    <constraint firstItem="RAo-g1-vVJ" firstAttribute="leading" secondItem="WDy-eN-fBd" secondAttribute="leading" constant="5" id="zwg-pV-obE"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-os-Uuz" userLabel="ButtonView14">
                                                 <rect key="frame" x="104" y="123.5" width="103.5" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="N">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="fpJ-y6-nSe" firstAttribute="centerY" secondItem="wqK-os-Uuz" secondAttribute="centerY" id="9xE-sm-leg"/>
+                                                    <constraint firstItem="fpJ-y6-nSe" firstAttribute="leading" secondItem="wqK-os-Uuz" secondAttribute="leading" constant="5" id="FNh-fo-qk7"/>
+                                                    <constraint firstItem="fpJ-y6-nSe" firstAttribute="top" secondItem="wqK-os-Uuz" secondAttribute="top" constant="5" id="a8W-dt-P3a"/>
+                                                    <constraint firstItem="fpJ-y6-nSe" firstAttribute="centerX" secondItem="wqK-os-Uuz" secondAttribute="centerX" id="byo-aN-swx"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-Eq-8LZ" userLabel="ButtonView15">
                                                 <rect key="frame" x="207.5" y="123.5" width="104" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="94" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="O">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Zp3-or-jAl" firstAttribute="leading" secondItem="tUy-Eq-8LZ" secondAttribute="leading" constant="5" id="AYW-LT-BFJ"/>
+                                                    <constraint firstItem="Zp3-or-jAl" firstAttribute="top" secondItem="tUy-Eq-8LZ" secondAttribute="top" constant="5" id="E7N-UD-7b6"/>
+                                                    <constraint firstItem="Zp3-or-jAl" firstAttribute="centerX" secondItem="tUy-Eq-8LZ" secondAttribute="centerX" id="P8G-ok-5yG"/>
+                                                    <constraint firstItem="Zp3-or-jAl" firstAttribute="centerY" secondItem="tUy-Eq-8LZ" secondAttribute="centerY" id="xkH-6Z-EQ2"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-2b-gGs" userLabel="ButtonView16">
                                                 <rect key="frame" x="311.5" y="123.5" width="103.5" height="103.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW">
-                                                        <rect key="frame" x="24" y="32" width="46" height="30"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                        <rect key="frame" x="5" y="5" width="93.5" height="93.5"/>
+                                                        <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <state key="normal" title="P">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="yfa-IX-WCW" firstAttribute="leading" secondItem="cLl-2b-gGs" secondAttribute="leading" constant="5" id="QaF-dg-Hcf"/>
+                                                    <constraint firstItem="yfa-IX-WCW" firstAttribute="centerX" secondItem="cLl-2b-gGs" secondAttribute="centerX" id="c1p-pq-oDI"/>
+                                                    <constraint firstItem="yfa-IX-WCW" firstAttribute="centerY" secondItem="cLl-2b-gGs" secondAttribute="centerY" id="eQ9-xG-hx9"/>
+                                                    <constraint firstItem="yfa-IX-WCW" firstAttribute="top" secondItem="cLl-2b-gGs" secondAttribute="top" constant="5" id="vfH-Kd-7hs"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Top Rest View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="123.5"/>
@@ -456,6 +642,56 @@
             <point key="canvasLocation" x="1145" y="130"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4UE-Pk-ick">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="EkZ-t1-0DQ">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="H3g-49-1AA">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="JfW-lp-hZR">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="RAo-g1-vVJ">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="WR6-qV-M06">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="ZAF-qn-Y1a">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="Zp3-or-jAl">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="aRu-MR-Rqw">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="fFh-xf-5Mp">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="fpJ-y6-nSe">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="irh-4V-ebM">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="jdH-P2-y0K">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="kCx-3C-2Wv">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="nQb-GL-zaU">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+        <designable name="yfa-IX-WCW">
+            <size key="intrinsicContentSize" width="30" height="48"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
