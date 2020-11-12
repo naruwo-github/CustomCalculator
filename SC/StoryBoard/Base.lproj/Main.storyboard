@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hi4-gk-dYt">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -13,18 +13,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PSCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtN-yE-iPL" userLabel="Top Ad View">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="eQE-qR-8pY"/>
                                     <constraint firstAttribute="height" constant="50" id="feS-bL-lRt"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hu-wU-esy" userLabel="Bottom Ad View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="hiQ-7a-5p4"/>
                                 </constraints>
@@ -55,35 +55,35 @@
             <objects>
                 <viewController id="hi4-gk-dYt" customClass="CalculateViewController" customModule="PSCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qqo-DB-ZwH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDS-bG-5jO" userLabel="Top Ad View" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="yLd-Iq-HSf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gmu-mm-VO1" userLabel="Bottom Ad View" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="S4Q-c9-0gU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sw4-Cx-PdV" userLabel="Calculator View">
-                                <rect key="frame" x="0.0" y="50" width="375" height="567"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="718"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tky-Cx-BO9" userLabel="MemoryView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-8Z-gGX" userLabel="Memory">
-                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="56.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="72"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-z8-iLf" userLabel="MemoryResultLabel">
-                                                <rect key="frame" x="112.5" y="5" width="262.5" height="46.5"/>
+                                                <rect key="frame" x="124" y="5" width="290" height="62"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -101,16 +101,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Ov-igm" userLabel="ResultView">
-                                        <rect key="frame" x="0.0" y="56.5" width="375" height="85.5"/>
+                                        <rect key="frame" x="0.0" y="72" width="414" height="107.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="F8h-zu-ifA">
-                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="25.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-eH-hel" userLabel="ResultLabel">
-                                                <rect key="frame" x="0.0" y="30.5" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="37" width="414" height="65.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -129,21 +129,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzo-rN-Mn9" userLabel="ButtonsView">
-                                        <rect key="frame" x="0.0" y="142" width="375" height="425"/>
+                                        <rect key="frame" x="0.0" y="179.5" width="414" height="538.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWF-gk-WKt" userLabel="C View">
-                                                <rect key="frame" x="0.0" y="350" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="455.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="C">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -157,18 +157,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KQ-xC-xC9" userLabel="0 View">
-                                                <rect key="frame" x="75" y="350" width="75" height="75"/>
+                                                <rect key="frame" x="83" y="455.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkZ-t1-0DQ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -181,18 +181,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBO-3T-Nek" userLabel=". View">
-                                                <rect key="frame" x="150" y="350" width="75" height="75"/>
+                                                <rect key="frame" x="165.5" y="455.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -206,18 +206,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-ep-zpZ" userLabel="= View">
-                                                <rect key="frame" x="225" y="350" width="75" height="75"/>
+                                                <rect key="frame" x="248.5" y="455.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="=">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -230,18 +230,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udg-RT-c5I" userLabel="√ View">
-                                                <rect key="frame" x="300" y="350" width="75" height="75"/>
+                                                <rect key="frame" x="331" y="455.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12g-fQ-qiM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="√">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -254,18 +254,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-yM-VgD" userLabel="1 View">
-                                                <rect key="frame" x="0.0" y="275" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="373" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="1">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -278,18 +278,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSr-wY-ERL" userLabel="2 View">
-                                                <rect key="frame" x="75" y="275" width="75" height="75"/>
+                                                <rect key="frame" x="83" y="373" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="2">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -303,18 +303,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-x1-mMR" userLabel="3 View">
-                                                <rect key="frame" x="150" y="275" width="75" height="75"/>
+                                                <rect key="frame" x="165.5" y="373" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="3">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -327,18 +327,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-BZ-6YT" userLabel="+ View">
-                                                <rect key="frame" x="225" y="275" width="75" height="75"/>
+                                                <rect key="frame" x="248.5" y="373" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="+">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -351,18 +351,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRj-mv-K9g" userLabel="! View">
-                                                <rect key="frame" x="300" y="275" width="75" height="75"/>
+                                                <rect key="frame" x="331" y="373" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-YQ-G6m" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="!">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -375,18 +375,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-bl-EeM" userLabel="4 View">
-                                                <rect key="frame" x="0.0" y="200" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="290" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -399,18 +399,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8M-qyP" userLabel="5 View">
-                                                <rect key="frame" x="75" y="200" width="75" height="75"/>
+                                                <rect key="frame" x="83" y="290" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -423,18 +423,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-EV-MXd" userLabel="6 View">
-                                                <rect key="frame" x="150" y="200" width="75" height="75"/>
+                                                <rect key="frame" x="165.5" y="290" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -447,18 +447,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-v0-C9y" userLabel="- View">
-                                                <rect key="frame" x="225" y="200" width="75" height="75"/>
+                                                <rect key="frame" x="248.5" y="290" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="-">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -471,18 +471,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-ud-rjp" userLabel="1/x View">
-                                                <rect key="frame" x="300" y="200" width="75" height="75"/>
+                                                <rect key="frame" x="331" y="290" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-Pc-0QD" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="1/x">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -495,18 +495,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-eN-fBd" userLabel="7 View">
-                                                <rect key="frame" x="0.0" y="125" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -519,18 +519,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-os-Uuz" userLabel="8 View">
-                                                <rect key="frame" x="75" y="125" width="75" height="75"/>
+                                                <rect key="frame" x="83" y="207.5" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -543,18 +543,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-Eq-8LZ" userLabel="9 View">
-                                                <rect key="frame" x="150" y="125" width="75" height="75"/>
+                                                <rect key="frame" x="165.5" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -567,18 +567,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-2b-gGs" userLabel="× View">
-                                                <rect key="frame" x="225" y="125" width="75" height="75"/>
+                                                <rect key="frame" x="248.5" y="207.5" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="×">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -591,18 +591,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc3-V1-S6M" userLabel="^x View">
-                                                <rect key="frame" x="300" y="125" width="75" height="75"/>
+                                                <rect key="frame" x="331" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-Oy-SIo" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="^x">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -615,18 +615,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-1D-C77" userLabel="AC View">
-                                                <rect key="frame" x="0.0" y="50" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="124.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-aV-ZJh" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="AC">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -639,18 +639,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-Ch-3er" userLabel="± View">
-                                                <rect key="frame" x="75" y="50" width="75" height="75"/>
+                                                <rect key="frame" x="83" y="124.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-XM-DZu" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="±">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -663,18 +663,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1L-Qv-7Gu" userLabel="% View">
-                                                <rect key="frame" x="150" y="50" width="75" height="75"/>
+                                                <rect key="frame" x="165.5" y="124.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-Jq-rco" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="%">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -687,18 +687,18 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxX-Kf-sSh" userLabel="÷ View">
-                                                <rect key="frame" x="225" y="50" width="75" height="75"/>
+                                                <rect key="frame" x="248.5" y="124.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-eC-3cv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="÷">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -710,23 +710,19 @@
                                                     <constraint firstItem="eIw-eC-3cv" firstAttribute="centerY" secondItem="qxX-Kf-sSh" secondAttribute="centerY" id="xze-oA-bhh"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Top Rest View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                                <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-Xu-mg1" userLabel="10^x View">
-                                                <rect key="frame" x="300" y="50" width="75" height="75"/>
+                                                <rect key="frame" x="331" y="124.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mp-IF-QdZ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="5" width="65" height="65"/>
+                                                        <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <state key="normal" title="10^x">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="15"/>
+                                                                <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
@@ -737,6 +733,10 @@
                                                     <constraint firstItem="2mp-IF-QdZ" firstAttribute="centerY" secondItem="Lpi-Xu-mg1" secondAttribute="centerY" id="dob-pw-dzP"/>
                                                     <constraint firstItem="2mp-IF-QdZ" firstAttribute="leading" secondItem="Lpi-Xu-mg1" secondAttribute="leading" constant="5" id="pTI-pa-t1u"/>
                                                 </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Top Rest View">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="124.5"/>
+                                                <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -896,79 +896,79 @@
     </scenes>
     <designables>
         <designable name="12g-fQ-qiM">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="2L1-aV-ZJh">
-            <size key="intrinsicContentSize" width="40" height="48"/>
+            <size key="intrinsicContentSize" width="38" height="46"/>
         </designable>
         <designable name="2mp-IF-QdZ">
-            <size key="intrinsicContentSize" width="66" height="48"/>
+            <size key="intrinsicContentSize" width="61" height="46"/>
         </designable>
         <designable name="4UE-Pk-ick">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="EkZ-t1-0DQ">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="H3g-49-1AA">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="JLF-YQ-G6m">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="JfW-lp-hZR">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="RAo-g1-vVJ">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="SgZ-Oy-SIo">
-            <size key="intrinsicContentSize" width="33" height="48"/>
+            <size key="intrinsicContentSize" width="31" height="46"/>
         </designable>
         <designable name="TRN-Pc-0QD">
-            <size key="intrinsicContentSize" width="37" height="48"/>
+            <size key="intrinsicContentSize" width="35" height="46"/>
         </designable>
         <designable name="WR6-qV-M06">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="ZAF-qn-Y1a">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="Zp3-or-jAl">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="aRu-MR-Rqw">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="eIw-eC-3cv">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="fFh-xf-5Mp">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="fRS-XM-DZu">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="fpJ-y6-nSe">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="irh-4V-ebM">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="jdH-P2-y0K">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="kCx-3C-2Wv">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="nQb-GL-zaU">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="pZJ-Jq-rco">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="yfa-IX-WCW">
-            <size key="intrinsicContentSize" width="30" height="48"/>
+            <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
     </designables>
     <resources>
