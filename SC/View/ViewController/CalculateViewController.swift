@@ -14,11 +14,9 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
     
     @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var bottomAdView: GADBannerView!
-    @IBOutlet private weak var calculatorView: UIView!
     
     @IBOutlet private weak var memoryLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
-    @IBOutlet private weak var buttonsView: UIView!
     
     private let greenButtonColor = UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1.0)
     private let TOP_AD_UNIT_ID = "ca-app-pub-6492692627915720/3353518937"
