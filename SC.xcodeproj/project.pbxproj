@@ -400,7 +400,7 @@
 				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = SC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = SC/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
