@@ -6,6 +6,8 @@
 //  Copyright © 2019 Narumi Nogawa. All rights reserved.
 //
 
+import AppTrackingTransparency
+import AdSupport
 import UIKit
 import GoogleMobileAds
 
@@ -53,6 +55,11 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.setAdvertisement()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.requestIDFA()
+    }
+    
     @objc private func numberButtonEvent(_ sender: UIButton) {
         if canCalculate == true || resultLabel.text == "0" {
             resultLabel.text = String(sender.tag-1)
@@ -69,6 +76,13 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             self.operationButtonEventLowerTwenty(sender: sender)
         } else {
             self.operationButtonEventUpperTwenty(sender: sender)
+        }
+    }
+    
+    private func requestIDFA() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            })
         }
     }
     
