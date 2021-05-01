@@ -32,22 +32,12 @@
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>FirebaseCoreDiagnosticsInterop.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
-		</dict>
 		<key>FirebaseInstallations.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
-		</dict>
-		<key>FirebaseInstanceID.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 		<key>Google-Mobile-Ads-SDK.xcscheme</key>
 		<dict>
@@ -69,11 +59,6 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
-		</dict>
-		<key>GoogleDataTransportCCTSupport.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
 		</dict>
 		<key>GoogleUserMessagingPlatform.xcscheme</key>
 		<dict>
