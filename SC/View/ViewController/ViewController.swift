@@ -91,7 +91,8 @@ class ViewController: UIViewController {
     }
     
     private func operationButtonEventLowerTwenty(sender: UIButton) {
-        if sender.tag == 11 { // C
+        switch sender.tag {
+        case 11: // C
             if self.resultLabel.text!.count > 1 {
                 _ = self.resultLabel.text!.popLast()
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
@@ -99,15 +100,15 @@ class ViewController: UIViewController {
                 self.resultLabel.text = "0"
                 self.numOnScreen = 0
             }
-        } else if sender.tag == 12 { // Point
+        case 12: // point
             if self.getLastChar() != "." {
                 self.resultLabel.text?.append(".")
             } else {
                 _ = self.resultLabel.text?.popLast()
             }
-        } else if sender.tag == 13 { // =
+        case 13: // =
             self.calculateOperation()
-        } else if sender.tag == 14 { // +
+        case 14: // +
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -117,7 +118,7 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("+")
             self.operationNum = sender.tag
             self.canCalculate = true
-        } else if sender.tag == 15 { // -
+        case 15: // -
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -127,7 +128,7 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("-")
             self.operationNum = sender.tag
             self.canCalculate = true
-        } else if sender.tag == 16 { // ×
+        case 16: // ×
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -137,18 +138,18 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("×")
             self.operationNum = sender.tag
             self.canCalculate = true
-        } else if sender.tag == 17 { // AC
+        case 17: // AC
             self.resultLabel.text = "0"
             self.preNum = 0
             self.numOnScreen = 0
             self.operationNum = 0
-        } else if sender.tag == 18 { // +/-
+        case 18: // +/-
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             var tmp = NSString(string: self.resultLabel.text!).floatValue
             tmp *= -1.0
             self.numOnScreen = tmp
             self.resultLabel.text = String(tmp)
-        } else if sender.tag == 19 { // %
+        case 19: // %
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -158,6 +159,8 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("%")
             self.operationNum = sender.tag
             self.canCalculate = true
+        default:
+            print("may not be come in here...")
         }
     }
     
