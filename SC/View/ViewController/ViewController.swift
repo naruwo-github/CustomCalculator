@@ -165,7 +165,8 @@ class ViewController: UIViewController {
     }
     
     private func operationButtonEventUpperTwenty(sender: UIButton) {
-        if sender.tag == 20 { // ÷
+        switch sender.tag {
+        case 20: // ÷
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -175,7 +176,7 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("÷")
             self.operationNum = sender.tag
             self.canCalculate = true
-        } else if sender.tag == 21 { // √
+        case 21: // √
             // TODO: perationじゃないかの確認 する？
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
@@ -184,7 +185,7 @@ class ViewController: UIViewController {
             } else {
                 _ = self.resultLabel.text?.popLast()
             }
-        } else if sender.tag == 22 { // !
+        case 22: // !
             // TODO: perationじゃないかの確認 する？
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
@@ -197,7 +198,7 @@ class ViewController: UIViewController {
                 self.resultLabel.text = String(ans)
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
-        } else if sender.tag == 23 { // 1/x
+        case 23: // 1/x
             // TODO: perationじゃないかの確認 する？
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
@@ -205,7 +206,7 @@ class ViewController: UIViewController {
                 self.resultLabel.text = String(1/self.numOnScreen)
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
-        } else if sender.tag == 24 { // ^x
+        case 24: // ^x
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
@@ -215,7 +216,7 @@ class ViewController: UIViewController {
             self.resultLabel.text?.append("^")
             self.operationNum = sender.tag
             self.canCalculate = true
-        } else if sender.tag == 25 { // 10^x
+        case 25: // 10^x
             // TODO: perationじゃないかの確認 する？
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
@@ -223,22 +224,24 @@ class ViewController: UIViewController {
                 self.resultLabel.text = String(powf(10, self.numOnScreen))
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
-        } else if sender.tag == 26 { // mc
+        case 26: // mc
             self.memoryNumOnScreen = 0
             self.memoryLabel.text = String(self.memoryNumOnScreen)
-        } else if sender.tag == 27 { // m+
+        case 27: // m+
             self.memoryNumOnScreen += self.numOnScreen
             self.memoryLabel.text = String(self.memoryNumOnScreen)
-        } else if sender.tag == 28 { // m-
+        case 28: // m-
             self.memoryNumOnScreen -= self.numOnScreen
             self.memoryLabel.text = String(self.memoryNumOnScreen)
-        } else if sender.tag == 29 { // mr
+        case 29: // mr
             self.numOnScreen = self.memoryNumOnScreen
             self.resultLabel.text = String(self.numOnScreen)
-        } else if sender.tag == 30 { // Hatena Button
+        case 30: // ?
             if UIApplication.shared.canOpenURL(self.url! as URL) {
                 UIApplication.shared.open(self.url! as URL, options: [:], completionHandler: nil)
             }
+        default:
+            print("may not be come in here...")
         }
     }
     
