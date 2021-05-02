@@ -240,25 +240,29 @@ class ViewController: UIViewController {
     }
     
     private func calculateOperation() {
-        if self.operationNum == 14 {
+        switch self.operationNum {
+        case 14: // +
             self.resultLabel.text = String(self.preNum + self.numOnScreen)
             self.numOnScreen += self.preNum
-        } else if operationNum == 15 {
+        case 15: // -
             self.resultLabel.text = String(self.preNum - self.numOnScreen)
             self.numOnScreen -= self.preNum
-        } else if operationNum == 16 {
+        case 16: // *
             self.resultLabel.text = String(self.preNum * self.numOnScreen)
             self.numOnScreen *= self.preNum
-        } else if self.operationNum == 19 {
+        case 19: // %
             self.resultLabel.text = String(self.preNum.truncatingRemainder(dividingBy: self.numOnScreen))
             self.numOnScreen = self.preNum.truncatingRemainder(dividingBy: self.numOnScreen)
-        } else if self.operationNum == 20 {
+        case 20: // /
             self.resultLabel.text = String(self.preNum / self.numOnScreen)
             self.numOnScreen /= self.preNum
-        } else if operationNum == 24 {
+        case 24: // ^x
             self.resultLabel.text = String(powf(self.preNum, self.numOnScreen))
             self.numOnScreen = powf(self.preNum, self.numOnScreen)
+        default:
+            print("may not be come in here.")
         }
+        
         self.operationNum = 0
     }
     
@@ -326,12 +330,6 @@ class ViewController: UIViewController {
             numButton.backgroundColor = self.buttonColorGreen
             numButton.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
             numButton.layer.cornerRadius = rad
-            numButton.layer.masksToBounds = false
-            numButton.clipsToBounds = false
-            numButton.layer.shadowColor = UIColor.white.cgColor
-            numButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-            numButton.layer.shadowRadius = 4.0
-            numButton.layer.shadowOpacity = 0.4
             numButton.addTarget(self, action: #selector(numberButtonEvent(_:)), for: UIControl.Event.touchUpInside)
             self.view.addSubview(numButton)
         }
