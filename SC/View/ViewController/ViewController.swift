@@ -11,23 +11,23 @@ import AdSupport
 import UIKit
 import GoogleMobileAds
 
-class ViewController: UIViewController, GADBannerViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet private weak var topAdvertisementView: UIView!
     @IBOutlet private weak var bottomAdvertisementView: UIView!
     
-    var topBannerView: GADBannerView!
-    var bottomBannerView: GADBannerView!
-    let resultLabel: UILabel = UILabel()
-    var numOnScreen: Float = 0
-    var preNum: Float = 0
-    var canCalculate: Bool = false
-    var operationNum: Int = 0
-    var moveToRight: CGFloat = 0
-    let memoryLabel: UILabel = UILabel()
-    var memoryNumOnScreen: Float = 0
-    let memoryMark = UILabel()
-    let url = NSURL(string: PSCStringStorage.init().BLOG_URL)
+    private var topBannerView: GADBannerView!
+    private var bottomBannerView: GADBannerView!
+    private let resultLabel: UILabel = UILabel()
+    private var numOnScreen: Float = 0
+    private var preNum: Float = 0
+    private var canCalculate: Bool = false
+    private var operationNum: Int = 0
+    private var moveToRight: CGFloat = 0
+    private let memoryLabel: UILabel = UILabel()
+    private var memoryNumOnScreen: Float = 0
+    private let memoryMark = UILabel()
+    private let url = NSURL(string: PSCStringStorage.init().BLOG_URL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,17 +61,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     @objc private func numberButtonEvent(_ sender: UIButton) {
-        if canCalculate == true || resultLabel.text == "0" {
-            resultLabel.text = String(sender.tag-1)
-            numOnScreen = NSString(string: resultLabel.text!).floatValue
-            canCalculate = false
+        if self.canCalculate == true || self.resultLabel.text == "0" {
+            self.resultLabel.text = String(sender.tag-1)
+            self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
+            self.canCalculate = false
         } else {
-            resultLabel.text = resultLabel.text! + String(sender.tag-1)
-            numOnScreen = NSString(string: resultLabel.text!).floatValue
+            self.resultLabel.text = self.resultLabel.text! + String(sender.tag-1)
+            self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
         }
     }
     
-    @objc func operationButtonEvent(_ sender: UIButton) {
+    @objc private func operationButtonEvent(_ sender: UIButton) {
         if sender.tag < 20 {
             self.operationButtonEventLowerTwenty(sender: sender)
         } else {
@@ -87,175 +87,177 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     private func operationButtonEventLowerTwenty(sender: UIButton) {
         if sender.tag == 11 { // C
-            if resultLabel.text!.count > 1 {
-                _ = resultLabel.text!.popLast()
-                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            if self.resultLabel.text!.count > 1 {
+                _ = self.resultLabel.text!.popLast()
+                self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             } else {
-                resultLabel.text = "0"
-                numOnScreen = 0
+                self.resultLabel.text = "0"
+                self.numOnScreen = 0
             }
         } else if sender.tag == 12 { // Point
-            if getLastChar() != "." {
-                resultLabel.text?.append(".")
+            if self.getLastChar() != "." {
+                self.resultLabel.text?.append(".")
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
         } else if sender.tag == 13 { // =
-            calculateOperation()
+            self.calculateOperation()
         } else if sender.tag == 14 { // +
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("+")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("+")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         } else if sender.tag == 15 { // -
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("-")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("-")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         } else if sender.tag == 16 { // ×
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("×")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("×")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         } else if sender.tag == 17 { // AC
-            resultLabel.text = "0"
-            preNum = 0
-            numOnScreen = 0
-            operationNum = 0
+            self.resultLabel.text = "0"
+            self.preNum = 0
+            self.numOnScreen = 0
+            self.operationNum = 0
         } else if sender.tag == 18 { // +/-
-            preNum = NSString(string: resultLabel.text!).floatValue
-            var tmp = NSString(string: resultLabel.text!).floatValue
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            var tmp = NSString(string: self.resultLabel.text!).floatValue
             tmp *= -1.0
-            numOnScreen = tmp
-            resultLabel.text = String(tmp)
+            self.numOnScreen = tmp
+            self.resultLabel.text = String(tmp)
         } else if sender.tag == 19 { // %
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("%")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("%")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         }
     }
     
     private func operationButtonEventUpperTwenty(sender: UIButton) {
         if sender.tag == 20 { // ÷
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("÷")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("÷")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         } else if sender.tag == 21 { // √
             // TODO: perationじゃないかの確認 する？
-            if getLastChar() >= "0" && getLastChar() <= "9" {
-                preNum = NSString(string: resultLabel.text!).floatValue
-                resultLabel.text = String(sqrtf(numOnScreen))
-                numOnScreen = NSString(string: resultLabel.text!).floatValue
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
+                self.preNum = NSString(string: self.resultLabel.text!).floatValue
+                self.resultLabel.text = String(sqrtf(self.numOnScreen))
+                self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
         } else if sender.tag == 22 { // !
             // TODO: perationじゃないかの確認 する？
-            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
-                preNum = NSString(string: resultLabel.text!).floatValue
-                let roop = Int(numOnScreen)
+                self.preNum = NSString(string: self.resultLabel.text!).floatValue
+                let roop = Int(self.numOnScreen)
                 var ans = 1
                 for i in 0..<roop {
                     ans *= i+1
                 }
-                resultLabel.text = String(ans)
-                numOnScreen = NSString(string: resultLabel.text!).floatValue
+                self.resultLabel.text = String(ans)
+                self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         } else if sender.tag == 23 { // 1/x
             // TODO: perationじゃないかの確認 する？
-            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
-                preNum = NSString(string: resultLabel.text!).floatValue
-                resultLabel.text = String(1/numOnScreen)
-                numOnScreen = NSString(string: resultLabel.text!).floatValue
+                self.preNum = NSString(string: self.resultLabel.text!).floatValue
+                self.resultLabel.text = String(1/self.numOnScreen)
+                self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         } else if sender.tag == 24 { // ^x
-            calculateOperation() // 最後がoperationじゃないかの確認
-            if getLastChar() >= "0" && getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
             } else {
-                _ = resultLabel.text?.popLast()
+                _ = self.resultLabel.text?.popLast()
             }
-            preNum = NSString(string: resultLabel.text!).floatValue
-            resultLabel.text?.append("^")
-            operationNum = sender.tag
-            canCalculate = true
+            self.preNum = NSString(string: self.resultLabel.text!).floatValue
+            self.resultLabel.text?.append("^")
+            self.operationNum = sender.tag
+            self.canCalculate = true
         } else if sender.tag == 25 { // 10^x
             // TODO: perationじゃないかの確認 する？
-            if resultLabel.text == "0" || resultLabel.text == "0.0" {
+            if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
-                preNum = NSString(string: resultLabel.text!).floatValue
-                resultLabel.text = String(powf(10, numOnScreen))
-                numOnScreen = NSString(string: resultLabel.text!).floatValue
+                self.preNum = NSString(string: self.resultLabel.text!).floatValue
+                self.resultLabel.text = String(powf(10, self.numOnScreen))
+                self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         } else if sender.tag == 26 { // mc
-            memoryNumOnScreen = 0
-            memoryLabel.text = String(memoryNumOnScreen)
+            self.memoryNumOnScreen = 0
+            self.memoryLabel.text = String(self.memoryNumOnScreen)
         } else if sender.tag == 27 { // m+
-            memoryNumOnScreen += numOnScreen
-            memoryLabel.text = String(memoryNumOnScreen)
+            self.memoryNumOnScreen += self.numOnScreen
+            self.memoryLabel.text = String(self.memoryNumOnScreen)
         } else if sender.tag == 28 { // m-
-            memoryNumOnScreen -= numOnScreen
-            memoryLabel.text = String(memoryNumOnScreen)
+            self.memoryNumOnScreen -= self.numOnScreen
+            self.memoryLabel.text = String(self.memoryNumOnScreen)
         } else if sender.tag == 29 { // mr
-            numOnScreen = memoryNumOnScreen
-            resultLabel.text = String(numOnScreen)
+            self.numOnScreen = self.memoryNumOnScreen
+            self.resultLabel.text = String(self.numOnScreen)
         } else if sender.tag == 30 { // Hatena Button
-            if UIApplication.shared.canOpenURL(url! as URL) {
-                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            if UIApplication.shared.canOpenURL(self.url! as URL) {
+                UIApplication.shared.open(self.url! as URL, options: [:], completionHandler: nil)
             }
         }
     }
     
     private func calculateOperation() {
-        if operationNum == 14 {
-            resultLabel.text = String(preNum + numOnScreen)
-            numOnScreen += preNum
+        if self.operationNum == 14 {
+            self.resultLabel.text = String(self.preNum + self.numOnScreen)
+            self.numOnScreen += self.preNum
         } else if operationNum == 15 {
-            resultLabel.text = String(preNum - numOnScreen)
-            numOnScreen -= preNum
+            self.resultLabel.text = String(self.preNum - self.numOnScreen)
+            self.numOnScreen -= self.preNum
         } else if operationNum == 16 {
-            resultLabel.text = String(preNum * numOnScreen)
-            numOnScreen *= preNum
-        } else if operationNum == 19 {
-            resultLabel.text = String(preNum.truncatingRemainder(dividingBy: numOnScreen))
-            numOnScreen = preNum.truncatingRemainder(dividingBy: numOnScreen)
-        } else if operationNum == 20 {
-            resultLabel.text = String(preNum / numOnScreen)
-            numOnScreen /= preNum
+            self.resultLabel.text = String(self.preNum * self.numOnScreen)
+            self.numOnScreen *= self.preNum
+        } else if self.operationNum == 19 {
+            self.resultLabel.text = String(self.preNum.truncatingRemainder(dividingBy: self.numOnScreen))
+            self.numOnScreen = self.preNum.truncatingRemainder(dividingBy: self.numOnScreen)
+        } else if self.operationNum == 20 {
+            self.resultLabel.text = String(self.preNum / self.numOnScreen)
+            self.numOnScreen /= self.preNum
         } else if operationNum == 24 {
-            resultLabel.text = String(powf(preNum, numOnScreen))
-            numOnScreen = powf(preNum, numOnScreen)
+            self.resultLabel.text = String(powf(self.preNum, self.numOnScreen))
+            self.numOnScreen = powf(self.preNum, self.numOnScreen)
         }
-        operationNum = 0
+        self.operationNum = 0
     }
+    
+    // TODO: ボタンやラベル設定のところは、コード削減できないか？
     
     private func setLabels(wid: CGFloat, hei: CGFloat) {
         let w = wid/5
@@ -362,23 +364,6 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    private func setAdvertisement() {
-        self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.topBannerView.adUnitID = PSCStringStorage.init().TOP_AD_UNIT_ID
-        self.topBannerView.rootViewController = self
-        self.topBannerView.load(GADRequest())
-        self.topBannerView.delegate = self
-        self.topBannerView.center.x = self.view.center.x
-        self.topAdvertisementView.addSubview(self.topBannerView)
-        
-        self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.bottomBannerView.adUnitID = PSCStringStorage.init().BOTTOM_AD_UNIT_ID
-        self.bottomBannerView.rootViewController = self
-        self.bottomBannerView.load(GADRequest())
-        self.bottomBannerView.delegate = self
-        self.bottomBannerView.center.x = self.view.center.x
-        self.bottomAdvertisementView.addSubview(self.bottomBannerView)
-    }
 }
 
 extension ViewController {
@@ -393,7 +378,7 @@ extension ViewController {
         return button
     }
     
-    fileprivate func setupOperationButtonsFormarHalf(wid: CGFloat, hei: CGFloat) {
+    private func setupOperationButtonsFormarHalf(wid: CGFloat, hei: CGFloat) {
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
@@ -471,7 +456,7 @@ extension ViewController {
         self.view.addSubview(buttonSU)
     }
     
-    fileprivate func setupOperationButtonsLatterHalf(wid: CGFloat, hei: CGFloat) {
+    private func setupOperationButtonsLatterHalf(wid: CGFloat, hei: CGFloat) {
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
@@ -563,6 +548,28 @@ extension ViewController {
         buttonHatena.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonHatena.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonHatena)
+    }
+    
+}
+
+extension ViewController: GADBannerViewDelegate {
+    
+    private func setAdvertisement() {
+        self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.topBannerView.adUnitID = PSCStringStorage.init().TOP_AD_UNIT_ID
+        self.topBannerView.rootViewController = self
+        self.topBannerView.load(GADRequest())
+        self.topBannerView.delegate = self
+        self.topBannerView.center.x = self.view.center.x
+        self.topAdvertisementView.addSubview(self.topBannerView)
+        
+        self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.bottomBannerView.adUnitID = PSCStringStorage.init().BOTTOM_AD_UNIT_ID
+        self.bottomBannerView.rootViewController = self
+        self.bottomBannerView.load(GADRequest())
+        self.bottomBannerView.delegate = self
+        self.bottomBannerView.center.x = self.view.center.x
+        self.bottomAdvertisementView.addSubview(self.bottomBannerView)
     }
     
 }
