@@ -29,6 +29,11 @@ class ViewController: UIViewController {
     private let memoryMark = UILabel()
     private let url = NSURL(string: PSCStringStorage.init().BLOG_URL)
     
+    private let buttonColorGreen = UIColor(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+    private let buttonColorCream = UIColor(red: 1, green: 1, blue: 0.8, alpha: 1)
+    private let buttonColorLightGray = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+    private let buttonColorDarkGray = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -257,8 +262,6 @@ class ViewController: UIViewController {
         self.operationNum = 0
     }
     
-    // TODO: ボタンやラベル設定のところは、コード削減できないか？
-    
     private func setLabels(wid: CGFloat, hei: CGFloat) {
         let w = wid/5
         let bottom = hei-50-w/2
@@ -320,7 +323,7 @@ class ViewController: UIViewController {
             numButton.setTitle(String(i), for: UIControl.State.normal)
             numButton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
             numButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
-            numButton.backgroundColor = UIColor.init(red: 0.8, green: 1, blue: 0.8, alpha: 1)
+            numButton.backgroundColor = self.buttonColorGreen
             numButton.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
             numButton.layer.cornerRadius = rad
             numButton.layer.masksToBounds = false
@@ -368,11 +371,14 @@ class ViewController: UIViewController {
 
 extension ViewController {
     
-    private func returnBaseButton(rad: CGFloat) -> UIButton {
+    private func returnBaseButton(tag: Int, title: String, color: UIColor, rad: CGFloat) -> UIButton {
         let button = UIButton(type: UIButton.ButtonType.system)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.setTitleColor(UIColor.black, for: UIControl.State.normal)
+        button.tag = tag
+        button.setTitle(title, for: UIControl.State.normal)
+        button.backgroundColor = color
         button.layer.cornerRadius = rad
         button.addTarget(self, action: #selector(operationButtonEvent(_:)), for: UIControl.Event.touchUpInside)
         return button
@@ -383,74 +389,47 @@ extension ViewController {
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
         
-        let buttonC = self.returnBaseButton(rad: rad)
-        buttonC.tag = 11
-        buttonC.setTitle("C", for: UIControl.State.normal)
-        buttonC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        let buttonC = self.returnBaseButton(tag: 11, title: "C", color: self.buttonColorDarkGray, rad: rad)
         buttonC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonC.center = CGPoint(x: w/2+moveToRight, y: bottom)
         self.view.addSubview(buttonC)
         
-        let buttonP = self.returnBaseButton(rad: rad)
-        buttonP.tag = 12
-        buttonP.setTitle(".", for: UIControl.State.normal)
-        buttonP.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        let buttonP = self.returnBaseButton(tag: 12, title: ".", color: self.buttonColorDarkGray, rad: rad)
         buttonP.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonP.center = CGPoint(x: w/2*5+moveToRight, y: bottom)
         self.view.addSubview(buttonP)
         
-        let buttonE = self.returnBaseButton(rad: rad)
-        buttonE.tag = 13
-        buttonE.setTitle("=", for: UIControl.State.normal)
-        buttonE.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        let buttonE = self.returnBaseButton(tag: 13, title: "=", color: self.buttonColorCream, rad: rad)
         buttonE.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonE.center = CGPoint(x: w/2*7+moveToRight, y: bottom)
         self.view.addSubview(buttonE)
         
-        let buttonA = self.returnBaseButton(rad: rad)
-        buttonA.tag = 14
-        buttonA.setTitle("+", for: UIControl.State.normal)
-        buttonA.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        let buttonA = self.returnBaseButton(tag: 14, title: "+", color: self.buttonColorCream, rad: rad)
         buttonA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonA.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w)
         self.view.addSubview(buttonA)
         
-        let buttonS = self.returnBaseButton(rad: rad)
-        buttonS.tag = 15
-        buttonS.setTitle("-", for: UIControl.State.normal)
-        buttonS.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        let buttonS = self.returnBaseButton(tag: 15, title: "-", color: self.buttonColorCream, rad: rad)
         buttonS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonS.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*2)
         self.view.addSubview(buttonS)
         
-        let buttonM = self.returnBaseButton(rad: rad)
-        buttonM.tag = 16
-        buttonM.setTitle("×", for: UIControl.State.normal)
-        buttonM.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        let buttonM = self.returnBaseButton(tag: 16, title: "×", color: self.buttonColorCream, rad: rad)
         buttonM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonM.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*3)
         self.view.addSubview(buttonM)
         
-        let buttonAC = self.returnBaseButton(rad: rad)
-        buttonAC.tag = 17
-        buttonAC.setTitle("AC", for: UIControl.State.normal)
-        buttonAC.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        let buttonAC = self.returnBaseButton(tag: 17, title: "AC", color: self.buttonColorDarkGray, rad: rad)
         buttonAC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonAC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonAC)
         
-        let buttonPM = self.returnBaseButton(rad: rad)
-        buttonPM.tag = 18
-        buttonPM.setTitle("±", for: UIControl.State.normal)
-        buttonPM.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        let buttonPM = self.returnBaseButton(tag: 18, title: "±", color: self.buttonColorDarkGray, rad: rad)
         buttonPM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPM.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonPM)
         
-        let buttonSU = self.returnBaseButton(rad: rad)
-        buttonSU.tag = 19
-        buttonSU.setTitle("%", for: UIControl.State.normal)
-        buttonSU.backgroundColor = UIColor.init(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        let buttonSU = self.returnBaseButton(tag: 19, title: "%", color: self.buttonColorDarkGray, rad: rad)
         buttonSU.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonSU.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonSU)
@@ -461,90 +440,57 @@ extension ViewController {
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
         
-        let buttonD = self.returnBaseButton(rad: rad)
-        buttonD.tag = 20
-        buttonD.setTitle("÷", for: UIControl.State.normal)
-        buttonD.backgroundColor = UIColor.init(red: 1, green: 1, blue: 0.8, alpha: 1)
+        let buttonD = self.returnBaseButton(tag: 20, title: "÷", color: self.buttonColorCream, rad: rad)
         buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonD.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonD)
         
-        let buttonR = self.returnBaseButton(rad: rad)
-        buttonR.tag = 21
-        buttonR.setTitle("√", for: UIControl.State.normal)
-        buttonR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonR = self.returnBaseButton(tag: 21, title: "√", color: self.buttonColorLightGray, rad: rad)
         buttonR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonR.center = CGPoint(x: w/2*9+moveToRight, y: bottom)
         self.view.addSubview(buttonR)
         
-        let buttonFactorial = self.returnBaseButton(rad: rad)
-        buttonFactorial.tag = 22
-        buttonFactorial.setTitle("!", for: UIControl.State.normal)
-        buttonFactorial.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonFactorial = self.returnBaseButton(tag: 22, title: "!", color: self.buttonColorLightGray, rad: rad)
         buttonFactorial.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonFactorial.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w)
         self.view.addSubview(buttonFactorial)
         
-        let buttonReciprocal = self.returnBaseButton(rad: rad)
-        buttonReciprocal.tag = 23
-        buttonReciprocal.setTitle("1/x", for: UIControl.State.normal)
-        buttonReciprocal.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonReciprocal = self.returnBaseButton(tag: 23, title: "1/x", color: self.buttonColorLightGray, rad: rad)
         buttonReciprocal.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonReciprocal.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
         self.view.addSubview(buttonReciprocal)
         
-        let buttonPower = self.returnBaseButton(rad: rad)
-        buttonPower.tag = 24
-        buttonPower.setTitle("^x", for: UIControl.State.normal)
-        buttonPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonPower = self.returnBaseButton(tag: 24, title: "^x", color: self.buttonColorLightGray, rad: rad)
         buttonPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*3)
         self.view.addSubview(buttonPower)
         
-        let buttonTenPower = self.returnBaseButton(rad: rad)
-        buttonTenPower.tag = 25
-        buttonTenPower.setTitle("10^x", for: UIControl.State.normal)
-        buttonTenPower.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonTenPower = self.returnBaseButton(tag: 25, title: "10^x", color: self.buttonColorLightGray, rad: rad)
         buttonTenPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonTenPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonTenPower)
         
-        let buttonMC = self.returnBaseButton(rad: rad)
-        buttonMC.tag = 26
-        buttonMC.setTitle("mc", for: UIControl.State.normal)
-        buttonMC.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonMC = self.returnBaseButton(tag: 26, title: "mc", color: self.buttonColorLightGray, rad: rad)
         buttonMC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMC)
         
-        let buttonMA = self.returnBaseButton(rad: rad)
-        buttonMA.tag = 27
-        buttonMA.setTitle("m+", for: UIControl.State.normal)
-        buttonMA.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonMA = self.returnBaseButton(tag: 27, title: "m+", color: self.buttonColorLightGray, rad: rad)
         buttonMA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMA.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMA)
         
-        let buttonMS = self.returnBaseButton(rad: rad)
-        buttonMS.tag = 28
-        buttonMS.setTitle("m-", for: UIControl.State.normal)
-        buttonMS.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonMS = self.returnBaseButton(tag: 28, title: "m-", color: self.buttonColorLightGray, rad: rad)
         buttonMS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMS.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMS)
         
-        let buttonMR = self.returnBaseButton(rad: rad)
-        buttonMR.tag = 29
-        buttonMR.setTitle("mr", for: UIControl.State.normal)
-        buttonMR.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonMR = self.returnBaseButton(tag: 29, title: "mr", color: self.buttonColorLightGray, rad: rad)
         buttonMR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMR.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMR)
         
-        let buttonHatena = self.returnBaseButton(rad: rad)
-        buttonHatena.tag = 30
-        buttonHatena.setTitle("?", for: UIControl.State.normal)
-        buttonHatena.backgroundColor = UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+        let buttonHatena = self.returnBaseButton(tag: 30, title: "?", color: self.buttonColorLightGray, rad: rad)
         buttonHatena.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonHatena.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonHatena)
