@@ -81,14 +81,12 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     private func requestIDFA() {
         if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-            })
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
         }
     }
     
     private func operationButtonEventLowerTwenty(sender: UIButton) {
-        if sender.tag == 11 {
-            //C
+        if sender.tag == 11 { // C
             if resultLabel.text!.count > 1 {
                 _ = resultLabel.text!.popLast()
                 numOnScreen = NSString(string: resultLabel.text!).floatValue
@@ -96,21 +94,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                 resultLabel.text = "0"
                 numOnScreen = 0
             }
-        } else if sender.tag == 12 {
-            //Point
+        } else if sender.tag == 12 { // Point
             if getLastChar() != "." {
                 resultLabel.text?.append(".")
             } else {
                 _ = resultLabel.text?.popLast()
             }
-            //preNum = NSString(string: resultLabel.text!).floatValue
-        } else if sender.tag == 13 {
-            //=
+        } else if sender.tag == 13 { // =
             calculateOperation()
-        } else if sender.tag == 14 {
-            //+
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 14 { // +
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -119,10 +112,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("+")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 15 {
-            //-
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 15 { // -
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -131,10 +122,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("-")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 16 {
-            //×
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 16 { // ×
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -143,23 +132,19 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("×")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 17 {
-            //AC
+        } else if sender.tag == 17 { // AC
             resultLabel.text = "0"
             preNum = 0
             numOnScreen = 0
             operationNum = 0
-        } else if sender.tag == 18 {
-            //+/-
+        } else if sender.tag == 18 { // +/-
             preNum = NSString(string: resultLabel.text!).floatValue
             var tmp = NSString(string: resultLabel.text!).floatValue
             tmp *= -1.0
             numOnScreen = tmp
             resultLabel.text = String(tmp)
-        } else if sender.tag == 19 {
-            //%
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 19 { // %
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -172,10 +157,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func operationButtonEventUpperTwenty(sender: UIButton) {
-        if sender.tag == 20 {
-            //÷
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        if sender.tag == 20 { // ÷
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -184,9 +167,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("÷")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 21 {
-            //√
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 21 { // √
+            // TODO: perationじゃないかの確認 する？
             if getLastChar() >= "0" && getLastChar() <= "9" {
                 preNum = NSString(string: resultLabel.text!).floatValue
                 resultLabel.text = String(sqrtf(numOnScreen))
@@ -194,9 +176,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             } else {
                 _ = resultLabel.text?.popLast()
             }
-        } else if sender.tag == 22 {
-            //!
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 22 { // !
+            // TODO: perationじゃないかの確認 する？
             if resultLabel.text == "0" || resultLabel.text == "0.0" {
             } else {
                 preNum = NSString(string: resultLabel.text!).floatValue
@@ -208,19 +189,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
                 resultLabel.text = String(ans)
                 numOnScreen = NSString(string: resultLabel.text!).floatValue
             }
-        } else if sender.tag == 23 {
-            //1/x
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 23 { // 1/x
+            // TODO: perationじゃないかの確認 する？
             if resultLabel.text == "0" || resultLabel.text == "0.0" {
             } else {
                 preNum = NSString(string: resultLabel.text!).floatValue
                 resultLabel.text = String(1/numOnScreen)
                 numOnScreen = NSString(string: resultLabel.text!).floatValue
             }
-        } else if sender.tag == 24 {
-            //^x
-            calculateOperation()
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 24 { // ^x
+            calculateOperation() // 最後がoperationじゃないかの確認
             if getLastChar() >= "0" && getLastChar() <= "9" {
             } else {
                 _ = resultLabel.text?.popLast()
@@ -229,33 +207,27 @@ class ViewController: UIViewController, GADBannerViewDelegate {
             resultLabel.text?.append("^")
             operationNum = sender.tag
             canCalculate = true
-        } else if sender.tag == 25 {
-            //10^x
-            //最後がoperationじゃないかの確認
+        } else if sender.tag == 25 { // 10^x
+            // TODO: perationじゃないかの確認 する？
             if resultLabel.text == "0" || resultLabel.text == "0.0" {
             } else {
                 preNum = NSString(string: resultLabel.text!).floatValue
                 resultLabel.text = String(powf(10, numOnScreen))
                 numOnScreen = NSString(string: resultLabel.text!).floatValue
             }
-        } else if sender.tag == 26 {
-            //mc
+        } else if sender.tag == 26 { // mc
             memoryNumOnScreen = 0
             memoryLabel.text = String(memoryNumOnScreen)
-        } else if sender.tag == 27 {
-            //m+
+        } else if sender.tag == 27 { // m+
             memoryNumOnScreen += numOnScreen
             memoryLabel.text = String(memoryNumOnScreen)
-        } else if sender.tag == 28 {
-            //m-
+        } else if sender.tag == 28 { // m-
             memoryNumOnScreen -= numOnScreen
             memoryLabel.text = String(memoryNumOnScreen)
-        } else if sender.tag == 29 {
-            //mr
+        } else if sender.tag == 29 { // mr
             numOnScreen = memoryNumOnScreen
             resultLabel.text = String(numOnScreen)
-        } else if sender.tag == 30 {
-            //Hatena Button
+        } else if sender.tag == 30 { // Hatena Button
             if UIApplication.shared.canOpenURL(url! as URL) {
                 UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
             }
@@ -286,10 +258,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func setLabels(wid: CGFloat, hei: CGFloat) {
-        //2labels are implemented
         let w = wid/5
         let bottom = hei-50-w/2
-        //result label
+        
         resultLabel.backgroundColor = UIColor.black
         resultLabel.textColor = UIColor.white
         resultLabel.text = "0"
@@ -297,7 +268,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         resultLabel.font = UIFont.systemFont(ofSize: 80)
         resultLabel.adjustsFontSizeToFitWidth = true
         self.view.addSubview(resultLabel)
-        //memory label
+        
         memoryLabel.backgroundColor = UIColor.black
         memoryLabel.textColor = UIColor.white
         memoryLabel.text = "0"
@@ -305,31 +276,29 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         memoryLabel.font = UIFont.systemFont(ofSize: 40)
         memoryLabel.adjustsFontSizeToFitWidth = true
         self.view.addSubview(memoryLabel)
-        //memory text
+        
         memoryMark.backgroundColor = UIColor.black
         memoryMark.textColor = UIColor.white
         memoryMark.font = UIFont.systemFont(ofSize: 20)
         memoryMark.text = "Memory"
         self.view.addSubview(memoryMark)
         if UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20 {
-            //weather iphone is X or not
-            //result label
+            // weather iphone is X or not
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w)
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6)
-            //memory label
+            
             memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2-2)
             memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/4+1)
-            //memory text
+            
             memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2-2)
             memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/4+1)
         } else {
-            //result label
             resultLabel.frame = CGRect.init(x: 0, y: 0, width: wid, height: w-10)
             resultLabel.center = CGPoint.init(x: w*5/2+moveToRight, y: bottom-w*6+10)
-            //memory label
+            
             memoryLabel.frame = CGRect.init(x: 0, y: 0, width: wid/2, height: w/2-2)
             memoryLabel.center = CGPoint.init(x: w*7/2+moveToRight, y: bottom-w*7+w/16*7+1)
-            //memory text
+            
             memoryMark.frame = CGRect.init(x: 0, y: 0, width: wid/4, height: w/2-2)
             memoryMark.center = CGPoint.init(x: wid/4+moveToRight, y: bottom-w*7+w/16*7+1)
         }
@@ -340,11 +309,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func setNumberButtons(wid: CGFloat, hei: CGFloat) {
-        //side length of buttons
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
-        //making buttons No.0~9
         for i in 0..<10 {
             let numButton = UIButton(type: UIButton.ButtonType.system)
             numButton.tag = i+1
@@ -430,7 +397,7 @@ extension ViewController {
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
-        //Pop last charactor
+        
         let buttonC = self.returnBaseButton(rad: rad)
         buttonC.tag = 11
         buttonC.setTitle("C", for: UIControl.State.normal)
@@ -438,7 +405,7 @@ extension ViewController {
         buttonC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonC.center = CGPoint(x: w/2+moveToRight, y: bottom)
         self.view.addSubview(buttonC)
-        //Point button ...
+        
         let buttonP = self.returnBaseButton(rad: rad)
         buttonP.tag = 12
         buttonP.setTitle(".", for: UIControl.State.normal)
@@ -446,7 +413,7 @@ extension ViewController {
         buttonP.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonP.center = CGPoint(x: w/2*5+moveToRight, y: bottom)
         self.view.addSubview(buttonP)
-        //Equal button
+        
         let buttonE = self.returnBaseButton(rad: rad)
         buttonE.tag = 13
         buttonE.setTitle("=", for: UIControl.State.normal)
@@ -454,7 +421,7 @@ extension ViewController {
         buttonE.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonE.center = CGPoint(x: w/2*7+moveToRight, y: bottom)
         self.view.addSubview(buttonE)
-        //Add button
+        
         let buttonA = self.returnBaseButton(rad: rad)
         buttonA.tag = 14
         buttonA.setTitle("+", for: UIControl.State.normal)
@@ -462,7 +429,7 @@ extension ViewController {
         buttonA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonA.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w)
         self.view.addSubview(buttonA)
-        //Sub button
+        
         let buttonS = self.returnBaseButton(rad: rad)
         buttonS.tag = 15
         buttonS.setTitle("-", for: UIControl.State.normal)
@@ -470,7 +437,7 @@ extension ViewController {
         buttonS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonS.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*2)
         self.view.addSubview(buttonS)
-        //Multiply
+        
         let buttonM = self.returnBaseButton(rad: rad)
         buttonM.tag = 16
         buttonM.setTitle("×", for: UIControl.State.normal)
@@ -478,7 +445,7 @@ extension ViewController {
         buttonM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonM.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*3)
         self.view.addSubview(buttonM)
-        //All Clear button
+        
         let buttonAC = self.returnBaseButton(rad: rad)
         buttonAC.tag = 17
         buttonAC.setTitle("AC", for: UIControl.State.normal)
@@ -486,7 +453,7 @@ extension ViewController {
         buttonAC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonAC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonAC)
-        //Plus Minus button
+        
         let buttonPM = self.returnBaseButton(rad: rad)
         buttonPM.tag = 18
         buttonPM.setTitle("±", for: UIControl.State.normal)
@@ -494,7 +461,7 @@ extension ViewController {
         buttonPM.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPM.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonPM)
-        //Surplus button
+        
         let buttonSU = self.returnBaseButton(rad: rad)
         buttonSU.tag = 19
         buttonSU.setTitle("%", for: UIControl.State.normal)
@@ -508,7 +475,7 @@ extension ViewController {
         let w = wid/5
         let bottom = hei-50-w/2
         let rad = (w-10)/2 - 2
-        //Division
+        
         let buttonD = self.returnBaseButton(rad: rad)
         buttonD.tag = 20
         buttonD.setTitle("÷", for: UIControl.State.normal)
@@ -516,7 +483,7 @@ extension ViewController {
         buttonD.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonD.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonD)
-        //√
+        
         let buttonR = self.returnBaseButton(rad: rad)
         buttonR.tag = 21
         buttonR.setTitle("√", for: UIControl.State.normal)
@@ -524,7 +491,7 @@ extension ViewController {
         buttonR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonR.center = CGPoint(x: w/2*9+moveToRight, y: bottom)
         self.view.addSubview(buttonR)
-        //!
+        
         let buttonFactorial = self.returnBaseButton(rad: rad)
         buttonFactorial.tag = 22
         buttonFactorial.setTitle("!", for: UIControl.State.normal)
@@ -532,7 +499,7 @@ extension ViewController {
         buttonFactorial.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonFactorial.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w)
         self.view.addSubview(buttonFactorial)
-        //1/x
+        
         let buttonReciprocal = self.returnBaseButton(rad: rad)
         buttonReciprocal.tag = 23
         buttonReciprocal.setTitle("1/x", for: UIControl.State.normal)
@@ -540,7 +507,7 @@ extension ViewController {
         buttonReciprocal.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonReciprocal.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*2)
         self.view.addSubview(buttonReciprocal)
-        //^x
+        
         let buttonPower = self.returnBaseButton(rad: rad)
         buttonPower.tag = 24
         buttonPower.setTitle("^x", for: UIControl.State.normal)
@@ -548,7 +515,7 @@ extension ViewController {
         buttonPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*3)
         self.view.addSubview(buttonPower)
-        //10^x
+        
         let buttonTenPower = self.returnBaseButton(rad: rad)
         buttonTenPower.tag = 25
         buttonTenPower.setTitle("10^x", for: UIControl.State.normal)
@@ -556,7 +523,7 @@ extension ViewController {
         buttonTenPower.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonTenPower.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*4)
         self.view.addSubview(buttonTenPower)
-        //mc
+        
         let buttonMC = self.returnBaseButton(rad: rad)
         buttonMC.tag = 26
         buttonMC.setTitle("mc", for: UIControl.State.normal)
@@ -564,7 +531,7 @@ extension ViewController {
         buttonMC.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMC.center = CGPoint(x: w/2+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMC)
-        //m+
+        
         let buttonMA = self.returnBaseButton(rad: rad)
         buttonMA.tag = 27
         buttonMA.setTitle("m+", for: UIControl.State.normal)
@@ -572,7 +539,7 @@ extension ViewController {
         buttonMA.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMA.center = CGPoint(x: w/2*3+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMA)
-        //m-
+        
         let buttonMS = self.returnBaseButton(rad: rad)
         buttonMS.tag = 28
         buttonMS.setTitle("m-", for: UIControl.State.normal)
@@ -580,7 +547,7 @@ extension ViewController {
         buttonMS.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMS.center = CGPoint(x: w/2*5+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMS)
-        //mr
+        
         let buttonMR = self.returnBaseButton(rad: rad)
         buttonMR.tag = 29
         buttonMR.setTitle("mr", for: UIControl.State.normal)
@@ -588,7 +555,7 @@ extension ViewController {
         buttonMR.frame = CGRect(x: 0, y: 0, width: w-10, height: w-10)
         buttonMR.center = CGPoint(x: w/2*7+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonMR)
-        //?
+        
         let buttonHatena = self.returnBaseButton(rad: rad)
         buttonHatena.tag = 30
         buttonHatena.setTitle("?", for: UIControl.State.normal)
@@ -597,4 +564,5 @@ extension ViewController {
         buttonHatena.center = CGPoint(x: w/2*9+moveToRight, y: bottom-w*5)
         self.view.addSubview(buttonHatena)
     }
+    
 }
