@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050B17FA263E328900CDF755 /* PSCStringStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050B17F9263E328900CDF755 /* PSCStringStorage.swift */; };
 		05568F8D2359AC7D007B9BB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */; };
+		0565B47C254E7490009C86A9 /* SCCustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0565B47B254E7490009C86A9 /* SCCustomUIButton.swift */; };
 		056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056DAD4F2457289E004FCC1D /* CalculateViewController.swift */; };
 		05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */; };
 		05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DFA5D72324CD5E008F5ED6 /* ViewController.swift */; };
@@ -18,7 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050B17F9263E328900CDF755 /* PSCStringStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSCStringStorage.swift; sourceTree = "<group>"; };
 		05568F8C2359AC7D007B9BB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0565B47B254E7490009C86A9 /* SCCustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCCustomUIButton.swift; sourceTree = "<group>"; };
 		056DAD4F2457289E004FCC1D /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		05DFA5D22324CD5E008F5ED6 /* PSCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DFA5D52324CD5E008F5ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050B17F8263E326A00CDF755 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				050B17F9263E328900CDF755 /* PSCStringStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		0565B478254E72ED009C86A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0565B479254E7301009C86A9 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0565B479254E7301009C86A9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				056DAD4F2457289E004FCC1D /* CalculateViewController.swift */,
+				05DFA5D72324CD5E008F5ED6 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0565B47A254E7462009C86A9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0565B47B254E7490009C86A9 /* SCCustomUIButton.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		05DFA5C92324CD5E008F5ED6 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +102,9 @@
 		05DFA5D42324CD5E008F5ED6 /* SC */ = {
 			isa = PBXGroup;
 			children = (
-				05DFA5D72324CD5E008F5ED6 /* ViewController.swift */,
-				056DAD4F2457289E004FCC1D /* CalculateViewController.swift */,
+				050B17F8263E326A00CDF755 /* Storage */,
+				0565B478254E72ED009C86A9 /* View */,
+				0565B47A254E7462009C86A9 /* Extension */,
 				05E190742453CE6A003546AB /* StoryBoard */,
 				05E190732453CE5C003546AB /* Delegate */,
 				05DFA5DC2324CD5F008F5ED6 /* Assets.xcassets */,
@@ -245,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0565B47C254E7490009C86A9 /* SCCustomUIButton.swift in Sources */,
 				05DFA5D82324CD5E008F5ED6 /* ViewController.swift in Sources */,
 				05DFA5D62324CD5E008F5ED6 /* AppDelegate.swift in Sources */,
+				050B17FA263E328900CDF755 /* PSCStringStorage.swift in Sources */,
 				056DAD502457289E004FCC1D /* CalculateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
