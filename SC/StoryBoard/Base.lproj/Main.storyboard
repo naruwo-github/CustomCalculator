@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hi4-gk-dYt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="130"/>
+            <point key="canvasLocation" x="246" y="130"/>
         </scene>
         <!--Calculate View Controller-->
         <scene sceneID="I5Z-eI-8vx">
@@ -735,9 +735,147 @@
                                                     <constraint firstItem="2mp-IF-QdZ" firstAttribute="leading" secondItem="Lpi-Xu-mg1" secondAttribute="leading" constant="5" id="pTI-pa-t1u"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Top Rest View">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Memory Buttons View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="124.5"/>
-                                                <color key="backgroundColor" red="0.4823529412" green="0.78039215689999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-zD-A0m" userLabel="View1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="124.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zK-lf-UM7" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="39.5" width="73" height="46"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <state key="normal" title="MC">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="7zK-lf-UM7" firstAttribute="leading" secondItem="tCO-zD-A0m" secondAttribute="leading" constant="5" id="5jD-kK-Qxl"/>
+                                                            <constraint firstItem="7zK-lf-UM7" firstAttribute="centerY" secondItem="tCO-zD-A0m" secondAttribute="centerY" id="oO6-p0-0lc"/>
+                                                            <constraint firstItem="7zK-lf-UM7" firstAttribute="centerX" secondItem="tCO-zD-A0m" secondAttribute="centerX" id="xp5-TX-s2A"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VK-7T-3mf" userLabel="View2">
+                                                        <rect key="frame" x="83" y="0.0" width="82.5" height="124.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emU-Sa-HBY" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="39.5" width="72.5" height="46"/>
+                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <state key="normal" title="M+">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="emU-Sa-HBY" firstAttribute="leading" secondItem="2VK-7T-3mf" secondAttribute="leading" constant="5" id="LaY-nb-Bn7"/>
+                                                            <constraint firstItem="emU-Sa-HBY" firstAttribute="centerY" secondItem="2VK-7T-3mf" secondAttribute="centerY" id="VkQ-QM-8pZ"/>
+                                                            <constraint firstItem="emU-Sa-HBY" firstAttribute="centerX" secondItem="2VK-7T-3mf" secondAttribute="centerX" id="wWZ-jG-BHU"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFI-A3-aOC" userLabel="View3">
+                                                        <rect key="frame" x="165.5" y="0.0" width="83" height="124.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-c8-bHV" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="39.5" width="73" height="46"/>
+                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <state key="normal" title="M-">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="xg0-c8-bHV" firstAttribute="centerY" secondItem="JFI-A3-aOC" secondAttribute="centerY" id="Zt8-I8-pmg"/>
+                                                            <constraint firstItem="xg0-c8-bHV" firstAttribute="leading" secondItem="JFI-A3-aOC" secondAttribute="leading" constant="5" id="fqB-lh-Wr1"/>
+                                                            <constraint firstItem="xg0-c8-bHV" firstAttribute="centerX" secondItem="JFI-A3-aOC" secondAttribute="centerX" id="hUL-ls-RXl"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-h0-kIy" userLabel="View4">
+                                                        <rect key="frame" x="248.5" y="0.0" width="82.5" height="124.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-WD-20I" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="39.5" width="72.5" height="46"/>
+                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <state key="normal" title="MR">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Ado-WD-20I" firstAttribute="centerX" secondItem="6T3-h0-kIy" secondAttribute="centerX" id="de0-QJ-LLL"/>
+                                                            <constraint firstItem="Ado-WD-20I" firstAttribute="centerY" secondItem="6T3-h0-kIy" secondAttribute="centerY" id="kNP-Mh-Ocf"/>
+                                                            <constraint firstItem="Ado-WD-20I" firstAttribute="leading" secondItem="6T3-h0-kIy" secondAttribute="leading" constant="5" id="nKp-wP-Fq6"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-Oh-5LZ" userLabel="View5">
+                                                        <rect key="frame" x="331" y="0.0" width="83" height="124.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-KM-DSl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="39.5" width="73" height="46"/>
+                                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <state key="normal" title="?">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="PbY-KM-DSl" firstAttribute="centerX" secondItem="Z3A-Oh-5LZ" secondAttribute="centerX" id="IID-mL-cJj"/>
+                                                            <constraint firstItem="PbY-KM-DSl" firstAttribute="leading" secondItem="Z3A-Oh-5LZ" secondAttribute="leading" constant="5" id="LzN-Kg-Eoj"/>
+                                                            <constraint firstItem="PbY-KM-DSl" firstAttribute="centerY" secondItem="Z3A-Oh-5LZ" secondAttribute="centerY" id="eml-5h-pa1"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="tCO-zD-A0m" firstAttribute="leading" secondItem="TBs-Ch-0Ny" secondAttribute="leading" id="2lA-6B-Dcb"/>
+                                                    <constraint firstItem="6T3-h0-kIy" firstAttribute="leading" secondItem="JFI-A3-aOC" secondAttribute="trailing" id="8gK-eH-b8A"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Z3A-Oh-5LZ" secondAttribute="trailing" id="8v7-RE-zTc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="6T3-h0-kIy" secondAttribute="bottom" id="D30-mT-Dks"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JFI-A3-aOC" secondAttribute="bottom" id="EYO-TY-UvC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tCO-zD-A0m" secondAttribute="bottom" id="IUX-eI-uIT"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Z3A-Oh-5LZ" secondAttribute="bottom" id="JJZ-Wb-EM7"/>
+                                                    <constraint firstItem="JFI-A3-aOC" firstAttribute="top" secondItem="TBs-Ch-0Ny" secondAttribute="top" id="Jee-BY-PEw"/>
+                                                    <constraint firstItem="JFI-A3-aOC" firstAttribute="leading" secondItem="2VK-7T-3mf" secondAttribute="trailing" id="Mi4-Fu-nuW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2VK-7T-3mf" secondAttribute="bottom" id="NCj-XV-hHJ"/>
+                                                    <constraint firstItem="JFI-A3-aOC" firstAttribute="width" secondItem="2VK-7T-3mf" secondAttribute="width" id="OK4-AX-WqX"/>
+                                                    <constraint firstItem="6T3-h0-kIy" firstAttribute="width" secondItem="JFI-A3-aOC" secondAttribute="width" id="ToH-sM-7fj"/>
+                                                    <constraint firstItem="2VK-7T-3mf" firstAttribute="leading" secondItem="tCO-zD-A0m" secondAttribute="trailing" id="WLF-ow-svA"/>
+                                                    <constraint firstItem="tCO-zD-A0m" firstAttribute="width" secondItem="TBs-Ch-0Ny" secondAttribute="width" multiplier="0.2" id="aG8-Fs-2q4"/>
+                                                    <constraint firstItem="2VK-7T-3mf" firstAttribute="width" secondItem="tCO-zD-A0m" secondAttribute="width" id="ehM-Wi-K9U"/>
+                                                    <constraint firstItem="Z3A-Oh-5LZ" firstAttribute="top" secondItem="TBs-Ch-0Ny" secondAttribute="top" id="gBc-cz-82r"/>
+                                                    <constraint firstItem="6T3-h0-kIy" firstAttribute="top" secondItem="TBs-Ch-0Ny" secondAttribute="top" id="p30-8B-Ke2"/>
+                                                    <constraint firstItem="Z3A-Oh-5LZ" firstAttribute="leading" secondItem="6T3-h0-kIy" secondAttribute="trailing" id="sCb-8P-pd0"/>
+                                                    <constraint firstItem="tCO-zD-A0m" firstAttribute="top" secondItem="TBs-Ch-0Ny" secondAttribute="top" id="weX-38-M5U"/>
+                                                    <constraint firstItem="2VK-7T-3mf" firstAttribute="top" secondItem="TBs-Ch-0Ny" secondAttribute="top" id="xo0-UR-gB1"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -890,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vv5-up-q1M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1145" y="130"/>
+            <point key="canvasLocation" x="1058" y="130"/>
         </scene>
     </scenes>
     <designables>
@@ -906,6 +1044,9 @@
         <designable name="4UE-Pk-ick">
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
+        <designable name="Ado-WD-20I">
+            <size key="intrinsicContentSize" width="41" height="46"/>
+        </designable>
         <designable name="EkZ-t1-0DQ">
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
@@ -916,6 +1057,9 @@
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="JfW-lp-hZR">
+            <size key="intrinsicContentSize" width="30" height="46"/>
+        </designable>
+        <designable name="PbY-KM-DSl">
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
         <designable name="RAo-g1-vVJ">
@@ -942,6 +1086,9 @@
         <designable name="eIw-eC-3cv">
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
+        <designable name="emU-Sa-HBY">
+            <size key="intrinsicContentSize" width="41" height="46"/>
+        </designable>
         <designable name="fFh-xf-5Mp">
             <size key="intrinsicContentSize" width="30" height="46"/>
         </designable>
@@ -965,6 +1112,9 @@
         </designable>
         <designable name="pZJ-Jq-rco">
             <size key="intrinsicContentSize" width="30" height="46"/>
+        </designable>
+        <designable name="xg0-c8-bHV">
+            <size key="intrinsicContentSize" width="37" height="46"/>
         </designable>
         <designable name="yfa-IX-WCW">
             <size key="intrinsicContentSize" width="30" height="46"/>
