@@ -10,17 +10,15 @@ import UIKit
 
 import GoogleMobileAds
 
-class CalculateViewController: UIViewController, GADBannerViewDelegate {
+class CalculateViewController: UIViewController {
     
     @IBOutlet private weak var topAdView: GADBannerView!
     @IBOutlet private weak var bottomAdView: GADBannerView!
-    
     @IBOutlet private weak var memoryLabel: UILabel!
     @IBOutlet private weak var resultLabel: UILabel!
     
     private let greenButtonColor = UIColor(red: 0.8, green: 1.0, blue: 0.8, alpha: 1.0)
-    private let TOP_AD_UNIT_ID = "ca-app-pub-6492692627915720/3353518937"
-    private let BOTTOM_AD_UNIT_ID = "ca-app-pub-6492692627915720/2126205352"
+    private let url = NSURL(string: PSCStringStorage.init().BLOG_URL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +39,10 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
         })
     }
     
+}
+
+extension CalculateViewController: GADBannerViewDelegate {
+    
     private func loadBannerAd() {
         let frame = { () -> CGRect in
             return view.frame.inset(by: view.safeAreaInsets)
@@ -53,9 +55,9 @@ class CalculateViewController: UIViewController, GADBannerViewDelegate {
     }
     
     private func setAdvertisement() {
-        self.topAdView.adUnitID = self.TOP_AD_UNIT_ID
+        self.topAdView.adUnitID = PSCStringStorage.init().TOP_AD_UNIT_ID
         self.topAdView.rootViewController = self
-        self.bottomAdView.adUnitID = self.BOTTOM_AD_UNIT_ID
+        self.bottomAdView.adUnitID = PSCStringStorage.init().BOTTOM_AD_UNIT_ID
         self.bottomAdView.rootViewController = self
     }
     

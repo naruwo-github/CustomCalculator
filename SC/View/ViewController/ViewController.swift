@@ -27,7 +27,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     let memoryLabel: UILabel = UILabel()
     var memoryNumOnScreen: Float = 0
     let memoryMark = UILabel()
-    let url = NSURL(string: "https://chan-naru.hatenablog.com/entry/2019/10/27/141656")
+    let url = NSURL(string: PSCStringStorage.init().BLOG_URL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -364,7 +364,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     private func setAdvertisement() {
         self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.topBannerView.adUnitID = "ca-app-pub-6492692627915720/3353518937"
+        self.topBannerView.adUnitID = PSCStringStorage.init().TOP_AD_UNIT_ID
         self.topBannerView.rootViewController = self
         self.topBannerView.load(GADRequest())
         self.topBannerView.delegate = self
@@ -372,7 +372,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         self.topAdvertisementView.addSubview(self.topBannerView)
         
         self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
-        self.bottomBannerView.adUnitID = "ca-app-pub-6492692627915720/2126205352"
+        self.bottomBannerView.adUnitID = PSCStringStorage.init().BOTTOM_AD_UNIT_ID
         self.bottomBannerView.rootViewController = self
         self.bottomBannerView.load(GADRequest())
         self.bottomBannerView.delegate = self
