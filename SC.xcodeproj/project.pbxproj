@@ -437,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 1.9.1;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = SC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -445,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
 				PRODUCT_NAME = PSCalculator;
 				SWIFT_VERSION = 5.0;
@@ -459,7 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 1.9.1;
 				DEVELOPMENT_TEAM = UMBT5JZV43;
 				INFOPLIST_FILE = SC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -467,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9;
+				MARKETING_VERSION = 1.9.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
 				PRODUCT_NAME = PSCalculator;
 				SWIFT_VERSION = 5.0;

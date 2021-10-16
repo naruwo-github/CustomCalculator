@@ -487,7 +487,7 @@ extension ViewController {
 extension ViewController: GADBannerViewDelegate {
     
     private func setAdvertisement() {
-        self.topBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.topBannerView = GADBannerView(adSize: GADAdSizeBanner)
         self.topBannerView.adUnitID = PSCStringStorage.init().TOP_AD_UNIT_ID
         self.topBannerView.rootViewController = self
         self.topBannerView.load(GADRequest())
@@ -495,7 +495,7 @@ extension ViewController: GADBannerViewDelegate {
         self.topBannerView.center.x = self.view.center.x
         self.topAdvertisementView.addSubview(self.topBannerView)
         
-        self.bottomBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        self.bottomBannerView = GADBannerView(adSize: GADAdSizeBanner)
         self.bottomBannerView.adUnitID = PSCStringStorage.init().BOTTOM_AD_UNIT_ID
         self.bottomBannerView.rootViewController = self
         self.bottomBannerView.load(GADRequest())
