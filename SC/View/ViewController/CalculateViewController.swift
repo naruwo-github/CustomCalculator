@@ -33,6 +33,9 @@ class CalculateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setAdvertisement()
+        
+        self.memoryNumOnScreen = UserDefaults.standard.float(forKey: "memory_num_on_screen")
+        self.memoryLabel.text = self.memoryNumOnScreen.description
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,11 +62,11 @@ class CalculateViewController: UIViewController {
     // Green Buttons: tag = (0~9)
     @IBAction private func numberButtonTapped(_ sender: UIButton) {
         if self.canCalculate == true || self.resultLabel.text == "0" {
-            self.resultLabel.text = String(sender.tag)
+            self.resultLabel.text = sender.tag.description
             self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             self.canCalculate = false
         } else {
-            self.resultLabel.text = self.resultLabel.text! + String(sender.tag)
+            self.resultLabel.text = self.resultLabel.text! + sender.tag.description
             self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
         }
     }
@@ -96,7 +99,7 @@ class CalculateViewController: UIViewController {
             var tmp = NSString(string: self.resultLabel.text!).floatValue
             tmp *= -1.0
             self.numOnScreen = tmp
-            self.resultLabel.text = String(tmp)
+            self.resultLabel.text = tmp.description
         case 14: // %
             self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
@@ -171,7 +174,7 @@ class CalculateViewController: UIViewController {
             // TODO: perationじゃないかの確認 する？
             if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
-                self.resultLabel.text = String(sqrtf(self.numOnScreen))
+                self.resultLabel.text = sqrtf(self.numOnScreen).description
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             } else {
                 _ = self.resultLabel.text?.popLast()
@@ -184,9 +187,9 @@ class CalculateViewController: UIViewController {
                 let roop = Int(self.numOnScreen)
                 var ans = 1
                 for i in 0..<roop {
-                    ans *= i+1
+                    ans *= i + 1
                 }
-                self.resultLabel.text = String(ans)
+                self.resultLabel.text = ans.description
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         case 22: // 1/x
@@ -194,7 +197,7 @@ class CalculateViewController: UIViewController {
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
-                self.resultLabel.text = String(1/self.numOnScreen)
+                self.resultLabel.text = (1 / self.numOnScreen).description
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         case 23: // ^x
@@ -212,21 +215,25 @@ class CalculateViewController: UIViewController {
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
-                self.resultLabel.text = String(powf(10, self.numOnScreen))
+                self.resultLabel.text = powf(10, self.numOnScreen).description
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         case 25: // mc
             self.memoryNumOnScreen = 0
-            self.memoryLabel.text = String(self.memoryNumOnScreen)
+            self.memoryLabel.text = self.memoryNumOnScreen.description
+            UserDefaults.standard.set(self.memoryNumOnScreen, forKey: "memory_num_on_screen")
         case 26: // m+
             self.memoryNumOnScreen += self.numOnScreen
-            self.memoryLabel.text = String(self.memoryNumOnScreen)
+            self.memoryLabel.text = self.memoryNumOnScreen.description
+            UserDefaults.standard.set(self.memoryNumOnScreen, forKey: "memory_num_on_screen")
         case 27: // m-
             self.memoryNumOnScreen -= self.numOnScreen
-            self.memoryLabel.text = String(self.memoryNumOnScreen)
+            self.memoryLabel.text = self.memoryNumOnScreen.description
+            UserDefaults.standard.set(self.memoryNumOnScreen, forKey: "memory_num_on_screen")
         case 28: // mr
             self.numOnScreen = self.memoryNumOnScreen
-            self.resultLabel.text = String(self.numOnScreen)
+            self.resultLabel.text = self.numOnScreen.description
+            UserDefaults.standard.set(self.memoryNumOnScreen, forKey: "memory_num_on_screen")
         case 29: // ?
             if UIApplication.shared.canOpenURL(self.url! as URL) {
                 UIApplication.shared.open(self.url! as URL, options: [:], completionHandler: nil)
@@ -239,22 +246,22 @@ class CalculateViewController: UIViewController {
     private func calculateOperation() {
         switch self.operationNum {
         case 14: // %
-            self.resultLabel.text = String(self.preNum.truncatingRemainder(dividingBy: self.numOnScreen))
+            self.resultLabel.text = self.preNum.truncatingRemainder(dividingBy: self.numOnScreen).description
             self.numOnScreen = self.preNum.truncatingRemainder(dividingBy: self.numOnScreen)
         case 16: // +
-            self.resultLabel.text = String(self.preNum + self.numOnScreen)
+            self.resultLabel.text = (self.preNum + self.numOnScreen).description
             self.numOnScreen += self.preNum
         case 17: // -
-            self.resultLabel.text = String(self.preNum - self.numOnScreen)
+            self.resultLabel.text = (self.preNum - self.numOnScreen).description
             self.numOnScreen -= self.preNum
         case 18: // *
-            self.resultLabel.text = String(self.preNum * self.numOnScreen)
+            self.resultLabel.text = (self.preNum * self.numOnScreen).description
             self.numOnScreen *= self.preNum
         case 19: // /
-            self.resultLabel.text = String(self.preNum / self.numOnScreen)
+            self.resultLabel.text = (self.preNum / self.numOnScreen).description
             self.numOnScreen /= self.preNum
         case 23: // ^x
-            self.resultLabel.text = String(powf(self.preNum, self.numOnScreen))
+            self.resultLabel.text = powf(self.preNum, self.numOnScreen).description
             self.numOnScreen = powf(self.preNum, self.numOnScreen)
         default:
             print("may not be come in here.")

@@ -41,8 +41,11 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-z8-iLf" userLabel="MemoryResultLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-z8-iLf" userLabel="MemoryResultLabel">
                                                 <rect key="frame" x="124" y="5" width="290" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="EMQ-X5-1XY"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -50,26 +53,28 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="ZsF-z8-iLf" firstAttribute="leading" secondItem="dNd-8Z-gGX" secondAttribute="trailing" id="CMD-Bp-tJ7"/>
-                                            <constraint firstAttribute="bottom" secondItem="ZsF-z8-iLf" secondAttribute="bottom" constant="5" id="HHH-S0-evC"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="D88-R7-dys"/>
                                             <constraint firstAttribute="bottom" secondItem="dNd-8Z-gGX" secondAttribute="bottom" constant="5" id="Rry-0i-U42"/>
                                             <constraint firstItem="dNd-8Z-gGX" firstAttribute="leading" secondItem="tky-Cx-BO9" secondAttribute="leading" id="VWk-FK-6Y2"/>
-                                            <constraint firstItem="dNd-8Z-gGX" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" constant="5" id="bUF-6g-SOT"/>
+                                            <constraint firstItem="dNd-8Z-gGX" firstAttribute="centerY" secondItem="tky-Cx-BO9" secondAttribute="centerY" id="ZIc-RE-XZs"/>
+                                            <constraint firstItem="ZsF-z8-iLf" firstAttribute="centerY" secondItem="tky-Cx-BO9" secondAttribute="centerY" id="aae-y3-3Ti"/>
+                                            <constraint firstItem="ZsF-z8-iLf" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" constant="5" id="afM-4t-CVL"/>
                                             <constraint firstItem="dNd-8Z-gGX" firstAttribute="width" secondItem="tky-Cx-BO9" secondAttribute="width" multiplier="0.3" id="eDY-9P-6Xv"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZsF-z8-iLf" secondAttribute="bottom" constant="5" id="g2k-zt-hzT"/>
                                             <constraint firstAttribute="trailing" secondItem="ZsF-z8-iLf" secondAttribute="trailing" id="klb-Gw-8zc"/>
-                                            <constraint firstItem="ZsF-z8-iLf" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" constant="5" id="pmL-Hm-5qC"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Ov-igm" userLabel="ResultView">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="107.5"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="F8h-zu-ifA">
-                                                <rect key="frame" x="0.0" y="0.0" width="124" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tpv-eH-hel" userLabel="ResultLabel">
-                                                <rect key="frame" x="0.0" y="37.5" width="414" height="65"/>
+                                                <rect key="frame" x="0.0" y="5" width="414" height="90"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -78,20 +83,21 @@
                                         <constraints>
                                             <constraint firstItem="tpv-eH-hel" firstAttribute="leading" secondItem="l6c-Ov-igm" secondAttribute="leading" id="2To-qK-4VC"/>
                                             <constraint firstAttribute="bottom" secondItem="tpv-eH-hel" secondAttribute="bottom" constant="5" id="ENl-fa-3VN"/>
-                                            <constraint firstItem="tpv-eH-hel" firstAttribute="top" secondItem="F8h-zu-ifA" secondAttribute="bottom" constant="5" id="Hqj-Nb-VIe"/>
                                             <constraint firstAttribute="trailing" secondItem="tpv-eH-hel" secondAttribute="trailing" id="c7T-K5-aIk"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="F8h-zu-ifA" secondAttribute="trailing" constant="20" symbolic="YES" id="cHO-jm-TNa"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="height" secondItem="l6c-Ov-igm" secondAttribute="height" multiplier="0.3" id="cse-gG-lTY"/>
+                                            <constraint firstItem="tpv-eH-hel" firstAttribute="top" secondItem="l6c-Ov-igm" secondAttribute="top" constant="5" id="e48-mJ-Yba"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="leading" secondItem="l6c-Ov-igm" secondAttribute="leading" id="gac-6j-qk7"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="iti-NS-Yxx"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="width" secondItem="l6c-Ov-igm" secondAttribute="width" multiplier="0.3" id="qhy-12-mq7"/>
                                             <constraint firstItem="F8h-zu-ifA" firstAttribute="top" secondItem="l6c-Ov-igm" secondAttribute="top" id="voN-4Y-B3C"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hzo-rN-Mn9" userLabel="ButtonsView">
-                                        <rect key="frame" x="0.0" y="177.5" width="414" height="540.5"/>
+                                        <rect key="frame" x="0.0" y="170" width="414" height="548"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWF-gk-WKt" userLabel="C View">
-                                                <rect key="frame" x="0.0" y="457.5" width="83" height="83"/>
+                                                <rect key="frame" x="0.0" y="465" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -119,7 +125,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KQ-xC-xC9" userLabel="0 View">
-                                                <rect key="frame" x="83" y="457.5" width="82.5" height="83"/>
+                                                <rect key="frame" x="83" y="465" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkZ-t1-0DQ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -146,7 +152,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBO-3T-Nek" userLabel=". View">
-                                                <rect key="frame" x="165.5" y="457.5" width="83" height="83"/>
+                                                <rect key="frame" x="165.5" y="465" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -174,7 +180,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-ep-zpZ" userLabel="= View">
-                                                <rect key="frame" x="248.5" y="457.5" width="82.5" height="83"/>
+                                                <rect key="frame" x="248.5" y="465" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -201,7 +207,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udg-RT-c5I" userLabel="√ View">
-                                                <rect key="frame" x="331" y="457.5" width="83" height="83"/>
+                                                <rect key="frame" x="331" y="465" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12g-fQ-qiM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -228,7 +234,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-yM-VgD" userLabel="1 View">
-                                                <rect key="frame" x="0.0" y="375" width="83" height="82.5"/>
+                                                <rect key="frame" x="0.0" y="382.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -255,7 +261,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSr-wY-ERL" userLabel="2 View">
-                                                <rect key="frame" x="83" y="375" width="82.5" height="82.5"/>
+                                                <rect key="frame" x="83" y="382.5" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
@@ -283,7 +289,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-x1-mMR" userLabel="3 View">
-                                                <rect key="frame" x="165.5" y="375" width="83" height="82.5"/>
+                                                <rect key="frame" x="165.5" y="382.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -310,7 +316,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-BZ-6YT" userLabel="+ View">
-                                                <rect key="frame" x="248.5" y="375" width="82.5" height="82.5"/>
+                                                <rect key="frame" x="248.5" y="382.5" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
@@ -337,7 +343,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRj-mv-K9g" userLabel="! View">
-                                                <rect key="frame" x="331" y="375" width="83" height="82.5"/>
+                                                <rect key="frame" x="331" y="382.5" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-YQ-G6m" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -364,7 +370,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-bl-EeM" userLabel="4 View">
-                                                <rect key="frame" x="0.0" y="292" width="83" height="83"/>
+                                                <rect key="frame" x="0.0" y="299.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -391,7 +397,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8M-qyP" userLabel="5 View">
-                                                <rect key="frame" x="83" y="292" width="82.5" height="83"/>
+                                                <rect key="frame" x="83" y="299.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -418,7 +424,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-EV-MXd" userLabel="6 View">
-                                                <rect key="frame" x="165.5" y="292" width="83" height="83"/>
+                                                <rect key="frame" x="165.5" y="299.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -445,7 +451,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-v0-C9y" userLabel="- View">
-                                                <rect key="frame" x="248.5" y="292" width="82.5" height="83"/>
+                                                <rect key="frame" x="248.5" y="299.5" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -472,7 +478,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-ud-rjp" userLabel="1/x View">
-                                                <rect key="frame" x="331" y="292" width="83" height="83"/>
+                                                <rect key="frame" x="331" y="299.5" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-Pc-0QD" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -499,7 +505,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-eN-fBd" userLabel="7 View">
-                                                <rect key="frame" x="0.0" y="209.5" width="83" height="82.5"/>
+                                                <rect key="frame" x="0.0" y="217" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -526,7 +532,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-os-Uuz" userLabel="8 View">
-                                                <rect key="frame" x="83" y="209.5" width="82.5" height="82.5"/>
+                                                <rect key="frame" x="83" y="217" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
@@ -553,7 +559,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-Eq-8LZ" userLabel="9 View">
-                                                <rect key="frame" x="165.5" y="209.5" width="83" height="82.5"/>
+                                                <rect key="frame" x="165.5" y="217" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -580,7 +586,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-2b-gGs" userLabel="× View">
-                                                <rect key="frame" x="248.5" y="209.5" width="82.5" height="82.5"/>
+                                                <rect key="frame" x="248.5" y="217" width="82.5" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
@@ -607,7 +613,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc3-V1-S6M" userLabel="^x View">
-                                                <rect key="frame" x="331" y="209.5" width="83" height="82.5"/>
+                                                <rect key="frame" x="331" y="217" width="83" height="82.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-Oy-SIo" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
@@ -634,7 +640,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-1D-C77" userLabel="AC View">
-                                                <rect key="frame" x="0.0" y="126.5" width="83" height="83"/>
+                                                <rect key="frame" x="0.0" y="134" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-aV-ZJh" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -661,7 +667,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-Ch-3er" userLabel="± View">
-                                                <rect key="frame" x="83" y="126.5" width="82.5" height="83"/>
+                                                <rect key="frame" x="83" y="134" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-XM-DZu" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -688,7 +694,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1L-Qv-7Gu" userLabel="% View">
-                                                <rect key="frame" x="165.5" y="126.5" width="83" height="83"/>
+                                                <rect key="frame" x="165.5" y="134" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-Jq-rco" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -715,7 +721,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxX-Kf-sSh" userLabel="÷ View">
-                                                <rect key="frame" x="248.5" y="126.5" width="82.5" height="83"/>
+                                                <rect key="frame" x="248.5" y="134" width="82.5" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-eC-3cv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
@@ -742,7 +748,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-Xu-mg1" userLabel="10^x View">
-                                                <rect key="frame" x="331" y="126.5" width="83" height="83"/>
+                                                <rect key="frame" x="331" y="134" width="83" height="83"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mp-IF-QdZ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
@@ -769,13 +775,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TBs-Ch-0Ny" userLabel="Memory Buttons View">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="126.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-zD-A0m" userLabel="View1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="126.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="83" height="134"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zK-lf-UM7" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="40.5" width="73" height="46"/>
+                                                                <rect key="frame" x="5" y="44" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <state key="normal" title="MC">
@@ -799,10 +805,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VK-7T-3mf" userLabel="View2">
-                                                        <rect key="frame" x="83" y="0.0" width="82.5" height="126.5"/>
+                                                        <rect key="frame" x="83" y="0.0" width="82.5" height="134"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emU-Sa-HBY" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="40.5" width="72.5" height="46"/>
+                                                                <rect key="frame" x="5" y="44" width="72.5" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <state key="normal" title="M+">
@@ -826,10 +832,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFI-A3-aOC" userLabel="View3">
-                                                        <rect key="frame" x="165.5" y="0.0" width="83" height="126.5"/>
+                                                        <rect key="frame" x="165.5" y="0.0" width="83" height="134"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-c8-bHV" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="40.5" width="73" height="46"/>
+                                                                <rect key="frame" x="5" y="44" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <state key="normal" title="M-">
@@ -853,10 +859,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-h0-kIy" userLabel="View4">
-                                                        <rect key="frame" x="248.5" y="0.0" width="82.5" height="126.5"/>
+                                                        <rect key="frame" x="248.5" y="0.0" width="82.5" height="134"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-WD-20I" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="40.5" width="72.5" height="46"/>
+                                                                <rect key="frame" x="5" y="44" width="72.5" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <state key="normal" title="MR">
@@ -880,10 +886,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-Oh-5LZ" userLabel="View5">
-                                                        <rect key="frame" x="331" y="0.0" width="83" height="126.5"/>
+                                                        <rect key="frame" x="331" y="0.0" width="83" height="134"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-KM-DSl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="40.5" width="73" height="46"/>
+                                                                <rect key="frame" x="5" y="44" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <state key="normal" title="?">
@@ -1052,8 +1058,8 @@
                                     <constraint firstAttribute="trailing" secondItem="l6c-Ov-igm" secondAttribute="trailing" id="RVS-RC-tYU"/>
                                     <constraint firstAttribute="bottom" secondItem="Hzo-rN-Mn9" secondAttribute="bottom" id="SdR-H0-YUb"/>
                                     <constraint firstItem="l6c-Ov-igm" firstAttribute="leading" secondItem="Sw4-Cx-PdV" secondAttribute="leading" id="aMC-Np-Oqj"/>
-                                    <constraint firstItem="tky-Cx-BO9" firstAttribute="height" relation="lessThanOrEqual" secondItem="Sw4-Cx-PdV" secondAttribute="height" multiplier="0.1" id="eze-SD-G81"/>
-                                    <constraint firstItem="l6c-Ov-igm" firstAttribute="height" relation="lessThanOrEqual" secondItem="Sw4-Cx-PdV" secondAttribute="height" multiplier="0.15" id="lSp-Np-Zw9"/>
+                                    <constraint firstItem="tky-Cx-BO9" firstAttribute="height" relation="lessThanOrEqual" secondItem="Sw4-Cx-PdV" secondAttribute="height" multiplier="0.1" priority="750" id="eze-SD-G81"/>
+                                    <constraint firstItem="l6c-Ov-igm" firstAttribute="height" relation="lessThanOrEqual" secondItem="Sw4-Cx-PdV" secondAttribute="height" multiplier="0.15" priority="750" id="lSp-Np-Zw9"/>
                                     <constraint firstItem="Hzo-rN-Mn9" firstAttribute="leading" secondItem="Sw4-Cx-PdV" secondAttribute="leading" id="lZB-IF-NEr"/>
                                     <constraint firstItem="Hzo-rN-Mn9" firstAttribute="top" secondItem="l6c-Ov-igm" secondAttribute="bottom" id="pu1-UD-7yk"/>
                                     <constraint firstItem="tky-Cx-BO9" firstAttribute="top" secondItem="Sw4-Cx-PdV" secondAttribute="top" id="uG6-Cb-KRo"/>
