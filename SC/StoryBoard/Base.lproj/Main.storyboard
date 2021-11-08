@@ -1,56 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hi4-gk-dYt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PSCalculator" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtN-yE-iPL" userLabel="Top Ad View">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="eQE-qR-8pY"/>
-                                    <constraint firstAttribute="height" constant="50" id="feS-bL-lRt"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hu-wU-esy" userLabel="Bottom Ad View">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="hiQ-7a-5p4"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wtN-yE-iPL" secondAttribute="bottom" id="6v0-Ge-fbs"/>
-                            <constraint firstItem="1Hu-wU-esy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ngt-t6-t3l"/>
-                            <constraint firstItem="wtN-yE-iPL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sq6-gy-Jf8"/>
-                            <constraint firstItem="1Hu-wU-esy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="adh-gc-FwP"/>
-                            <constraint firstItem="wtN-yE-iPL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rwg-Ol-r1k"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Hu-wU-esy" secondAttribute="trailing" id="w3e-X4-S71"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="bottomAdvertisementView" destination="1Hu-wU-esy" id="u97-oA-em2"/>
-                        <outlet property="topAdvertisementView" destination="wtN-yE-iPL" id="oCF-jK-cSm"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="246" y="130"/>
-        </scene>
         <!--Calculate View Controller-->
         <scene sceneID="I5Z-eI-8vx">
             <objects>
@@ -135,7 +93,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWF-gk-WKt" userLabel="C View">
                                                 <rect key="frame" x="0.0" y="455.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFh-xf-5Mp" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -147,6 +105,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="Kzv-0d-j0B"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -172,6 +133,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="RaJ-il-0tx"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -184,7 +148,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBO-3T-Nek" userLabel=". View">
                                                 <rect key="frame" x="165.5" y="455.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UE-Pk-ick" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -196,6 +160,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="o1W-Ol-cDR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -209,7 +176,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-ep-zpZ" userLabel="= View">
                                                 <rect key="frame" x="248.5" y="455.5" width="82.5" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irh-4V-ebM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -221,6 +188,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="kZe-Z9-VDc"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -233,7 +203,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udg-RT-c5I" userLabel="√ View">
                                                 <rect key="frame" x="331" y="455.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12g-fQ-qiM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12g-fQ-qiM" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -245,6 +215,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="XV2-V9-Rov"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -257,7 +230,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zM-yM-VgD" userLabel="1 View">
                                                 <rect key="frame" x="0.0" y="373" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdH-P2-y0K" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -269,6 +242,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="vR0-Hz-L09"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -281,7 +257,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSr-wY-ERL" userLabel="2 View">
                                                 <rect key="frame" x="83" y="373" width="82.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3g-49-1AA" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -293,6 +269,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="zo5-bI-5DQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -306,7 +285,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-x1-mMR" userLabel="3 View">
                                                 <rect key="frame" x="165.5" y="373" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCx-3C-2Wv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -318,6 +297,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="gVz-2h-Dz0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -330,7 +312,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-BZ-6YT" userLabel="+ View">
                                                 <rect key="frame" x="248.5" y="373" width="82.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR6-qV-M06" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -342,6 +324,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="fzK-X9-HIQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -354,7 +339,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRj-mv-K9g" userLabel="! View">
                                                 <rect key="frame" x="331" y="373" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-YQ-G6m" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-YQ-G6m" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -366,6 +351,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="tXz-bu-bLy"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -378,7 +366,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsy-bl-EeM" userLabel="4 View">
                                                 <rect key="frame" x="0.0" y="290" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-GL-zaU" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -390,6 +378,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="FWa-3H-lhh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -402,7 +393,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-8M-qyP" userLabel="5 View">
                                                 <rect key="frame" x="83" y="290" width="82.5" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAF-qn-Y1a" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -414,6 +405,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="4dx-hN-b3Q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -426,7 +420,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmK-EV-MXd" userLabel="6 View">
                                                 <rect key="frame" x="165.5" y="290" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRu-MR-Rqw" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -438,6 +432,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="0UO-oS-zIs"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -450,7 +447,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-v0-C9y" userLabel="- View">
                                                 <rect key="frame" x="248.5" y="290" width="82.5" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-lp-hZR" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -462,6 +459,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="qhO-2q-btb"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -474,7 +474,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjQ-ud-rjp" userLabel="1/x View">
                                                 <rect key="frame" x="331" y="290" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-Pc-0QD" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRN-Pc-0QD" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -486,6 +486,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="noC-zE-QD5"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -498,7 +501,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDy-eN-fBd" userLabel="7 View">
                                                 <rect key="frame" x="0.0" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAo-g1-vVJ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -510,6 +513,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="Sru-cm-yZH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -522,7 +528,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-os-Uuz" userLabel="8 View">
                                                 <rect key="frame" x="83" y="207.5" width="82.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-y6-nSe" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -534,6 +540,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="25W-9o-Flr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -546,7 +555,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUy-Eq-8LZ" userLabel="9 View">
                                                 <rect key="frame" x="165.5" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp3-or-jAl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" red="0.75194203130000004" green="0.90943338520000006" blue="0.21231928380000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -558,6 +567,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="numberButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="f8x-TJ-KbC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -570,7 +582,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLl-2b-gGs" userLabel="× View">
                                                 <rect key="frame" x="248.5" y="207.5" width="82.5" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfa-IX-WCW" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="72.5"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -582,6 +594,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="8lP-On-sQh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -594,7 +609,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cc3-V1-S6M" userLabel="^x View">
                                                 <rect key="frame" x="331" y="207.5" width="83" height="82.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-Oy-SIo" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-Oy-SIo" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="72.5"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -606,6 +621,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="Moo-qK-0Y7"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -618,7 +636,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fgg-1D-C77" userLabel="AC View">
                                                 <rect key="frame" x="0.0" y="124.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-aV-ZJh" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-aV-ZJh" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -630,6 +648,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="EAk-Pt-c0C"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -642,7 +663,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ga-Ch-3er" userLabel="± View">
                                                 <rect key="frame" x="83" y="124.5" width="82.5" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-XM-DZu" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-XM-DZu" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -654,6 +675,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="E1r-wY-24f"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -666,7 +690,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1L-Qv-7Gu" userLabel="% View">
                                                 <rect key="frame" x="165.5" y="124.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-Jq-rco" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-Jq-rco" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -678,6 +702,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="darkGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="dHO-Bh-FII"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -690,7 +717,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxX-Kf-sSh" userLabel="÷ View">
                                                 <rect key="frame" x="248.5" y="124.5" width="82.5" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-eC-3cv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIw-eC-3cv" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="72.5" height="73"/>
                                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -702,6 +729,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="yellowOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="lh6-SL-zbO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -714,7 +744,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-Xu-mg1" userLabel="10^x View">
                                                 <rect key="frame" x="331" y="124.5" width="83" height="83"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mp-IF-QdZ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                    <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mp-IF-QdZ" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="73" height="73"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -726,6 +756,9 @@
                                                                 <real key="value" value="20"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="2T3-fo-UfJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -741,7 +774,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCO-zD-A0m" userLabel="View1">
                                                         <rect key="frame" x="0.0" y="0.0" width="83" height="124.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zK-lf-UM7" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                            <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zK-lf-UM7" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="39.5" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -753,6 +786,9 @@
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="afA-sd-IsV"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -764,7 +800,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VK-7T-3mf" userLabel="View2">
                                                         <rect key="frame" x="83" y="0.0" width="82.5" height="124.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emU-Sa-HBY" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                            <button opaque="NO" tag="26" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emU-Sa-HBY" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="39.5" width="72.5" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -776,6 +812,9 @@
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="U5K-h3-WXR"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -787,7 +826,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFI-A3-aOC" userLabel="View3">
                                                         <rect key="frame" x="165.5" y="0.0" width="83" height="124.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-c8-bHV" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                            <button opaque="NO" tag="27" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xg0-c8-bHV" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="39.5" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -799,6 +838,9 @@
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="rLi-dF-1uI"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -810,7 +852,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T3-h0-kIy" userLabel="View4">
                                                         <rect key="frame" x="248.5" y="0.0" width="82.5" height="124.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-WD-20I" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                            <button opaque="NO" tag="28" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-WD-20I" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="39.5" width="72.5" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -822,6 +864,9 @@
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="XEA-6s-bsA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -833,7 +878,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-Oh-5LZ" userLabel="View5">
                                                         <rect key="frame" x="331" y="0.0" width="83" height="124.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-KM-DSl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
+                                                            <button opaque="NO" tag="29" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbY-KM-DSl" customClass="SCCustomUIButton" customModule="PSCalculator" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="39.5" width="73" height="46"/>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -845,6 +890,9 @@
                                                                         <real key="value" value="20"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="lightGrayOperationButtonTapped:" destination="hi4-gk-dYt" eventType="touchUpInside" id="H4g-pt-7YE"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1124,9 +1172,6 @@
         </designable>
     </designables>
     <resources>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
