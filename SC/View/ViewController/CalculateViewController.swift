@@ -40,8 +40,11 @@ class CalculateViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
+        }
+        
         self.loadBannerAd()
-        self.requestIDFA()
     }
     
     override func viewWillTransition(
@@ -51,12 +54,6 @@ class CalculateViewController: UIViewController {
         coordinator.animate(alongsideTransition: { _ in
             self.loadBannerAd()
         })
-    }
-    
-    private func requestIDFA() {
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
-        }
     }
     
     // Green Buttons: tag = (0~9)
