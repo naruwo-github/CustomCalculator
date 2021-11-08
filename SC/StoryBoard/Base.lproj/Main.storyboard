@@ -35,13 +35,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tky-Cx-BO9" userLabel="MemoryView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-8Z-gGX" userLabel="Memory">
-                                                <rect key="frame" x="0.0" y="0.0" width="124" height="72"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-8Z-gGX" userLabel="Memory">
+                                                <rect key="frame" x="0.0" y="5" width="124" height="62"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-z8-iLf" userLabel="MemoryResultLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-z8-iLf" userLabel="MemoryResultLabel">
                                                 <rect key="frame" x="124" y="5" width="290" height="62"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,9 +51,9 @@
                                         <constraints>
                                             <constraint firstItem="ZsF-z8-iLf" firstAttribute="leading" secondItem="dNd-8Z-gGX" secondAttribute="trailing" id="CMD-Bp-tJ7"/>
                                             <constraint firstAttribute="bottom" secondItem="ZsF-z8-iLf" secondAttribute="bottom" constant="5" id="HHH-S0-evC"/>
-                                            <constraint firstAttribute="bottom" secondItem="dNd-8Z-gGX" secondAttribute="bottom" id="Rry-0i-U42"/>
+                                            <constraint firstAttribute="bottom" secondItem="dNd-8Z-gGX" secondAttribute="bottom" constant="5" id="Rry-0i-U42"/>
                                             <constraint firstItem="dNd-8Z-gGX" firstAttribute="leading" secondItem="tky-Cx-BO9" secondAttribute="leading" id="VWk-FK-6Y2"/>
-                                            <constraint firstItem="dNd-8Z-gGX" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" id="bUF-6g-SOT"/>
+                                            <constraint firstItem="dNd-8Z-gGX" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" constant="5" id="bUF-6g-SOT"/>
                                             <constraint firstItem="dNd-8Z-gGX" firstAttribute="width" secondItem="tky-Cx-BO9" secondAttribute="width" multiplier="0.3" id="eDY-9P-6Xv"/>
                                             <constraint firstAttribute="trailing" secondItem="ZsF-z8-iLf" secondAttribute="trailing" id="klb-Gw-8zc"/>
                                             <constraint firstItem="ZsF-z8-iLf" firstAttribute="top" secondItem="tky-Cx-BO9" secondAttribute="top" constant="5" id="pmL-Hm-5qC"/>
