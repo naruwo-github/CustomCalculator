@@ -445,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
 				PRODUCT_NAME = PSCalculator;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -467,7 +467,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.kero0711tennis.SC;
 				PRODUCT_NAME = PSCalculator;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
