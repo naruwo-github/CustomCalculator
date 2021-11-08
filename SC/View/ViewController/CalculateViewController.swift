@@ -43,13 +43,10 @@ class CalculateViewController: UIViewController {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
         }
-        
         self.loadBannerAd()
     }
     
-    override func viewWillTransition(
-        to size: CGSize,
-        with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { _ in
             self.loadBannerAd()
@@ -99,9 +96,8 @@ class CalculateViewController: UIViewController {
             self.resultLabel.text = tmp.description
         case 14: // %
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("%")
@@ -120,9 +116,8 @@ class CalculateViewController: UIViewController {
             self.calculateOperation()
         case 16: // +
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("+")
@@ -130,9 +125,8 @@ class CalculateViewController: UIViewController {
             self.canCalculate = true
         case 17: // -
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("-")
@@ -140,9 +134,8 @@ class CalculateViewController: UIViewController {
             self.canCalculate = true
         case 18: // ×
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("×")
@@ -150,9 +143,8 @@ class CalculateViewController: UIViewController {
             self.canCalculate = true
         case 19: // ÷
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("÷")
@@ -168,8 +160,8 @@ class CalculateViewController: UIViewController {
     @IBAction private func lightGrayOperationButtonTapped(_ sender: UIButton) {
         switch sender.tag {
         case 20: // √
-            // TODO: perationじゃないかの確認 する？
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
+            self.calculateOperation() // 最後がoperationじゃないかの確認
+            if self.isNumber(char: self.getLastChar()) {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
                 self.resultLabel.text = sqrtf(self.numOnScreen).description
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
@@ -177,7 +169,7 @@ class CalculateViewController: UIViewController {
                 _ = self.resultLabel.text?.popLast()
             }
         case 21: // !
-            // TODO: perationじゃないかの確認 する？
+            self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
@@ -190,7 +182,7 @@ class CalculateViewController: UIViewController {
                 self.numOnScreen = NSString(string: self.resultLabel.text!).floatValue
             }
         case 22: // 1/x
-            // TODO: perationじゃないかの確認 する？
+            self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
@@ -199,16 +191,15 @@ class CalculateViewController: UIViewController {
             }
         case 23: // ^x
             self.calculateOperation() // 最後がoperationじゃないかの確認
-            if self.getLastChar() >= "0" && self.getLastChar() <= "9" {
-            } else {
-                _ = self.resultLabel.text?.popLast()
+            if !self.isNumber(char: self.getLastChar()) {
+                _ = self.resultLabel.text?.popLast() // 最後が数字でなければ、それをポップする
             }
             self.preNum = NSString(string: self.resultLabel.text!).floatValue
             self.resultLabel.text?.append("^")
             self.operationNum = sender.tag
             self.canCalculate = true
         case 24: // 10^x
-            // TODO: perationじゃないかの確認 する？
+            self.calculateOperation() // 最後がoperationじゃないかの確認
             if self.resultLabel.text == "0" || self.resultLabel.text == "0.0" {
             } else {
                 self.preNum = NSString(string: self.resultLabel.text!).floatValue
@@ -269,6 +260,10 @@ class CalculateViewController: UIViewController {
     
     private func getLastChar() -> Character {
         return resultLabel.text?.last ?? "0"
+    }
+    
+    private func isNumber(char: Character) -> Bool {
+        return char >= "0" && char <= "9"
     }
     
 }
