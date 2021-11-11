@@ -6,6 +6,7 @@
 //  Copyright © 2019 Narumi Nogawa. All rights reserved.
 //
 
+import AppTrackingTransparency
 import UIKit
 import Firebase
 import GoogleMobileAds
@@ -38,6 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if #available(iOS 14, *) {
+            if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
+                ATTrackingManager.requestTrackingAuthorization { _ in }
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
