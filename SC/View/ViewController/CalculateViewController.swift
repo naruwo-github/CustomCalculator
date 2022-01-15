@@ -6,7 +6,6 @@
 //  Copyright © 2020 Narumi Nogawa. All rights reserved.
 //
 
-import AppTrackingTransparency
 import UIKit
 
 import GoogleMobileAds
@@ -40,9 +39,6 @@ class CalculateViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if #available(iOS 14, *) {
-            ATTrackingManager.requestTrackingAuthorization(completionHandler: { _ in })
-        }
         self.loadBannerAd()
     }
     
