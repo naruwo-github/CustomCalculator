@@ -831,7 +831,7 @@ Copyright 2021 Google
 
 ## Google-Mobile-Ads-SDK
 
-Copyright 2021 Google
+Copyright 2022 Google
 
 ## GoogleAppMeasurement
 
