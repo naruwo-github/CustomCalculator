@@ -13,6 +13,8 @@ import SwiftUI
 struct CalculatorBundle: WidgetBundle {
     var body: some Widget {
         Calculator()
-        CalculatorLiveActivity()
+        if #available(iOSApplicationExtension 16.1, *) {
+            CalculatorLiveActivity()
+        }
     }
 }

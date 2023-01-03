@@ -101,9 +101,12 @@ struct CalculatorEntryView: View {
                 ForEach(buttonTypes, id: \.self) { row in
                       HStack {
                           ForEach(row, id: \.self) { buttonType in
-                              Button(buttonType.description) { }
+                              Button(buttonType.description) {
+                                  // todo: add event
+                                  print(buttonType.foregroundColor)
+                              }
                                   .buttonStyle(CalculatorButtonStyle(
-                                    size: 25,
+                                    size: UIScreen.main.bounds.width / 16,
                                     backgroundColor: buttonType.backgroundColor,
                                     foregroundColor: buttonType.foregroundColor
                                   ))

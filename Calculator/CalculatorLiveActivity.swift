@@ -20,6 +20,7 @@ struct CalculatorAttributes: ActivityAttributes {
     var name: String
 }
 
+@available(iOSApplicationExtension 16.1, *)
 struct CalculatorLiveActivity: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: CalculatorAttributes.self) { context in
@@ -57,6 +58,7 @@ struct CalculatorLiveActivity: Widget {
     }
 }
 
+@available(iOSApplicationExtension 16.2, *)
 struct CalculatorLiveActivity_Previews: PreviewProvider {
     static let attributes = CalculatorAttributes(name: "Me")
     static let contentState = CalculatorAttributes.ContentState(value: 3)
